@@ -1,8 +1,12 @@
-# fintech_vis
+# fintech_projects
 ## repo for fintech visualization project
 
-### team members:
+### team members: 강래현, 김태린, 박가희, 이한상, 최윤서
 
-### used data(기상청 API)
+### projects
+
+- portfolio maximization using lending club data
+
+- data visualization using korean meteological administration data
 
 
