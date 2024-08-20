@@ -1,32 +1,25 @@
 import requests
-import json
 import os
 
-# API setup
-api_url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
-api_key = "YOUR_API_KEY"  # Replace with your actual API key
+# The URL provided by the API creator
+api_url = "https://apihub.kma.go.kr/api/typ05/api/GK2A/LE2/QPN/KO/data?sdate=202312012350&eDate=202312120000&authKey=rBhoeJUrSEiYaHiVK4hIPg"
 
-# Parameters for the API request
-params = {
-    "serviceKey": api_key,
-    "numOfRows": "100",
-    "pageNo": "1",
-    "dataType": "JSON",
-    "base_date": "20230801",  # Example date
-    "base_time": "0500",      # Example time
-    "nx": "60",               # Example grid x coordinate
-    "ny": "127"               # Example grid y coordinate
-}
-
-def fetch_and_save_data(filename, params):
-    response = requests.get(api_url, params=params)
-    data = response.json()
+def fetch_and_save_data(url, filename):
+    # Send the request to the API
+    response = requests.get(url)
     
-    os.makedirs("data", exist_ok=True)
-    with open(f"data/{filename}", "w", encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    # Check for errors in the response
+    if response.status_code == 200:
+        # Save the file to the appropriate directory
+        os.makedirs("data", exist_ok=True)
+        save_path = f"data/{filename}"
+        with open(save_path, 'wb') as f:
+            f.write(response.content)
+        print(f"Data saved successfully to {save_path}.")
+    else:
+        print(f"Failed to fetch data. HTTP Status Code: {response.status_code} - {response.text}")
 
-# Fetch data for each example
-fetch_and_save_data("insect_outbreak_data.json", params)
-fetch_and_save_data("heatstroke_data.json", params)
-fetch_and_save_data("flooding_data.json", params)
+# Fetch and save data using the provided URL
+fetch_and_save_data(api_url, "fetched_data.json")
+
+
