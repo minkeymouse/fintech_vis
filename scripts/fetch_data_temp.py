@@ -2,14 +2,17 @@ import requests
 import os
 
 # The URL provided by the API creator
-domain = 'https://apihub.kma.go.kr/api/typ01/url/sfc_norm1.php?'
-norm = 'norm=D&'
-tm = 'tmst=2021&'
-stn_id = 'stn=0&'
-option = 'MM1=5&DD1=1&MM2=5&DD2=2&'
+domain = 'https://apihub.kma.go.kr/api/typ01/url/kma_sfcdd3.php?'
+# norm = 'norm=D&'
+tm = 'tm=2021&'
+tm1 = 'tm1=20181211&'
+tm2 = 'tm2=20240514&'
+stn_id = 'stn=108&'
+help = 'help=1&'
+# option = 'MM1=5&DD1=1&MM2=5&DD2=2&'
 auth = 'authKey=-9IQCdUWT9ySEAnVFs_c4Q'
 
-api_url = domain + norm + tm + stn_id + option + auth
+api_url = domain + tm1 + tm2 + stn_id + help + auth
 
 # API 요청 보내기
 response = requests.get(api_url)
