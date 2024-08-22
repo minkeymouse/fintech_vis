@@ -46,98 +46,17 @@
 				<header>
 					<h2>열사병 (이한상, 박가희)</h2>
 				</header>
-				<div id="visualization"></div> <!-- 시각화가 삽입될 곳 -->
+				<div id="visualization-one"></div> <!-- 시각화가 삽입될 곳 -->
 			</div>
 			<a href="#two" class="button style2 down anchored">Next</a>
 		</section>
 
-    <!-- D3.js 시각화 코드 추가 -->
-	<script>
-		// IntersectionObserver 설정
-		const observer = new IntersectionObserver((entries, observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					// 섹션이 화면에 보일 때 D3.js 시각화를 시작
-					startVisualization();
-					observer.unobserve(entry.target);  // 시각화를 한 번만 실행하도록 관찰 중지
-				}
-			});
-		}, { threshold: 0.5 });  // 섹션의 50%가 화면에 보일 때 트리거
-	
-		// 'one' 섹션을 관찰 대상으로 설정
-		observer.observe(document.querySelector('#one'));
-	
-		// D3.js 시각화 함수 정의
-		function startVisualization() {
-			d3.json("data/temp_anomaly.json").then(function(data) {
-				var svgWidth = 600, svgHeight = 400, margin = {top: 20, right: 20, bottom: 30, left: 50};
-				var width = svgWidth - margin.left - margin.right;
-				var height = svgHeight - margin.top - margin.bottom;
-	
-				var svg = d3.select("#visualization")
-							.append("svg")
-							.attr("width", svgWidth)
-							.attr("height", svgHeight)
-							.append("g")
-							.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	
-				var x = d3.scaleLinear().domain([1, 12]).range([0, width]);
-				var y = d3.scaleLinear().domain([-5, 7]).range([height, 0]);
-	
-				var line = d3.line()
-					.x(function(d) { return x(d.Month); })
-					.y(function(d) { return y(d.temp_anomaly); });
-	
-				var years = Array.from(new Set(data.map(d => d.Year))).sort();
-				var color = d3.scaleSequential(d3.interpolateYlOrRd)
-							  .domain(d3.extent(years));
-	
-				var yearIndex = 0;
-	
-				function drawNextYear() {
-					if (yearIndex >= years.length) return;
-	
-					var year = years[yearIndex];
-					var yearData = data.filter(d => d.Year === year);
-	
-					svg.append("path")
-					.datum(yearData)
-					.attr("fill", "none")
-					.attr("stroke", color(year))
-					.attr("stroke-width", 1.5)
-					.attr("d", line)
-					.attr("stroke-dasharray", function() {
-							var totalLength = this.getTotalLength();
-							return totalLength + " " + totalLength;
-					})
-					.attr("stroke-dashoffset", function() {
-							return this.getTotalLength();
-					})
-					.transition()
-					.duration(300)  // 애니메이션 속도
-					.ease(d3.easeLinear)
-					.attr("stroke-dashoffset", 0);
-	
-					yearIndex++;
-					setTimeout(drawNextYear, 150);  // 다음 연도 그리기
-				}
-	
-				svg.append("g")
-				.attr("transform", "translate(0," + height + ")")
-				.call(d3.axisBottom(x).tickFormat(d3.format("d")));
-	
-				svg.append("g")
-				.call(d3.axisLeft(y));
-	
-				drawNextYear();
-			});
-		}
-	</script>
+    
 	<!-- Graph -->
 	<section id="work" class="main style3 primary">
 		<div class="content">
 			<header>
-				<h2>My Work</h2>
+				<h2>짜잔!</h2>
 				<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
 				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
 				arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
@@ -160,11 +79,12 @@
 		<section id="two" class="main style2 left dark fullscreen">
 			<div class="content box style2">
 				<header>
-					<h2>이상기후 - 곤충대발생, 스콜 등 (최윤서 강래현)</h2>
+					<h2>이상기후 - 곤충대발생??, 스콜 등 (최윤서 강래현)</h2>
 				</header>
-				<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+				<div id="visualization-two"></div> <!-- 시각화가 삽입될 곳 -->
+				<!-- <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
 				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-				id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+				id varius justo euismod in. Curabitur egestas consectetur magna.</p> -->
 			</div>
 			<a href="#three" class="button style2 down anchored">Next</a>
 		</section>
@@ -175,6 +95,7 @@
 				<header>
 					<h2>침수 (장민기, 김태린)</h2>
 				</header>
+				
 				<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
 				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
 				id varius justo euismod in. Curabitur egestas consectetur magna.</p>
@@ -270,6 +191,7 @@
 		<script src="assets/js/main.js"></script>
 		<!-- D3.js 라이브러리 추가 -->
 		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script type="module" src="scripts/index.js"></script>
 
 	</body>
 </html>
