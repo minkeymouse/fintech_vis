@@ -204,7 +204,6 @@ export function startTemperatureVisualization() {
 
 
 // Rainfall Network Visualization
-// Rainfall Network Visualization
 export function startRainfallVisualization() {
     const width = 960, height = 600;
 
@@ -228,7 +227,7 @@ export function startRainfallVisualization() {
             .data(geoData.features)
             .enter().append("path")
             .attr("d", path)
-            .attr("fill", "#e0e0e0")
+            .attr("fill", "#cccccc")  // Map background color (light grey)
             .attr("stroke", "#333");
 
         // 강수량 데이터 로드 및 처리
@@ -244,14 +243,17 @@ export function startRainfallVisualization() {
 
                 const sizeScale = d3.scaleLinear()
                     .domain([0, d3.max(nodes, d => d.rainfall)])
-                    .range([5, 20]);
+                    .range([2, 10]);  // Reduced the size range for smaller nodes
 
                 const colorScale = d3.scaleSequential(d3.interpolateBlues)
                     .domain([0, d3.max(nodes, d => d.rainfall)]);
 
+                const edgeColor = "#007ACC";  // More visible blue color for the edges
+
                 // 이전 요소 제거
                 svg.selectAll(".node").remove();
                 svg.selectAll(".link").remove();
+                svg.selectAll(".month-label").remove();  // Remove previous text labels
 
                 // 연결선 그리기
                 svg.append("g")
@@ -259,13 +261,25 @@ export function startRainfallVisualization() {
                     .data(links)
                     .enter().append("line")
                     .attr("class", "link")
-                    .attr("x1", d => projection([d.source.longitude, d.source.latitude])[0])
-                    .attr("y1", d => projection([d.source.longitude, d.source.latitude])[1])
-                    .attr("x2", d => projection([d.target.longitude, d.target.latitude])[0])
-                    .attr("y2", d => projection([d.target.longitude, d.target.latitude])[1])
-                    .style("stroke-width", d => Math.sqrt(d.weight))
-                    .style("stroke", d => colorScale(d.weight))
-                    .style("stroke-opacity", 0.6);
+                    .attr("x1", d => {
+                        const sourceNode = nodes.find(node => node.id === d.source);
+                        return projection([sourceNode.longitude, sourceNode.latitude])[0];
+                    })
+                    .attr("y1", d => {
+                        const sourceNode = nodes.find(node => node.id === d.source);
+                        return projection([sourceNode.longitude, sourceNode.latitude])[1];
+                    })
+                    .attr("x2", d => {
+                        const targetNode = nodes.find(node => node.id === d.target);
+                        return projection([targetNode.longitude, targetNode.latitude])[0];
+                    })
+                    .attr("y2", d => {
+                        const targetNode = nodes.find(node => node.id === d.target);
+                        return projection([targetNode.longitude, targetNode.latitude])[1];
+                    })
+                    .style("stroke-width", d => Math.sqrt(d.weight) * 0.75)  // Adjusted to make edges more visible
+                    .style("stroke", edgeColor)  // Use the more visible blue color
+                    .style("stroke-opacity", 0.9);  // Increased opacity for better visibility
 
                 // 노드 그리기
                 svg.append("g")
@@ -276,14 +290,16 @@ export function startRainfallVisualization() {
                     .attr("r", d => sizeScale(d.rainfall))
                     .attr("cx", d => projection([d.longitude, d.latitude])[0])
                     .attr("cy", d => projection([d.longitude, d.latitude])[1])
-                    .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall) : "#FFD700");
+                    .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall) : "#FFD700"); // Yellow for low rainfall
 
-                // 월 표시
+                // 월 표시 (이전 텍스트 제거 후 다시 추가)
                 svg.append("text")
+                    .attr("class", "month-label")
                     .attr("x", width / 2)
                     .attr("y", 30)
                     .attr("text-anchor", "middle")
                     .attr("font-size", "24px")
+                    .attr("font-weight", "bold")  // Make the text bold
                     .attr("fill", "#333")
                     .text(`Month: ${currentMonthData.month}`);
             }
@@ -296,10 +312,10 @@ export function startRainfallVisualization() {
             let intervalSpeed = 1000;  // 기본 속도
             function adjustSpeed() {
                 const year = parseInt(data[monthIndex].month.split('-')[0]);
-                if (year >= 2010) {
-                    intervalSpeed = 3000;  // 2010년 이후 속도 느림
+                if (year >= 2015) {
+                    intervalSpeed = 1000;  // 2019년 이후 속도 느림
                 } else {
-                    intervalSpeed = 1000;  // 2010년 이전 속도 빠름
+                    intervalSpeed = 50;  // 2010년 이전 속도 빠름
                 }
             }
 
@@ -313,3 +329,4 @@ export function startRainfallVisualization() {
         });
     });
 }
+
