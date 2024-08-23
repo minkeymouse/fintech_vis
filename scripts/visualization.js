@@ -211,10 +211,6 @@ export function startTemperatureVisualization() {
     });
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bf5d431de16241ab7eca5643a8c3490fca222521
 // Rainfall Network Visualization
 export function startRainfallVisualization() {
     const width = 960, height = 600;
@@ -342,7 +338,6 @@ export function startRainfallVisualization() {
     });
 }
 
-<<<<<<< HEAD
 export function startWork1Visualization() {
     const margin = { top: 20, right: 30, bottom: 40, left: 50 };
     const width = 800 - margin.left - margin.right;
@@ -473,5 +468,3 @@ export function startWork1Visualization() {
         .style("text-anchor", "end")
         .text(d => d);
 }
-=======
->>>>>>> bf5d431de16241ab7eca5643a8c3490fca222521
