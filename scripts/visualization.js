@@ -204,6 +204,7 @@ export function startTemperatureVisualization() {
 
 
 // Rainfall Network Visualization
+// Rainfall Network Visualization
 export function startRainfallVisualization() {
     const width = 960, height = 600;
 
@@ -211,76 +212,104 @@ export function startRainfallVisualization() {
         .attr("width", width)
         .attr("height", height);
 
-    const colorScale = d3.scaleSequential(d3.interpolateBlues).domain([0, 1]);
-    const sunnyColor = d3.rgb(255, 255, 0); // Yellow for sunny days
-    const sizeScale = d3.scaleLinear().range([5, 20]);
+    // 지도 투영 설정 (Mercator projection 사용)
+    const projection = d3.geoMercator()
+        .center([128, 36])  // 대한민국 중심 좌표
+        .scale(5000)        // 확대 비율
+        .translate([width / 2, height / 2]);
 
-    d3.json("data/rainfall_network_monthly.json").then(data => {
-        console.log("JSON data loaded:", data);
-        let monthIndex = 0;
+    const path = d3.geoPath().projection(projection);
 
-        function update() {
-            const currentMonthData = data[monthIndex];
-            
-            const nodes = currentMonthData.nodes;
-            const links = currentMonthData.edges;
+    // 대한민국 GeoJSON 파일 로드
+    d3.json("data/korea_geojson.json").then(geoData => {
+        // 대한민국 지도 그리기
+        svg.append("g")
+            .selectAll("path")
+            .data(geoData.features)
+            .enter().append("path")
+            .attr("d", path)
+            .attr("fill", "#e0e0e0")
+            .attr("stroke", "#333");
 
-            sizeScale.domain([0, d3.max(nodes, d => d.rainfall)]);
+        // 강수량 데이터 로드 및 처리
+        d3.json("data/rainfall_network_monthly.json").then(data => {
+            console.log("JSON data loaded:", data);
+            let monthIndex = 0;
 
-            svg.selectAll("*").remove();
+            function update() {
+                const currentMonthData = data[monthIndex];
+                
+                const nodes = currentMonthData.nodes;
+                const links = currentMonthData.edges;
 
-            // Draw links
-            svg.append("g")
-                .selectAll(".link")
-                .data(links)
-                .enter().append("line")
-                .attr("class", "link")
-                .style("stroke-width", d => Math.sqrt(d.weight))
-                .style("stroke", d => colorScale(1 - (d.weight / 50)))
-                .style("stroke-opacity", 0.6);
+                const sizeScale = d3.scaleLinear()
+                    .domain([0, d3.max(nodes, d => d.rainfall)])
+                    .range([5, 20]);
 
-            // Draw nodes
-            svg.append("g")
-                .selectAll(".node")
-                .data(nodes)
-                .enter().append("circle")
-                .attr("class", "node")
-                .attr("r", d => sizeScale(d.rainfall))
-                .attr("cx", d => d.longitude)
-                .attr("cy", d => d.latitude)
-                .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall / d3.max(nodes, n => n.rainfall)) : sunnyColor);
+                const colorScale = d3.scaleSequential(d3.interpolateBlues)
+                    .domain([0, d3.max(nodes, d => d.rainfall)]);
 
-            // Add month label
-            svg.append("text")
-                .attr("x", width / 2)
-                .attr("y", 30)
-                .attr("text-anchor", "middle")
-                .attr("font-size", "24px")
-                .attr("fill", "#333")
-                .text(`Month: ${currentMonthData.month}`);
-        }
+                // 이전 요소 제거
+                svg.selectAll(".node").remove();
+                svg.selectAll(".link").remove();
 
-        function animate() {
-            update();
-            monthIndex = (monthIndex + 1) % data.length;
-        }
+                // 연결선 그리기
+                svg.append("g")
+                    .selectAll(".link")
+                    .data(links)
+                    .enter().append("line")
+                    .attr("class", "link")
+                    .attr("x1", d => projection([d.source.longitude, d.source.latitude])[0])
+                    .attr("y1", d => projection([d.source.longitude, d.source.latitude])[1])
+                    .attr("x2", d => projection([d.target.longitude, d.target.latitude])[0])
+                    .attr("y2", d => projection([d.target.longitude, d.target.latitude])[1])
+                    .style("stroke-width", d => Math.sqrt(d.weight))
+                    .style("stroke", d => colorScale(d.weight))
+                    .style("stroke-opacity", 0.6);
 
-        let intervalSpeed = 1000;  // Default speed
-        function adjustSpeed() {
-            const year = parseInt(data[monthIndex].month.split('-')[0]);
-            if (year >= 2010) {
-                intervalSpeed = 3000;  // Slow down after 2010
-            } else {
-                intervalSpeed = 1000;  // Faster before 2010
+                // 노드 그리기
+                svg.append("g")
+                    .selectAll(".node")
+                    .data(nodes)
+                    .enter().append("circle")
+                    .attr("class", "node")
+                    .attr("r", d => sizeScale(d.rainfall))
+                    .attr("cx", d => projection([d.longitude, d.latitude])[0])
+                    .attr("cy", d => projection([d.longitude, d.latitude])[1])
+                    .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall) : "#FFD700");
+
+                // 월 표시
+                svg.append("text")
+                    .attr("x", width / 2)
+                    .attr("y", 30)
+                    .attr("text-anchor", "middle")
+                    .attr("font-size", "24px")
+                    .attr("fill", "#333")
+                    .text(`Month: ${currentMonthData.month}`);
             }
-        }
 
-        function startAnimation() {
-            adjustSpeed();
-            animate();
-            setTimeout(startAnimation, intervalSpeed);
-        }
+            function animate() {
+                update();
+                monthIndex = (monthIndex + 1) % data.length;
+            }
 
-        startAnimation();  // Start the animation
+            let intervalSpeed = 1000;  // 기본 속도
+            function adjustSpeed() {
+                const year = parseInt(data[monthIndex].month.split('-')[0]);
+                if (year >= 2010) {
+                    intervalSpeed = 3000;  // 2010년 이후 속도 느림
+                } else {
+                    intervalSpeed = 1000;  // 2010년 이전 속도 빠름
+                }
+            }
+
+            function startAnimation() {
+                adjustSpeed();
+                animate();
+                setTimeout(startAnimation, intervalSpeed);
+            }
+
+            startAnimation();  // 애니메이션 시작
+        });
     });
 }
