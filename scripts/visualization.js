@@ -135,7 +135,8 @@ export function startTemperatureVisualization() {
                 .attr("width", width / 250)
                 .attr("fill", d => d.color)
                 .transition()
-                .duration(2000) // 시간을 늘림
+                .duration(2000) // 애니메이션 시간을 늘림
+                .ease(d3.easeCubic)  // 스무딩 애니메이션 적용
                 .attr("y", d => y(d.frequency))
                 .attr("height", d => height - y(d.frequency))
                 .attr("opacity", 1)
@@ -182,6 +183,7 @@ export function startTemperatureVisualization() {
                 .attr("opacity", 0)  // 초기 투명도 설정
                 .transition()
                 .duration(1000)
+                .ease(d3.easeCubic)  // 스무딩 애니메이션 적용
                 .attr("y", d => y(d.frequency))
                 .attr("height", d => height - y(d.frequency))
                 .attr("opacity", 0.8);  // 최종 불투명도 설정
