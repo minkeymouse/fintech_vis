@@ -1,5 +1,6 @@
 import { startVisualization } from './visualization.js';
 import { startTemperatureVisualization } from './visualization.js';
+import { startRainfallVisualization } from './visualization.js';
 
 // 첫 번째 섹션에 대한 관찰자 설정
 const observerOne = new IntersectionObserver((entries, observer) => {
@@ -23,4 +24,18 @@ const observerTwo = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.5 });
 
-observerTwo.observe(document.querySelector('#two')); 
+observerTwo.observe(document.querySelector('#two'));
+
+// Rainfall network visualization observer
+const observerRainfall = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startRainfallVisualization();  // Start rainfall visualization
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+observerRainfall.observe(document.querySelector('#three'));
+
+
