@@ -201,3 +201,86 @@ export function startTemperatureVisualization() {
         console.error("Error loading JSON data:", error); // JSON 로드 에러 확인
     });
 }
+
+
+// Rainfall Network Visualization
+export function startRainfallVisualization() {
+    const width = 960, height = 600;
+
+    const svg = d3.select("#visualization-three").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    const colorScale = d3.scaleSequential(d3.interpolateBlues).domain([0, 1]);
+    const sunnyColor = d3.rgb(255, 255, 0); // Yellow for sunny days
+    const sizeScale = d3.scaleLinear().range([5, 20]);
+
+    d3.json("data/rainfall_network_monthly.json").then(data => {
+        console.log("JSON data loaded:", data);
+        let monthIndex = 0;
+
+        function update() {
+            const currentMonthData = data[monthIndex];
+            
+            const nodes = currentMonthData.nodes;
+            const links = currentMonthData.edges;
+
+            sizeScale.domain([0, d3.max(nodes, d => d.rainfall)]);
+
+            svg.selectAll("*").remove();
+
+            // Draw links
+            svg.append("g")
+                .selectAll(".link")
+                .data(links)
+                .enter().append("line")
+                .attr("class", "link")
+                .style("stroke-width", d => Math.sqrt(d.weight))
+                .style("stroke", d => colorScale(1 - (d.weight / 50)))
+                .style("stroke-opacity", 0.6);
+
+            // Draw nodes
+            svg.append("g")
+                .selectAll(".node")
+                .data(nodes)
+                .enter().append("circle")
+                .attr("class", "node")
+                .attr("r", d => sizeScale(d.rainfall))
+                .attr("cx", d => d.longitude)
+                .attr("cy", d => d.latitude)
+                .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall / d3.max(nodes, n => n.rainfall)) : sunnyColor);
+
+            // Add month label
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", 30)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "24px")
+                .attr("fill", "#333")
+                .text(`Month: ${currentMonthData.month}`);
+        }
+
+        function animate() {
+            update();
+            monthIndex = (monthIndex + 1) % data.length;
+        }
+
+        let intervalSpeed = 1000;  // Default speed
+        function adjustSpeed() {
+            const year = parseInt(data[monthIndex].month.split('-')[0]);
+            if (year >= 2010) {
+                intervalSpeed = 3000;  // Slow down after 2010
+            } else {
+                intervalSpeed = 1000;  // Faster before 2010
+            }
+        }
+
+        function startAnimation() {
+            adjustSpeed();
+            animate();
+            setTimeout(startAnimation, intervalSpeed);
+        }
+
+        startAnimation();  // Start the animation
+    });
+}
