@@ -1,6 +1,6 @@
 // scripts/visualization.js
 
-// D3.js 시각화 함수 정의
+// 해수면 + 지상 온도 상승 그래프
 export function startVisualization() {
     d3.json("data/temp_anomaly.json").then(function(data) {
         var svgWidth = 600, svgHeight = 400, margin = {top: 20, right: 20, bottom: 30, left: 50};
@@ -66,10 +66,7 @@ export function startVisualization() {
     });
 }
 
-// scripts/visualization.js
-
-// scripts/visualization.js
-
+// 평균 기온 상승 그래프 (윤서)
 export function startTemperatureVisualization() {
     const margin = { top: 20, right: 30, bottom: 40, left: 50 };
     const width = 800 - margin.left - margin.right;
@@ -122,88 +119,98 @@ export function startTemperatureVisualization() {
             .style("text-anchor", "middle")
             .text("Frequency");
 
+        const area = d3.area()
+            .x(d => x(d.temperature))
+            .y0(height)
+            .y1(d => y(d.frequency))
+            .curve(d3.curveBasis);
+
+        const colorSections = [
+            { color: "#0033cc", range: [15, 23] },
+            { color: "#0099cc", range: [23, 28] },
+            { color: "#cccccc", range: [28, 30] },
+            { color: "#ff9966", range: [30, 34] },
+            { color: "#cc3300", range: [34, 40] },
+        ];
+
         function drawInitialPeriod() {
             const initialPeriodData = data[0];
-            svg.selectAll(".initial-bar")
-                .data(initialPeriodData.data, d => d.temperature)
-                .enter()
-                .append("rect")
-                .attr("class", "initial-bar")
-                .attr("x", d => x(d.temperature))
-                .attr("y", y(0))
-                .attr("height", 0)
-                .attr("width", width / 250)
-                .attr("fill", d => d.color)
-                .transition()
-                .duration(2000) // 애니메이션 시간을 늘림
-                .ease(d3.easeCubic)  // 스무딩 애니메이션 적용
-                .attr("y", d => y(d.frequency))
-                .attr("height", d => height - y(d.frequency))
-                .attr("opacity", 1)
-                .on("end", function() {
-                    d3.select(this)
-                        .transition()
-                        .duration(1000)
-                        .attr("fill", "#000000")
-                        .attr("opacity", 0.3); // 검은색으로 전환
-                });
+
+            function drawSection(section, delay) {
+                const sectionData = initialPeriodData.data.filter(d => d.temperature >= section.range[0] && d.temperature <= section.range[1]);
+                svg.append("path")
+                    .datum(sectionData)
+                    .attr("class", "initial-area")
+                    .attr("fill", section.color)
+                    .attr("d", area)
+                    .attr("opacity", 0)
+                    .transition()
+                    .duration(1000)
+                    .delay(delay)
+                    .ease(d3.easeCubic)
+                    .attr("opacity", 1)
+                    .on("end", function() {
+                        if (section === colorSections[colorSections.length - 1]) {
+                            d3.selectAll(".initial-area")
+                                .transition()
+                                .duration(1000)
+                                .attr("fill", "#000000")
+                                .attr("opacity", 0.3);
+                        }
+                    });
+            }
+
+            colorSections.forEach((section, i) => {
+                drawSection(section, i * 100); // 각 구간이 200ms 간격으로 시작
+            });
         }
 
         let currentPeriod = 1;
 
         function drawNextPeriod() {
             if (currentPeriod >= data.length) {
-                svg.selectAll(".bar").remove();  // 모든 막대 제거
-                currentPeriod = 0;  // 첫 번째 기간으로 초기화
-                drawInitialPeriod(); // 첫 번째 기간 다시 그리기
-                setTimeout(drawNextPeriod, 1000); // 지연 시간 후 다음 기간 그리기
+                svg.selectAll(".area").remove();
+                currentPeriod = 0;
+                drawInitialPeriod();
+                setTimeout(drawNextPeriod, 1000);
                 return;
             }
 
             const periodData = data[currentPeriod];
 
-            // 이전 막대들 제거
-            svg.selectAll(".bar")
+            svg.selectAll(".area")
                 .transition()
                 .duration(1000)
                 .attr("opacity", 0)
-                .remove();  // 이전 막대를 완전히 제거
+                .remove();
 
-            // 새 막대 추가
-            svg.selectAll(`.bar-${currentPeriod}`)
-                .data(periodData.data, d => d.temperature)
-                .enter()
-                .append("rect")
-                .attr("class", `bar`)
-                .attr("x", d => x(d.temperature))
-                .attr("y", y(0))
-                .attr("height", 0)
-                .attr("width", width / 250)
-                .attr("fill", d => d.color)
-                .attr("opacity", 0)  // 초기 투명도 설정
-                .transition()
-                .duration(1000)
-                .ease(d3.easeCubic)  // 스무딩 애니메이션 적용
-                .attr("y", d => y(d.frequency))
-                .attr("height", d => height - y(d.frequency))
-                .attr("opacity", 0.8);  // 최종 불투명도 설정
+            colorSections.forEach((section, i) => {
+                const sectionData = periodData.data.filter(d => d.temperature >= section.range[0] && d.temperature <= section.range[1]);
+                svg.append("path")
+                    .datum(sectionData)
+                    .attr("class", "area")
+                    .attr("fill", section.color)
+                    .attr("d", area)
+                    .attr("opacity", 0)
+                    .transition()
+                    .duration(1000)
+                    .delay(i * 200)
+                    .ease(d3.easeCubic)
+                    .attr("opacity", 0.8);
+            });
 
-            // 텍스트 업데이트
             periodLabel.text(periodData.period);
-
             currentPeriod++;
-            setTimeout(drawNextPeriod, 3000);
+            setTimeout(drawNextPeriod, 3000); // 전체 기간 후 2초 대기
         }
 
         drawInitialPeriod();
         setTimeout(drawNextPeriod, 3000); // 첫 번째 기간 후 3초 후에 다음 기간 시작
     }).catch(error => {
-        console.error("Error loading JSON data:", error); // JSON 로드 에러 확인
+        console.error("Error loading JSON data:", error);
     });
 }
 
-
-// Rainfall Network Visualization
 // Rainfall Network Visualization
 export function startRainfallVisualization() {
     const width = 960, height = 600;
@@ -312,4 +319,135 @@ export function startRainfallVisualization() {
             startAnimation();  // 애니메이션 시작
         });
     });
+}
+
+export function startWork1Visualization() {
+    const margin = { top: 20, right: 30, bottom: 40, left: 50 };
+    const width = 800 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+
+    const svg = d3.select("#visualization-work1")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const data = [
+        { year: "2011", downpour: 77, typhoon: 1, heatwave: 29 },
+        { year: "2012", downpour: 2, typhoon: 14, heatwave: 63 },
+        { year: "2013", downpour: 4, typhoon: 0, heatwave: 51 },
+        { year: "2014", downpour: 2, typhoon: 0, heatwave: 16 },
+        { year: "2015", downpour: 0, typhoon: 0, heatwave: 42 },
+        { year: "2016", downpour: 1, typhoon: 6, heatwave: 81 },
+        { year: "2017", downpour: 7, typhoon: 0, heatwave: 44 },
+        { year: "2018", downpour: 2, typhoon: 3, heatwave: 162 },
+        { year: "2019", downpour: 0, typhoon: 18, heatwave: 30 }
+    ];
+
+    // 수정된 lineData, 기존 데이터 값에 비례하도록 조정된 값
+    const lineData = [
+        { year: "2011", value: 29 }, // 원래 값은 1
+        { year: "2012", value: 63 }, // 원래 값은 14
+        { year: "2013", value: 51 }, // 원래 값은 14
+        { year: "2014", value: 16 }, // 원래 값은 1
+        { year: "2015", value: 42 }, // 원래 값은 8
+        { year: "2016", value: 81 }, // 원래 값은 21
+        { year: "2017", value: 44 }, // 원래 값은 7
+        { year: "2018", value: 162 }, // 원래 값은 30
+        { year: "2019", value: 30 }  // 원래 값은 9
+    ];
+
+    const x0 = d3.scaleBand()
+        .domain(data.map(d => d.year))
+        .range([0, width])
+        .padding(0.2);
+
+    const x1 = d3.scaleBand()
+        .domain(['downpour', 'typhoon', 'heatwave'])
+        .range([0, x0.bandwidth()]);
+
+    const y = d3.scaleLinear()
+        .domain([0, 180])
+        .range([height, 0]);
+
+    const color = d3.scaleOrdinal()
+        .domain(['downpour', 'typhoon', 'heatwave'])
+        .range(["#1679AB", "#03C988", "#FF6A38"]);
+
+    // Bar chart animation
+    svg.append("g")
+        .selectAll("g")
+        .data(data)
+        .enter().append("g")
+        .attr("transform", d => `translate(${x0(d.year)},0)`)
+        .selectAll("rect")
+        .data(d => ['downpour', 'typhoon', 'heatwave'].map(key => ({ key: key, value: d[key] })))
+        .enter().append("rect")
+        .attr("x", d => x1(d.key))
+        .attr("y", height)
+        .attr("width", x1.bandwidth())
+        .attr("fill", d => color(d.key))
+        .transition()
+        .duration(2500)
+        .delay((d, i) => i * 200)  // 바가 순차적으로 애니메이션됨
+        .attr("y", d => y(d.value))
+        .attr("height", d => height - y(d.value));
+
+    // Add axes
+    svg.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x0));
+
+    svg.append("g")
+        .call(d3.axisLeft(y));
+
+    // Line chart container but hidden initially
+    const line = d3.line()
+        .x(d => x0(d.year.toString()) + x0.bandwidth() / 2 + x0.bandwidth() * 0.3)
+        .y(d => y(d.value));
+
+    const linePath = svg.append("path")
+        .datum(lineData)
+        .attr("fill", "none")
+        .attr("stroke", "red")
+        .attr("stroke-width", 2)
+        .attr("d", line)
+        .attr("opacity", 0);  // Initially hidden
+
+    // Add a transparent rectangle to catch mouse events
+    svg.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "transparent")
+        .on("mouseover", function() {
+            linePath.transition()
+                .duration(500)
+                .attr("opacity", 1);  // Show the line chart
+        })
+        .on("mouseout", function() {
+            linePath.transition()
+                .duration(500)
+                .attr("opacity", 0);  // Hide the line chart
+        });
+
+    // 범례 추가 코드
+    const legend = svg.selectAll(".legend")
+        .data(color.domain())
+        .enter().append("g")
+        .attr("class", "legend")
+        .attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+    legend.append("rect")
+        .attr("x", width - 18)
+        .attr("width", 18)
+        .attr("height", 18)
+        .style("fill", color);
+
+    legend.append("text")
+        .attr("x", width - 24)
+        .attr("y", 9)
+        .attr("dy", ".35em")
+        .style("text-anchor", "end")
+        .text(d => d);
 }
