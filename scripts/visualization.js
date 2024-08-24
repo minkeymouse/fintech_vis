@@ -338,12 +338,13 @@ export function startRainfallVisualization() {
     });
 }
 
+// 열사병: 호우 태풍 폭염 그래프
 export function startWork1Visualization() {
     const margin = { top: 20, right: 30, bottom: 40, left: 50 };
     const width = 800 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
-    const svg = d3.select("#visualization-work1")
+    const svg = d3.select("#heatstroke_one_graph")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -467,4 +468,257 @@ export function startWork1Visualization() {
         .attr("dy", ".35em")
         .style("text-anchor", "end")
         .text(d => d);
+}
+
+// general three
+export function startTempAnomalyVisualization() {
+    d3.json('./data/temp_month.json').then(function(data) {
+        console.log('데이터 로드 성공:', data);  // 데이터가 제대로 로드되었는지 확인
+
+        const margin = { top: 20, right: 30, bottom: 50, left: 70 },
+            width = 800 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        const svg = d3.select("#temp-anomaly-chart")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const x = d3.scaleLinear()
+            .domain([1, 12])
+            .range([0, width]);
+
+        const y = d3.scaleLinear()
+            .domain([-5, 30])  // 섭씨 온도 범위로 설정
+            .range([height, 0]);
+
+        const line = d3.line()
+            .x(d => x(d.Month))
+            .y(d => y(d.temp_avg));  // temp_avg_celsius 대신 temp_avg로 수정
+
+        const allYears = Array.from(new Set(data.map(d => d.Year)));
+        const pastYears = allYears.filter(year => year < 2023);
+        const currentYear = 2024;
+        const lastYear = 2023;
+
+        // 회색으로 2023년 이전의 데이터 그리기
+        pastYears.forEach(year => {
+            const yearlyData = data.filter(d => d.Year === year);
+            if (yearlyData.length > 0) {  // 데이터가 있을 경우에만 그리기
+                console.log(`그리기: ${year}년 데이터`, yearlyData);
+                svg.append("path")
+                    .datum(yearlyData)
+                    .attr("fill", "none")
+                    .attr("stroke", "gray")
+                    .attr("stroke-width", 1.5)
+                    .attr("d", line)
+                    .style("opacity", 0.2);
+            }
+        });
+
+        // 2023년 데이터 그리기
+        const lastYearData = data.filter(d => d.Year === lastYear);
+        if (lastYearData.length > 0) {
+            console.log(`그리기: 2023년 데이터`, lastYearData);
+            svg.append("path")
+                .datum(lastYearData)
+                .attr("fill", "none")
+                .attr("stroke", "orange")
+                .attr("stroke-width", 2.5)
+                .attr("d", line)
+                .style("opacity", 0.8);
+        }
+
+        // 2024년 데이터 그리기
+        const currentYearData = data.filter(d => d.Year === currentYear);
+        if (currentYearData.length > 0) {
+            console.log(`그리기: 2024년 데이터`, currentYearData);
+            svg.append("path")
+                .datum(currentYearData)
+                .attr("fill", "none")
+                .attr("stroke", "red")
+                .attr("stroke-width", 2.5)
+                .attr("d", line);
+        }
+
+        // 마지막 데이터 라벨 추가
+        if (currentYearData.length > 0) {
+            const lastDataPoint = currentYearData[currentYearData.length - 1];
+            svg.append("text")
+                .attr("x", x(lastDataPoint.Month))
+                .attr("y", y(lastDataPoint.temp_avg) - 10)
+                .attr("fill", "red")
+                .style("font-size", "14px")
+                .style("font-weight", "bold")
+                .text(`${lastDataPoint.Month}, 2024`);
+
+            // 온도 라벨 추가
+            // svg.append("text")
+            //     .attr("x", x(lastDataPoint.Month))
+            //     .attr("y", y(lastDataPoint.temp_avg) - 25)
+            //     .attr("fill", "red")
+            //     .style("font-size", "12px")
+            //     .text(`${lastDataPoint.temp_avg}°C`);
+        }
+
+        // x축 생성 (월만 표시)
+        svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x).ticks(12).tickFormat(d => d3.timeFormat("%b")(new Date(0, d - 1))));
+
+        // y축 생성 (섭씨 온도)
+        svg.append("g")
+            .call(d3.axisLeft(y).tickFormat(d => `${d}°C`));
+
+        // 제목 추가
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", -10)
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .style("font-weight", "bold")
+            .text("Global temperature above preindustrial levels");
+    }).catch(function(error) {
+        console.error('데이터 로드 실패:', error);
+    });
+}
+
+// 열사병: 열스트레스 그래프
+export function startWBGTVisualization() {
+    d3.json('data/wbgt_data_with_forecast.json').then(function(data) {
+        console.log('데이터 로드 성공:', data);
+
+        const margin = { top: 20, right: 100, bottom: 50, left: 70 },
+            width = 800 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        const svg = d3.select("#heatstroke_two_graph")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // 날짜 데이터를 파싱하여 Date 객체로 변환
+        data.forEach(d => {
+            d.date = d3.timeParse("%m-%d")(d.month_day); // 날짜만 파싱
+            d.year = +d.year;
+            d.WBGT = +d.WBGT; // WBGT 값을 숫자로 변환
+        });
+
+        // x축과 y축 범위 설정
+        const x = d3.scaleTime()
+            .domain([new Date(0, 5, 1), new Date(0, 7, 31)]) // 6월 1일 ~ 8월 31일의 범위로 설정
+            .range([0, width]);
+
+        const y = d3.scaleLinear()
+            .domain([13, 35]) // WBGT 값 범위에 맞게 y축 설정
+            .range([height, 0]);
+
+        // WBGT 라인 설정
+        const line = d3.line()
+            .x(d => x(d.date))
+            .y(d => y(d.WBGT));
+
+        // 열 구역 배경을 그립니다.
+        svg.append("rect")
+            .attr("x", 0)
+            .attr("y", y(35))
+            .attr("width", width)
+            .attr("height", y(32) - y(35))
+            .attr("fill", "red")
+            .style("opacity", 0.3);
+
+        svg.append("rect")
+            .attr("x", 0)
+            .attr("y", y(32))
+            .attr("width", width)
+            .attr("height", y(30) - y(32))
+            .attr("fill", "orange")
+            .style("opacity", 0.3);
+
+        svg.append("rect")
+            .attr("x", 0)
+            .attr("y", y(30))
+            .attr("width", width)
+            .attr("height", y(28) - y(30))
+            .attr("fill", "yellow")
+            .style("opacity", 0.3);
+
+        // 모든 연도별 데이터를 그립니다.
+        const years = d3.groups(data, d => d.year);
+
+        // 우선 모든 회색 선을 그립니다.
+        years.forEach(([year, values]) => {
+            if (year !== 2024 && year !== 2050 && year !== 2023) {
+                svg.append("path")
+                    .datum(values)
+                    .attr("fill", "none")
+                    .attr("stroke", "#a9a9a9")
+                    .attr("stroke-width", 1.5)
+                    .attr("d", line);
+            }
+        });
+
+        // 검은색, 빨간색, 파란색 선을 그립니다.
+        [2023, 2024, 2050].forEach(targetYear => {
+            const yearData = years.find(([year, _]) => year === targetYear)[1];
+            svg.append("path")
+                .datum(yearData)
+                .attr("fill", "none")
+                .attr("stroke", targetYear === 2024 ? "red" : targetYear === 2050 ? "blue" : "#333333")
+                .attr("stroke-width", 2.5)
+                .attr("stroke-dasharray", targetYear === 2050 ? "5,5" : "none")
+                .attr("d", line);
+        });
+
+        // x축과 y축을 추가합니다.
+        svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%m-%d")));
+
+        svg.append("g")
+            .call(d3.axisLeft(y).tickFormat(d => `${d}°C`));
+
+        // 그래프 제목을 추가합니다.
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", -10)
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .style("font-weight", "bold")
+            .text("Summer Daily WBGT Trends (1974-2024)");
+
+        // 범례 추가
+        const legendData = [
+            { name: '1974-2022', color: '#a9a9a9', width: 1.5, dasharray: 'none' },
+            { name: '2023', color: '#333333', width: 1.5, dasharray: 'none' },
+            { name: '2024', color: 'red', width: 2.5, dasharray: 'none' },
+            { name: '2050 (predicted)', color: 'blue', width: 2.5, dasharray: '5,5' }
+        ];
+
+        const legend = svg.selectAll(".legend")
+            .data(legendData)
+            .enter().append("g")
+            .attr("class", "legend")
+            .attr("transform", (d, i) => `translate(${width + 20}, ${i * 20})`);
+
+        legend.append("line")
+            .attr("x1", 0)
+            .attr("x2", 20)
+            .attr("y1", 10)
+            .attr("y2", 10)
+            .attr("stroke", d => d.color)
+            .attr("stroke-width", d => d.width)
+            .attr("stroke-dasharray", d => d.dasharray);
+
+        legend.append("text")
+            .attr("x", 25)
+            .attr("y", 10)
+            .attr("dy", ".35em")
+            .style("text-anchor", "start")
+            .text(d => d.name);
+    }).catch(function(error) {
+        console.error('데이터 로드 실패:', error);
+    });
 }

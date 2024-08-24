@@ -2,7 +2,8 @@ import { startVisualization } from './visualization.js';
 import { startTemperatureVisualization } from './visualization.js';
 import { startRainfallVisualization } from './visualization.js';
 import { startWork1Visualization } from './visualization.js';
-
+import { startTempAnomalyVisualization } from './visualization.js';
+import { startWBGTVisualization } from './visualization.js';
 
 // 첫 번째 섹션에 대한 관찰자 설정
 const observerOne = new IntersectionObserver((entries, observer) => {
@@ -40,7 +41,7 @@ const observerRainfall = new IntersectionObserver((entries, observer) => {
 observerRainfall.observe(document.querySelector('#three'));
 
 
-// 가희 그래프
+// // 열사병: 호우 태풍 폭염 그래프
 const observerWork1 = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -49,5 +50,21 @@ const observerWork1 = new IntersectionObserver((entries, observer) => {
         }
     });
 }, { threshold: 0.5 });
-observerWork1.observe(document.querySelector('#work1'));
+observerWork1.observe(document.querySelector('#heatstroke_one'));
 
+
+// general-one 페이지 로드 또는 특정 이벤트에서 시각화 함수 호출
+document.addEventListener('DOMContentLoaded', () => {
+    startTempAnomalyVisualization();
+});
+
+//열사병 Graph: 열스트레스 그래프
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startWBGTVisualization();
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+observer.observe(document.querySelector('#heatstroke_two'));
