@@ -13,9 +13,9 @@ const observerOne = new IntersectionObserver((entries, observer) => {
         }
     });
 }, { threshold: 0.5 });
-observerOne.observe(document.querySelector('#one'));
+observerOne.observe(document.querySelector('#general_one'));
 
-
+// 두번째 섹션에 대한 관찰자 설정
 const observerTwo = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -25,7 +25,7 @@ const observerTwo = new IntersectionObserver((entries, observer) => {
         }
     });
 }, { threshold: 0.5 });
-observerTwo.observe(document.querySelector('#two'));
+observerTwo.observe(document.querySelector('#general_two'));
 
 
 // Rainfall network visualization observer
@@ -50,3 +50,4 @@ const observerWork1 = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.5 });
 observerWork1.observe(document.querySelector('#work1'));
+
