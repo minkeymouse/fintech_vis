@@ -454,7 +454,7 @@ export function startTempAnomalyVisualization() {
 // 열사병: 호우 태풍 폭염 그래프
 export function startWork1Visualization() {
     const margin = { top: 20, right: 30, bottom: 40, left: 50 };
-    const width = 800 - margin.left - margin.right;
+    const width = 1000 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
     const svg = d3.select("#heatstroke_one_graph")
@@ -589,7 +589,7 @@ export function startWBGTVisualization() {
         console.log('데이터 로드 성공:', data);
 
         const margin = { top: 20, right: 100, bottom: 50, left: 70 },
-            width = 800 - margin.left - margin.right,
+            width = 1100 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         const svg = d3.select("#heatstroke_two_graph")
@@ -732,27 +732,27 @@ export function startWBGTVisualization() {
             .call(d3.axisLeft(y).tickFormat(d => `${d}°C`));
 
         // 그래프 제목을 추가합니다.
-        svg.append("text")
-            .attr("x", width / 2)
-            .attr("y", -10)
-            .attr("text-anchor", "middle")
-            .style("font-size", "16px")
-            .style("font-weight", "bold")
-            .text("Summer Daily WBGT Trends (1974-2024)");
+        // svg.append("text")
+        //     .attr("x", width / 2)
+        //     .attr("y", -10)
+        //     .attr("text-anchor", "middle")
+        //     .style("font-size", "16px")
+        //     .style("font-weight", "bold")
+        //     .text("Summer Daily WBGT Trends (1974-2024)");
 
         // 범례 추가
         const legendData = [
-            { name: '1974-2022', color: '#a9a9a9', width: 1.5, dasharray: 'none' },
             { name: '2023', color: '#333333', width: 1.5, dasharray: 'none' },
             { name: '2024', color: 'red', width: 2.5, dasharray: 'none' },
-            { name: '2050 (predicted)', color: 'blue', width: 2.5, dasharray: '5,5' }
+            { name: '2050', color: 'blue', width: 2.5, dasharray: '5,5' }
         ];
 
         const legend = svg.selectAll(".legend")
-            .data(legendData)
-            .enter().append("g")
-            .attr("class", "legend")
-            .attr("transform", (d, i) => `translate(${width + 20}, ${i * 20})`);
+        .data(legendData)
+        .enter().append("g")
+        .attr("class", "legend")
+        .attr("transform", (d, i) => `translate(${width - 100}, ${height - margin.bottom - (legendData.length - i) * 20})`);  // 오른쪽 하단으로 위치 조정
+    
 
         legend.append("line")
             .attr("x1", 0)
@@ -767,6 +767,7 @@ export function startWBGTVisualization() {
             .attr("x", 25)
             .attr("y", 10)
             .attr("dy", ".35em")
+            .style("font-size", "18px")
             .style("text-anchor", "start")
             .text(d => d.name);
     }).catch(function(error) {

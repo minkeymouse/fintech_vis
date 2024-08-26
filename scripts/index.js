@@ -101,6 +101,14 @@ observerStaticRainfall.observe(document.querySelector('#static-plots'));
 
 // 침수 2: 태린 그래프
 document.addEventListener('DOMContentLoaded', function() {
-    drawSeaLevelRiseChart();
+    const observerRainfall = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                drawSeaLevelRiseChart();  // 그래프 그리기 함수 호출
+                observer.unobserve(entry.target);  // 한 번 실행 후 관찰 중지
+            }
+        });
+    }, { threshold: 0.8 });  // 80% 이상 보일 때 트리거
+
+    observerRainfall.observe(document.querySelector('#rainfall_two'));
 });
-observerRainfall.observe(document.querySelector('#rainfall_two'));

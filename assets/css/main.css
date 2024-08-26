@@ -2041,9 +2041,9 @@ input, select, textarea {
 			.main.style3 .content > header {
 				margin-bottom: 2em;
 			}
-
+			/* background 색상 */
 			.main.style3.primary {
-				background: #ffffff;
+				background: #FFFFF0;
 			}
 
 			.main.style3.secondary {
