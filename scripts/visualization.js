@@ -70,7 +70,7 @@ export function startVisualization() {
 export function startTemperatureVisualization() {
     const margin = { top: 20, right: 30, bottom: 40, left: 50 };
     const width = 800 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+    const height = 600 - margin.top - margin.bottom;
 
     const svg = d3.select("#visualization-two")
         .append("svg")
@@ -87,7 +87,21 @@ export function startTemperatureVisualization() {
         .attr("fill", "black")
         .attr("text-anchor", "middle");
 
+    function smoothData(data, windowSize = 3) {
+        return data.map((d, i, arr) => {
+            const start = Math.max(0, i - Math.floor(windowSize / 2));
+            const end = Math.min(arr.length, i + Math.ceil(windowSize / 2));
+            const windowData = arr.slice(start, end);
+            const smoothedFreq = d3.mean(windowData, d => d.frequency);
+            return { ...d, frequency: smoothedFreq };
+        });
+    }
+
     d3.json("data/data_for_choi.json").then(data => {
+        data.forEach(periodData => {
+            periodData.data = smoothData(periodData.data);
+        });
+
         const x = d3.scaleLinear()
             .domain([15, 40])
             .range([0, width]);
@@ -96,119 +110,146 @@ export function startTemperatureVisualization() {
             .domain([0, 0.015])
             .range([height, 0]);
 
-        const xAxis = d3.axisBottom(x);
-        const yAxis = d3.axisLeft(y);
+        // x축의 눈금 제거
+        const xAxis = d3.axisBottom(x)
+            .tickValues([]); // 기본 눈금과 라벨 제거
 
+        // x축을 먼저 그리고 텍스트를 수동으로 추가
         svg.append("g")
             .attr("transform", `translate(0,${height})`)
-            .call(xAxis)
-            .append("text")
-            .attr("class", "axis-label")
-            .attr("x", width / 2)
-            .attr("y", margin.bottom - 10)
-            .style("text-anchor", "middle")
-            .text("Temperature Category");
+            .call(xAxis);
 
-        svg.append("g")
-            .call(yAxis)
-            .append("text")
-            .attr("class", "axis-label")
-            .attr("transform", "rotate(-90)")
-            .attr("x", -height / 2)
-            .attr("y", -margin.left + 10)
-            .style("text-anchor", "middle")
-            .text("Frequency");
+        // 세로선 추가
+        const verticalLines = [20.5, 25.5, 29, 32, 37]; // 선을 그릴 x축 상의 위치들
+        verticalLines.forEach(pos => {
+            svg.append("line")
+                .attr("x1", x(pos))
+                .attr("y1", 0)
+                .attr("x2", x(pos))
+                .attr("y2", height)
+                .attr("stroke", "#ccc")  // 선의 색상
+                .attr("stroke-width", 1)
+                .attr("stroke-dasharray", "4 4");  // 점선으로 만듦
+        });
 
+        // 커스텀 텍스트 라벨 추가
+        const categories = ["extremely cold", "cold", "normal", "hot", "extremely hot"];
+        const colors = ["#002699", "#0073b3", "#999999", "#e65c00", "#b32400"];
+        const tickPositions = [20.5, 25.5, 29, 32, 37];
+
+        categories.forEach((category, i) => {
+            svg.append("text")
+                .attr("x", x(tickPositions[i]))
+                .attr("y", height + margin.bottom - 20)
+                .attr("fill", colors[i])
+                .attr("font-weight", "bold")
+                .attr("font-size", "14px")
+                .attr("text-anchor", "middle")
+                .text(category);
+        });
+        
         const area = d3.area()
             .x(d => x(d.temperature))
             .y0(height)
             .y1(d => y(d.frequency))
             .curve(d3.curveBasis);
 
-        const colorSections = [
-            { color: "#0033cc", range: [15, 23] },
-            { color: "#0099cc", range: [23, 28] },
-            { color: "#cccccc", range: [28, 30] },
-            { color: "#ff9966", range: [30, 34] },
-            { color: "#cc3300", range: [34, 40] },
-        ];
+        // colors와 반복문을 사용하여 colorSections 생성
+        const ranges = [[15, 23], [23, 28], [28, 30], [30, 34], [34, 40]];
+        const colorSections = colors.map((color, i) => ({ color: color, range: ranges[i] }));
+        
+        // 초기 회색 영역 (기본 기간)
+        const initialPeriodData = data[0];
+        svg.append("path")
+            .datum(initialPeriodData.data)
+            .attr("class", "base-area")
+            .attr("fill", "url(#hatched)")  // 빗금친 패턴 사용
+            .attr("d", area)
+            .attr("opacity", 0.3);  // 가시성을 위한 불투명도 조정
 
-        function drawInitialPeriod() {
-            const initialPeriodData = data[0];
+        let currentPeriod = 0;
 
-            function drawSection(section, delay) {
-                const sectionData = initialPeriodData.data.filter(d => d.temperature >= section.range[0] && d.temperature <= section.range[1]);
-                svg.append("path")
-                    .datum(sectionData)
-                    .attr("class", "initial-area")
-                    .attr("fill", section.color)
-                    .attr("d", area)
-                    .attr("opacity", 0)
-                    .transition()
-                    .duration(1000)
-                    .delay(delay)
-                    .ease(d3.easeCubic)
-                    .attr("opacity", 1)
-                    .on("end", function() {
-                        if (section === colorSections[colorSections.length - 1]) {
-                            d3.selectAll(".initial-area")
-                                .transition()
-                                .duration(1000)
-                                .attr("fill", "#000000")
-                                .attr("opacity", 0.3);
-                        }
-                    });
-            }
-
-            colorSections.forEach((section, i) => {
-                drawSection(section, i * 100); // 각 구간이 200ms 간격으로 시작
-            });
-        }
-
-        let currentPeriod = 1;
-
-        function drawNextPeriod() {
-            if (currentPeriod >= data.length) {
-                svg.selectAll(".area").remove();
-                currentPeriod = 0;
-                drawInitialPeriod();
-                setTimeout(drawNextPeriod, 1000);
+        function animatePeriodChange(label, startPeriod, endPeriod, duration) {
+            // 기간이 존재하지 않을 경우 초기화
+            if (!startPeriod || !endPeriod || !startPeriod.includes('-') || !endPeriod.includes('-')) {
+                label.text(endPeriod); // 그냥 새로운 기간을 설정
                 return;
             }
-
-            const periodData = data[currentPeriod];
-
-            svg.selectAll(".area")
-                .transition()
-                .duration(1000)
-                .attr("opacity", 0)
-                .remove();
-
-            colorSections.forEach((section, i) => {
-                const sectionData = periodData.data.filter(d => d.temperature >= section.range[0] && d.temperature <= section.range[1]);
-                svg.append("path")
-                    .datum(sectionData)
-                    .attr("class", "area")
-                    .attr("fill", section.color)
-                    .attr("d", area)
-                    .attr("opacity", 0)
-                    .transition()
-                    .duration(1000)
-                    .delay(i * 200)
-                    .ease(d3.easeCubic)
-                    .attr("opacity", 0.8);
-            });
-
-            periodLabel.text(periodData.period);
-            currentPeriod++;
-            setTimeout(drawNextPeriod, 3000); // 전체 기간 후 2초 대기
+        
+            const startYear = parseInt(startPeriod.split('-')[0], 10);
+            const endYear = parseInt(endPeriod.split('-')[0], 10);
+        
+            if (isNaN(startYear) || isNaN(endYear)) {
+                label.text(endPeriod); // 잘못된 값이 있을 경우 새로운 기간을 바로 설정
+                return;
+            }
+        
+            const stepTime = Math.abs(Math.floor(duration / (endYear - startYear)));
+            const startTime = new Date().getTime();
+            const endTime = startTime + duration;
+        
+            function updatePeriod() {
+                const now = new Date().getTime();
+                const remainingTime = Math.max((endTime - now) / duration, 0);
+                const currentYear = Math.round(endYear - (remainingTime * (endYear - startYear)));
+                label.text(`${currentYear}-${currentYear + (parseInt(endPeriod.split('-')[1], 10) - parseInt(endPeriod.split('-')[0], 10))}`);
+        
+                if (currentYear === endYear) {
+                    clearInterval(timer);
+                }
+            }
+        
+            const timer = setInterval(updatePeriod, stepTime);
         }
 
-        drawInitialPeriod();
-        setTimeout(drawNextPeriod, 3000); // 첫 번째 기간 후 3초 후에 다음 기간 시작
+        function updatePeriod() {
+            const periodData = data[currentPeriod];
+
+            // Update or create paths for each section
+            const paths = svg.selectAll(".area")
+                .data(colorSections, d => d.color);
+
+            // Enter new paths
+            paths.enter().append("path")
+                .attr("class", "area")
+                .attr("fill", d => d.color)
+                .attr("d", d => area(periodData.data.filter(p => p.temperature >= d.range[0] && p.temperature <= d.range[1])))
+                .attr("opacity", 0)
+                .transition()
+                .duration(1000)
+                .attr("opacity", 0.3);
+
+            // Update existing paths
+            paths.transition()
+                .duration(1000)
+                .attr("d", d => area(periodData.data.filter(p => p.temperature >= d.range[0] && p.temperature <= d.range[1])))
+                .attr("opacity", 0.3);
+
+            // 숫자 애니메이션 시작
+            const currentPeriodValue = periodLabel.text();  // 현재 라벨의 기간 값을 가져옴
+            const newPeriodValue = periodData.period;  // 새로 업데이트될 기간
+
+            animatePeriodChange(periodLabel, currentPeriodValue, newPeriodValue, 500);  // 0.5초 동안 애니메이션 실행
+
+            currentPeriod = (currentPeriod + 1) % data.length;
+        }
+
+        updatePeriod();
+        setInterval(updatePeriod, 1500); // 1.5초마다 업데이트
     }).catch(error => {
         console.error("Error loading JSON data:", error);
     });
+        // 기본 영역을 위한 빗금 패턴 추가
+        svg.append("defs")
+        .append("pattern")
+        .attr("id", "hatched")
+        .attr("width", 4)
+        .attr("height", 4)
+        .attr("patternUnits", "userSpaceOnUse")
+        .append("path")
+        .attr("d", "M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2")
+        .attr("stroke", "#555")
+        .attr("stroke-width", 1);
 }
 
 // Rainfall Network Visualization
@@ -620,35 +661,8 @@ export function startWBGTVisualization() {
             .x(d => x(d.date))
             .y(d => y(d.WBGT));
 
-        // 열 구역 배경을 그립니다.
-        svg.append("rect")
-            .attr("x", 0)
-            .attr("y", y(35))
-            .attr("width", width)
-            .attr("height", y(32) - y(35))
-            .attr("fill", "red")
-            .style("opacity", 0.3);
-
-        svg.append("rect")
-            .attr("x", 0)
-            .attr("y", y(32))
-            .attr("width", width)
-            .attr("height", y(30) - y(32))
-            .attr("fill", "orange")
-            .style("opacity", 0.3);
-
-        svg.append("rect")
-            .attr("x", 0)
-            .attr("y", y(30))
-            .attr("width", width)
-            .attr("height", y(28) - y(30))
-            .attr("fill", "yellow")
-            .style("opacity", 0.3);
-
-        // 모든 연도별 데이터를 그립니다.
+        // 모든 연도별 회색 그래프를 먼저 그립니다.
         const years = d3.groups(data, d => d.year);
-
-        // 우선 모든 회색 선을 그립니다.
         years.forEach(([year, values]) => {
             if (year !== 2024 && year !== 2050 && year !== 2023) {
                 svg.append("path")
@@ -656,20 +670,91 @@ export function startWBGTVisualization() {
                     .attr("fill", "none")
                     .attr("stroke", "#a9a9a9")
                     .attr("stroke-width", 1.5)
-                    .attr("d", line);
+                    .attr("d", line)
+                    .attr("opacity", 0)
+                    .transition()
+                    .duration(1000)
+                    .attr("opacity", 1);
             }
         });
 
-        // 검은색, 빨간색, 파란색 선을 그립니다.
-        [2023, 2024, 2050].forEach(targetYear => {
-            const yearData = years.find(([year, _]) => year === targetYear)[1];
-            svg.append("path")
-                .datum(yearData)
-                .attr("fill", "none")
-                .attr("stroke", targetYear === 2024 ? "red" : targetYear === 2050 ? "blue" : "#333333")
-                .attr("stroke-width", 2.5)
-                .attr("stroke-dasharray", targetYear === 2050 ? "5,5" : "none")
-                .attr("d", line);
+        // 검은색과 빨간색 선을 왼쪽에서 오른쪽으로 그리기
+        setTimeout(() => {
+            [2023, 2024].forEach(targetYear => {
+                const yearData = years.find(([year, _]) => year === targetYear)[1];
+                svg.append("path")
+                    .datum(yearData)
+                    .attr("fill", "none")
+                    .attr("stroke", targetYear === 2024 ? "red" : "#333333")
+                    .attr("stroke-width", 2.5)
+                    .attr("stroke-dasharray", function() { return this.getTotalLength(); })
+                    .attr("stroke-dashoffset", function() { return this.getTotalLength(); })
+                    .attr("d", line)
+                    .attr("opacity", 1)
+                    .transition()
+                    .duration(2000)
+                    .ease(d3.easeLinear)
+                    .attr("stroke-dashoffset", 0);
+            });
+        }, 1000); // 1초 대기 후 검은색과 빨간색 그래프 그리기 시작
+
+        // 검은색과 빨간색 그래프가 그려진 후에 온도별로 색칠된 부분이 나타납니다.
+        setTimeout(() => {
+            svg.append("rect")
+                .attr("x", 0)
+                .attr("y", y(35))
+                .attr("width", width)
+                .attr("height", y(32) - y(35))
+                .attr("fill", "red")
+                .style("opacity", 0)
+                .transition()
+                .duration(1000)
+                .style("opacity", 0.3);
+
+            svg.append("rect")
+                .attr("x", 0)
+                .attr("y", y(32))
+                .attr("width", width)
+                .attr("height", y(30) - y(32))
+                .attr("fill", "orange")
+                .style("opacity", 0)
+                .transition()
+                .duration(1000)
+                .style("opacity", 0.3);
+
+            svg.append("rect")
+                .attr("x", 0)
+                .attr("y", y(30))
+                .attr("width", width)
+                .attr("height", y(28) - y(30))
+                .attr("fill", "yellow")
+                .style("opacity", 0)
+                .transition()
+                .duration(1000)
+                .style("opacity", 0.3);
+        }, 2000); // 2초 대기 후 색칠된 부분 그리기 시작
+
+        // 파란색 선은 마우스를 올리면 나타나도록 설정
+        const yearData = years.find(([year, _]) => year === 2050)[1];
+        const blueLine = svg.append("path")
+            .datum(yearData)
+            .attr("fill", "none")
+            .attr("stroke", "blue")
+            .attr("stroke-width", 2.5)
+            .attr("stroke-dasharray", "5,5")
+            .attr("d", line)
+            .attr("opacity", 0); // 처음에는 보이지 않음
+
+        svg.on("mouseover", function() {
+            blueLine.transition()
+                .duration(1000)
+                .attr("opacity", 1); // 마우스를 올리면 나타남
+        });
+
+        svg.on("mouseout", function() {
+            blueLine.transition()
+                .duration(1000)
+                .attr("opacity", 0); // 마우스를 치우면 다시 사라짐
         });
 
         // x축과 y축을 추가합니다.
