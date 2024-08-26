@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // -----------------------------------------------------
 
 // 침수 1: Rainfall network visualization observer
-// 비 네트워크 그래프 애니메이션 관찰자 설정
 const observerRainfall = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
