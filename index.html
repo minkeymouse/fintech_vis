@@ -159,9 +159,9 @@
 					<h2>이상기후 -, 스콜 등 (최윤서 강래현)</h2>
 				</header>
 				
-				<!-- <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+				<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
 				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-				id varius justo euismod in. Curabitur egestas consectetur magna.</p> -->
+				id varius justo euismod in. Curabitur egestas consectetur magna.</p>
 			</div>
 			<a href="#work2" class="button style2 down anchored">Next</a>
 		</section>
@@ -207,7 +207,7 @@
 					<h2>침수 (장민기, 김태린)</h2>
 				</header>
 				<!-- Rainfall Network Visualization -->
-				<div id="visualization-three"></div> <!-- This is where the D3.js visualization will be rendered -->
+				<div id=""></div> <!-- This is where the D3.js visualization will be rendered -->
 
 				<!-- <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
 				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
@@ -216,17 +216,40 @@
 			<a href="#work" class="button style2 down anchored">Next</a>
 		</section>
 		<!-- 민기 그래프 -->
+				<!-- Rainfall Network Animation Section -->
 		<section id="rainfall_one" class="main style3 primary">
 			<div class="content">
 				<header>
-					<p>기온이 너무 상승해서 더워요오오오!!</p>
+					<h2>Seoul District Temperature and Complaints Map</h2>
 				</header>
-				<!-- 시각화 들어가는곳!!!!!!!!!! -->
-				<p>그래프 설명!!!!!!!!!!!!!!!!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
+				<div id="rainfall_map"></div>
+				
+				<p>Interactive visualization of Seoul's temperature and complaints data.</p>
+			</div>
+			<a href="#static-plots" class="button style2 down anchored">Next</a> <!-- Add a button to move to static plots section -->
+		</section>
+
+		<!-- Static Rainfall Network Visualizations Section 2024.08.24-->
+		<section id="static-plots" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2>Static Rainfall Network Visualizations</h2>
+					<p>These visualizations show the average seasonal rainfall networks for different periods.</p>
+				</header>
+			
+				<div id="visualization-spring-1997-2007"></div>
+				<div id="visualization-summer-1997-2007"></div>
+				<div id="visualization-autumn-1997-2007"></div>
+				<div id="visualization-winter-1997-2007"></div>
+			
+				<div id="visualization-spring-2018-2023"></div>
+				<div id="visualization-summer-2018-2023"></div>
+				<div id="visualization-autumn-2018-2023"></div>
+				<div id="visualization-winter-2018-2023"></div>
 			</div>
 		</section>
 		<!-- 민기 추가 이미지?? -->
-		<section id="work" class="main style3 primary">
+		<!-- <section id="work" class="main style3 primary">
 			<div class="content">
 				<header>
 					<h2>My Work</h2>
@@ -235,7 +258,7 @@
 					arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
 				</header>
 
-				<!-- Gallery  -->
+				Gallery 
 					<div class="gallery">
 						<article class="from-left">
 							<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
@@ -258,14 +281,15 @@
 					</div>
 
 			</div>
-		</section>
+		</section> -->
 
 		<!-- 태린 그래프 -->
 		<section id="rainfall_two" class="main style3 primary">
 			<div class="content">
 				<header>
-					<p>기온이 너무 상승해서 더워요오오오!!</p>
+					<p>해수면이 높아진다아아 비상비상!</p>
 				</header>
+				<div id="sea_level_chart"></div>
 				<p>그래프 설명!!!!!!!!!!!!!!!!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
 			</div>
 			<!-- <a href="#general_three" class="button style2 down anchored">Next</a> -->
@@ -325,6 +349,8 @@
 		<!-- D3.js 라이브러리 추가 -->
 		<script src="https://d3js.org/d3.v7.min.js"></script>
 		<script type="module" src="scripts/index.js"></script>
+		
+		<!-- nav bar 숨기기 -->
 		<script>
 			let lastScrollTop = 0;
 			const navbar = document.getElementById('header');

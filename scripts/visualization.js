@@ -983,11 +983,13 @@ export function drawSeoulMaps() {
 }
 // -----------------------------------------------------
 
-// Rainfall Network Visualization
+//침수 1: Rainfall Network Visualization (민기)
 export function startRainfallVisualization() {
+    d3.select("#rainfall_map").select("svg").remove();
+
     const width = 960, height = 600;
 
-    const svg = d3.select("#visualization-three").append("svg")
+    const svg = d3.select("#rainfall_map").append("svg")
         .attr("width", width)
         .attr("height", height);
 
@@ -1107,5 +1109,250 @@ export function startRainfallVisualization() {
 
             startAnimation();  // 애니메이션 시작
         });
+    });
+}
+// 침수 2: plot 그리기
+export function drawStaticRainfallVisualization(containerId, dataFile, season) {
+    const width = 960, height = 600;
+
+    const svg = d3.select(containerId).append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    const projection = d3.geoMercator()
+        .center([128, 36])
+        .scale(5000)
+        .translate([width / 2, height / 2]);
+
+    const path = d3.geoPath().projection(projection);
+
+    d3.json("data/korea_geojson.json").then(geoData => {
+        svg.append("g")
+            .selectAll("path")
+            .data(geoData.features)
+            .enter().append("path")
+            .attr("d", path)
+            .attr("fill", "#cccccc")
+            .attr("stroke", "#333");
+
+        d3.json(dataFile).then(data => {
+            const seasonData = data.find(d => d.season === season);
+
+            if (!seasonData) return;
+
+            const nodes = seasonData.nodes;
+            const links = seasonData.edges;
+
+            const sizeScale = d3.scaleLinear()
+                .domain([0, d3.max(nodes, d => d.rainfall)])
+                .range([2, 10]);
+
+            const colorScale = d3.scaleSequential(d3.interpolateBlues)
+                .domain([0, d3.max(nodes, d => d.rainfall)]);
+
+            const edgeColor = "#007ACC";
+
+            svg.append("g")
+                .selectAll(".link")
+                .data(links)
+                .enter().append("line")
+                .attr("class", "link")
+                .attr("x1", d => {
+                    const sourceNode = nodes.find(node => node.id === d.source);
+                    return projection([sourceNode.longitude, sourceNode.latitude])[0];
+                })
+                .attr("y1", d => {
+                    const sourceNode = nodes.find(node => node.id === d.source);
+                    return projection([sourceNode.longitude, sourceNode.latitude])[1];
+                })
+                .attr("x2", d => {
+                    const targetNode = nodes.find(node => node.id === d.target);
+                    return projection([targetNode.longitude, targetNode.latitude])[0];
+                })
+                .attr("y2", d => {
+                    const targetNode = nodes.find(node => node.id === d.target);
+                    return projection([targetNode.longitude, targetNode.latitude])[1];
+                })
+                .style("stroke-width", d => Math.sqrt(d.weight) * 0.75)
+                .style("stroke", edgeColor)
+                .style("stroke-opacity", 0.9);
+
+            svg.append("g")
+                .selectAll(".node")
+                .data(nodes)
+                .enter().append("circle")
+                .attr("class", "node")
+                .attr("r", d => sizeScale(d.rainfall))
+                .attr("cx", d => projection([d.longitude, d.latitude])[0])
+                .attr("cy", d => projection([d.longitude, d.latitude])[1])
+                .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall) : "#FFD700");
+
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", 30)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "24px")
+                .attr("font-weight", "bold")
+                .attr("fill", "#333")
+                .text(`Season: ${season}`);
+        });
+    });
+}
+
+//침수: 그래프 (태린)
+export function drawSeaLevelRiseChart() {
+    // JSON 데이터 파일 경로
+    const jsonFilePath = 'data/sea_level_yearly.json';
+
+    // 데이터 로드 및 시각화
+    d3.json(jsonFilePath).then(data => {
+        // 차트 설정
+        const margin = { top: 20, right: 30, bottom: 30, left: 50 },
+            width = 800 - margin.left - margin.right,
+            height = 400 - margin.top - margin.bottom;
+
+        const svg = d3.select("#sea_level_chart")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // 초기 X축 설정
+        const x = d3.scaleLinear()
+            .domain([d3.min(data, d => d.연도), d3.max(data, d => d.연도)]) 
+            .range([0, width]);
+
+        const xAxis = svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x).tickFormat(d3.format("d")));
+
+        // Y축의 최솟값을 구함
+        const minY = d3.min(data, d => d['국내 평균 해수면 높이']);
+
+        // 초기 Y축 설정
+        const y = d3.scaleLinear()
+            .domain([minY, d3.max(data, d => d['국내 평균 해수면 높이'])])
+            .range([height, 0]);
+
+        const yAxis = svg.append("g")
+            .call(d3.axisLeft(y));
+
+        // 그리드 추가
+        const gridLines = svg.append("g")
+            .attr("class", "grid")
+            .call(d3.axisLeft(y)
+                .tickSize(-width)
+                .tickFormat("")
+            )
+            .selectAll("line")
+            .style("stroke", "lightgrey")
+            .style("stroke-dasharray", "3,3");
+
+        // 선 추가
+        const line = d3.line()
+            .x(d => x(d.연도))
+            .y(d => y(d['국내 평균 해수면 높이']))
+            .curve(d3.curveMonotoneX);
+
+        const path = svg.append("path")
+            .datum(data)
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-width", 1.5)
+            .attr("d", line);
+
+        // 최종적으로 색상을 채우기 위한 영역 함수
+        const area = d3.area()
+            .x(d => x(d.연도))
+            .y0(y(minY))  // Y축의 최솟값을 기준으로 아래쪽을 채우기
+            .y1(d => y(d['국내 평균 해수면 높이']))  // 선 아래 전체를 채우기
+            .curve(d3.curveMonotoneX);
+
+        // X축과 Y축을 업데이트하면서 선을 애니메이션으로 그리는 함수
+        function updateChart(i) {
+            // X축과 Y축의 최대 값을 확대
+            const newX = d3.scaleLinear()
+                .domain([d3.min(data, d => d.연도), d3.max(data.slice(0, i + 1), d => d.연도)])
+                .range([0, width]);
+
+            const newY = d3.scaleLinear()
+                .domain([minY, d3.max(data.slice(0, i + 1), d => d['국내 평균 해수면 높이'])])
+                .range([height, 0]);
+
+            // X축과 Y축 업데이트
+            xAxis.transition()
+                .duration(500)
+                .call(d3.axisBottom(newX).tickFormat(d3.format("d")));
+
+            yAxis.transition()
+                .duration(500)
+                .call(d3.axisLeft(newY));
+
+            // 그리드 업데이트
+            gridLines.transition()
+                .duration(500)
+                .call(d3.axisLeft(newY)
+                    .tickSize(-width)
+                    .tickFormat("")
+                )
+                .selectAll("line")
+                .style("stroke", "lightgrey")
+                .style("stroke-dasharray", "3,3");
+
+            // 선 업데이트
+            path.datum(data.slice(0, i + 1))
+                .attr("d", d3.line()
+                    .x(d => newX(d.연도))
+                    .y(d => newY(d['국내 평균 해수면 높이']))
+                    .curve(d3.curveMonotoneX)
+                )
+                .transition()
+                .duration(300)
+                .ease(d3.easeLinear);
+
+            // 모든 데이터가 다 그려졌을 때 전체 그래프를 기준으로 색상 영역 채우기
+            if (i === data.length - 1) {
+                setTimeout(() => {
+                    const startHeight = height;
+                    const targetHeight = y(minY);
+            
+                    // 애니메이션 타이머 시작
+                    const timer = d3.timer(function(elapsed) {
+                        // 애니메이션 진행률 (0에서 1 사이의 값)
+                        const t = Math.min(1, elapsed / 5000);  // 5초 동안 애니메이션
+            
+                        // 현재 y0 값을 계산
+                        const currentHeight = startHeight - t * (startHeight - targetHeight);
+            
+                        // 경로를 다시 그리기
+                        svg.selectAll("path.area")
+                            .data([data])
+                            .join("path")
+                            .attr("class", "area")
+                            .attr("fill", "steelblue")
+                            .attr("opacity", 0.5)
+                            .attr("d", d3.area()
+                                .x(d => x(d.연도))
+                                .y0(currentHeight)
+                                .y1(d => y(d['국내 평균 해수면 높이']))
+                                .curve(d3.curveMonotoneX));
+            
+                        // 애니메이션이 완료되면 타이머 중지
+                        if (t === 1) timer.stop();
+                    });
+                }, 1000);
+            }
+        }
+
+        // 애니메이션 실행
+        for (let i = 0; i < data.length; i++) {
+            setTimeout(() => {
+                updateChart(i);
+            }, i * 300);
+        }
+
+    }).catch(error => {
+        console.error('Error loading or parsing data:', error);
     });
 }
