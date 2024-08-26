@@ -8,6 +8,18 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <!-- D3.js 라이브러리 추가 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
+	<style>
+		#general_one {
+		  background: linear-gradient(to bottom, #0c3944, #ffffff); /* 예시 색상 */
+		}
+		#general_two {
+		  background: linear-gradient(to bottom, #ffffff, #ffffff); /* 예시 색상 */
+		}
+		#general_three {
+		  background: linear-gradient(to bottom, #ffffff, #d78e52); /* 예시 색상 */
+		}
+	</style>
+	
 </head>
 
 <body class="is-preload">
@@ -20,13 +32,13 @@
 					<li><a href="#intro">Intro</a></li>
 					<li><a href="#one">What I Do</a></li>
 					<li><a href="#two">Who I Am</a></li>
-					<li><a href="#work">My Work</a></li>
+					<li><a href="#three">My Work</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
 
-		<!-- Intro 비상 비상 Layout_O-->
+		<!-- Intro 비상 비상 메인 제목 Layout_O-->
 		<section id="intro" class="main style1 dark fullscreen">
 			<div class="content">
 				<header>
@@ -40,7 +52,7 @@
 				</footer>
 			</div>
 		</section>
-
+		
 		<!-- General #1 Layout_O-->
 		<section id="general_one" class="main style3 primary">
 			<div class="content">
@@ -130,23 +142,17 @@
 				<!-- Gallery  -->
 					<div class="gallery">
 						<article class="from-left">
-							<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+							<a href="images/fulls/netflix_temp.png" class="image fit"><img src="images/thumbs/netflix_temp.png" title="바코드" alt="" /></a>
 						</article>
 						<article class="from-right">
-							<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
-						</article>
-						<article class="from-left">
-							<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-						</article>
-						<article class="from-right">
-							<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
+							<a href="images/fulls/extreme_hot.png" class="image fit"><img src="images/thumbs/extreme_hot.png" title="Number of extreme hot days" alt="" /></a>
 						</article>
 					</div>
 			</div>
 			<a href="#two" class="button style2 down anchored">Next</a>
 		</section>
 
-		<!-- Two: 이상기후 (윤서) -->
+		<!-- Two: 이상기후 제목 (윤서) -->
 		<section id="two" class="main style2 left dark fullscreen">
 			<div class="content box style2">
 				<header>
@@ -160,6 +166,18 @@
 			<a href="#work2" class="button style2 down anchored">Next</a>
 		</section>
 		<!-- 이상기후 (윤서) 그래프들 -->
+		<section id="seoul_bugs" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2>Seoul District Temperature and Complaints Map</h2>
+				</header>
+				<div id="map-2022" style="display: inline-block; width: 45%;"></div>
+				<div id="map-2023" style="display: inline-block; width: 45%;"></div>
+				
+				<p>Interactive visualization of Seoul's temperature and complaints data.</p>
+			</div>
+		</section>
+
 		<section id="work2" class="main style3 primary">=
 			<div class="content">
 				<header>
@@ -182,7 +200,7 @@
 			<a href="#three" class="button style2 down anchored">Next</a>
 		</section>
 
-		<!-- Three: Rainfall Network -->
+		<!-- Three: Rainfall Network 제목 -->
 		<section id="three" class="main style2 right dark fullscreen">
 			<div class="content box style2">
 				<header>
@@ -197,7 +215,17 @@
 			</div>
 			<a href="#work" class="button style2 down anchored">Next</a>
 		</section>
-		<!--  -->
+		<!-- 민기 그래프 -->
+		<section id="rainfall_one" class="main style3 primary">
+			<div class="content">
+				<header>
+					<p>기온이 너무 상승해서 더워요오오오!!</p>
+				</header>
+				<!-- 시각화 들어가는곳!!!!!!!!!! -->
+				<p>그래프 설명!!!!!!!!!!!!!!!!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
+			</div>
+		</section>
+		<!-- 민기 추가 이미지?? -->
 		<section id="work" class="main style3 primary">
 			<div class="content">
 				<header>
@@ -230,6 +258,17 @@
 					</div>
 
 			</div>
+		</section>
+
+		<!-- 태린 그래프 -->
+		<section id="rainfall_two" class="main style3 primary">
+			<div class="content">
+				<header>
+					<p>기온이 너무 상승해서 더워요오오오!!</p>
+				</header>
+				<p>그래프 설명!!!!!!!!!!!!!!!!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
+			</div>
+			<!-- <a href="#general_three" class="button style2 down anchored">Next</a> -->
 		</section>
 
 		<!-- Contact -->
@@ -286,6 +325,24 @@
 		<!-- D3.js 라이브러리 추가 -->
 		<script src="https://d3js.org/d3.v7.min.js"></script>
 		<script type="module" src="scripts/index.js"></script>
+		<script>
+			let lastScrollTop = 0;
+			const navbar = document.getElementById('header');
+		
+			window.addEventListener('scroll', function() {
+				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		
+				if (scrollTop > lastScrollTop) {
+					// 아래로 스크롤 중
+					navbar.style.top = '-3em'; // Navbar 숨기기
+				} else {
+					// 위로 스크롤 중
+					navbar.style.top = '0'; // Navbar 보이기
+				}
+		
+				lastScrollTop = scrollTop;
+			});
+		</script>
 
 </body>
 </html>
