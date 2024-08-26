@@ -476,19 +476,6 @@ export function startWork1Visualization() {
         { year: "2019", downpour: 0, typhoon: 18, heatwave: 30 }
     ];
 
-    // 수정된 lineData, 기존 데이터 값에 비례하도록 조정된 값
-    const lineData = [
-        { year: "2011", value: 29 }, // 원래 값은 1
-        { year: "2012", value: 63 }, // 원래 값은 14
-        { year: "2013", value: 51 }, // 원래 값은 14
-        { year: "2014", value: 16 }, // 원래 값은 1
-        { year: "2015", value: 42 }, // 원래 값은 8
-        { year: "2016", value: 81 }, // 원래 값은 21
-        { year: "2017", value: 44 }, // 원래 값은 7
-        { year: "2018", value: 162 }, // 원래 값은 30
-        { year: "2019", value: 30 }  // 원래 값은 9
-    ];
-
     const x0 = d3.scaleBand()
         .domain(data.map(d => d.year))
         .range([0, width])
@@ -507,12 +494,13 @@ export function startWork1Visualization() {
         .range(["#1679AB", "#03C988", "#FF6A38"]);
 
     // Bar chart animation
-    svg.append("g")
+    const bars = svg.append("g")
         .selectAll("g")
         .data(data)
         .enter().append("g")
-        .attr("transform", d => `translate(${x0(d.year)},0)`)
-        .selectAll("rect")
+        .attr("transform", d => `translate(${x0(d.year)},0)`);
+
+    bars.selectAll("rect")
         .data(d => ['downpour', 'typhoon', 'heatwave'].map(key => ({ key: key, value: d[key] })))
         .enter().append("rect")
         .attr("x", d => x1(d.key))
@@ -524,6 +512,22 @@ export function startWork1Visualization() {
         .delay((d, i) => i * 200)  // 바가 순차적으로 애니메이션됨
         .attr("y", d => y(d.value))
         .attr("height", d => height - y(d.value));
+
+    // 각 바 그래프 위에 y 값을 표시
+    bars.selectAll("text")
+        .data(d => ['downpour', 'typhoon', 'heatwave'].map(key => ({ key: key, value: d[key] })))
+        .enter().append("text")
+        .attr("x", d => x1(d.key) + x1.bandwidth() / 2)
+        .attr("y", d => y(d.value) - 5) // 바 그래프의 위에 위치하도록 y 값을 약간 위로 이동
+        .attr("text-anchor", "middle")
+        .style("font-size", "12px") // 폰트 크기 설정
+        .style("fill", "black") // 텍스트 색상 설정
+        .text(d => d.value)
+        .attr("opacity", 0)
+        .transition()
+        .duration(2500)
+        .delay((d, i) => i * 200)
+        .attr("opacity", 1);
 
     // Add axes
     svg.append("g")
@@ -539,7 +543,7 @@ export function startWork1Visualization() {
         .y(d => y(d.value));
 
     const linePath = svg.append("path")
-        .datum(lineData)
+        .datum(data.map(d => ({ year: d.year, value: d.heatwave })))
         .attr("fill", "none")
         .attr("stroke", "red")
         .attr("stroke-width", 2)
@@ -579,6 +583,7 @@ export function startWork1Visualization() {
         .attr("x", width - 24)
         .attr("y", 9)
         .attr("dy", ".35em")
+        .style("font-size", "18px")
         .style("text-anchor", "end")
         .text(d => d);
 }
@@ -934,8 +939,8 @@ export function drawSeoulMaps() {
 
         drawMap(svg2023, data2023, projection2023, path2023, "2023");
 
-        // 범례 추가
-        const svgLegend = d3.select("body").append("svg")
+        // 특정 컨테이너에 SVG 범례 추가
+        const svgLegend = d3.select("#legend-container").append("svg")
             .attr("width", 500)
             .attr("height", 50);
 
@@ -964,22 +969,24 @@ export function drawSeoulMaps() {
             .attr("class", "legend")
             .attr("x", 100)
             .attr("y", 40)
+            .style("font-size", "18px")
             .text(`${minTemp}°C`);
 
         svgLegend.append("text")
             .attr("class", "legend")
             .attr("x", 400)
             .attr("y", 40)
+            .style("font-size", "18px")
             .attr("text-anchor", "end")
             .text(`${maxTemp}°C`);
 
-        svgLegend.append("text")
-            .attr("class", "legend")
-            .attr("x", 250)
-            .attr("y", 40)
-            .attr("text-anchor", "middle")
-            .text("Temperature (°C)");
-
+        // svgLegend.append("text")
+        //     .attr("class", "legend")
+        //     .attr("x", 250)
+        //     .attr("y", 40)
+        //     .style("font-size", "18px")
+        //     .attr("text-anchor", "middle")
+        //     .text("Temperature (°C)");
     });
 }
 // -----------------------------------------------------
