@@ -594,7 +594,7 @@ export function startWBGTVisualization() {
         console.log('데이터 로드 성공:', data);
 
         const margin = { top: 20, right: 100, bottom: 50, left: 70 },
-            width = 1100 - margin.left - margin.right,
+            width = 1000 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
         const svg = d3.select("#heatstroke_two_graph")
@@ -1207,7 +1207,7 @@ export function drawStaticRainfallVisualization(containerId, dataFile, season) {
     });
 }
 
-//침수: 그래프 (태린)
+//침수3: 그래프 (태린)
 export function drawSeaLevelRiseChart() {
     // JSON 데이터 파일 경로
     const jsonFilePath = 'data/sea_level_yearly.json';
@@ -1362,5 +1362,81 @@ export function drawSeaLevelRiseChart() {
 
     }).catch(error => {
         console.error('Error loading or parsing data:', error);
+    });
+}
+
+//친수4: 고구마 (태린)
+
+// visualization.js
+
+export function drawGogumaVisualization() {
+    const width = 800;
+    const height = 800;
+
+    const svg = d3.select("#goguma").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    // GeoJSON 데이터 불러오기
+    d3.json("./data/emd.geojson").then(function(data) {
+        console.log("GeoJSON Data Loaded:", data); // 데이터 확인
+
+        const projection = d3.geoMercator()
+            .scale(1)
+            .translate([0, 0]);
+
+        const path = d3.geoPath().projection(projection);
+
+        const bounds = path.bounds(data),
+            scale = 0.95 / Math.max(
+                (bounds[1][0] - bounds[0][0]) / width,
+                (bounds[1][1] - bounds[0][1]) / height
+            ),
+            translate = [
+                (width - scale * (bounds[1][0] + bounds[0][0])) / 2,
+                (height - scale * (bounds[1][1] + bounds[0][1])) / 2
+            ];
+
+        projection
+            .scale(scale)
+            .translate(translate);
+
+        const yeouido = data.features.filter(d => d.properties.EMD_KOR_NM.includes('여의도'));
+
+        const group = svg.selectAll(".district")
+            .data(yeouido)
+            .enter().append("g");
+
+        group.append("path")
+            .attr("d", path)
+            .attr("class", "district")
+            .attr("fill", "lightgray")
+            .attr("stroke", "black");
+
+        // 이미지 오버레이
+        const img = new Image();
+        img.src = "./data/gogum.png";
+
+        img.onload = function() {
+            const imagePattern = svg.append("defs")
+                .append("pattern")
+                .attr("id", "imagePattern")
+                .attr("width", 1)
+                .attr("height", 1)
+                .attr("patternContentUnits", "objectBoundingBox");
+
+            imagePattern.append("image")
+                .attr("width", 1)
+                .attr("height", 1)
+                .attr("preserveAspectRatio", "xMidYMid slice")
+                .attr("href", img.src);
+
+            group.append("rect")
+                .attr("x", d => path.centroid(d)[0] - 50)
+                .attr("y", d => path.centroid(d)[1] - 50)
+                .attr("width", 100)
+                .attr("height", 100)
+                .attr("fill", "url(#imagePattern)");
+        };
     });
 }

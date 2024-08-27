@@ -7,6 +7,8 @@ import { drawSeoulMaps } from './visualization.js';
 import { drawSeaLevelRiseChart } from './visualization.js';
 import { startRainfallVisualization } from './visualization.js';
 import { drawStaticRainfallVisualization } from './visualization.js';
+import { drawGogumaVisualization } from './visualization.js';
+
 
 // general_one
 const observerOne = new IntersectionObserver((entries, observer) => {
@@ -80,7 +82,7 @@ const observerRainfall = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.5 });
 observerRainfall.observe(document.querySelector('#rainfall_one'));
 
-// Initialize static visualizations once the corresponding section comes into view
+// 침수 2: Initialize static visualizations once the corresponding section comes into view
 const observerStaticRainfall = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -99,7 +101,7 @@ const observerStaticRainfall = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.5 });
 observerStaticRainfall.observe(document.querySelector('#static-plots'));
 
-// 침수 2: 태린 그래프
+// 침수 3: 태린 그래프
 document.addEventListener('DOMContentLoaded', function() {
     const observerRainfall = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
@@ -111,4 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.8 });  // 80% 이상 보일 때 트리거
 
     observerRainfall.observe(document.querySelector('#rainfall_two'));
+});
+
+// 침수 4: 태린 그래프 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observerRainfall = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                drawGogumaVisualization();  // 그래프 그리기 함수 호출
+                observer.unobserve(entry.target);  // 한 번 실행 후 관찰 중지
+            }
+        });
+    }, { threshold: 0.8 });  // 80% 이상 보일 때 트리거
+
+    observerRainfall.observe(document.querySelector('#rainfall_three'));
 });

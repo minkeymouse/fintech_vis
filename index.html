@@ -109,7 +109,7 @@
 							<a href="images/fulls/netflix_temp.png" class="image fit"><img src="images/thumbs/netflix_temp.png" title="바코드" alt="" /></a>
 						</article>
 						<article class="from-right">
-							<a href="images/fulls/extreme_hot.png" class="image fit"><img src="images/thumbs/extreme_hot.png" title="Number of extreme hot days" alt="" /></a>
+							<a href="images/fulls/extreme_hot.png" class="image fit"><img src="images/thumbs/extreme_hot.png" title="폭염 발생 빈도 (1973-2024년)" alt="" /></a>
 						</article>
 					</div>
 			</div>
@@ -119,12 +119,13 @@
 		<section id="heatstroke_one" class="main style3 primary">
 			<div class="content">
 				<header>
-					<p>호우 태풍 폭염 그래프</p>
+					<h3>기상 재해로 인한 연간 사망자 수 (2011-2019년)</h3>
+					<p class="custom-font">그래프에서 마우스를 올렸을 때 나타나는 선은 폭염일 수의 추세선을 보여주며, 이 추세선은 폭염으로 인한 열사병 사망자 수의 증가 추세와 일치하는 경향을 확인할 수 있습니다.</p>
 				</header>
 				<div id="visualization-container">
-					<svg id="heatstroke_one_graph" width="1000" height="600"></svg>
+					<svg id="heatstroke_one_graph" width="1000" height="400"></svg>
 				</div>
-				<p>Interactive visualization of WBGT trends over years.</p>
+				
 			</div>
 		</section>
 			<!-- 열사병 Graph: 열스트레스 그래프 -->
@@ -147,10 +148,10 @@
 		<section id="two" class="main style2 left dark fullscreen">
 			<div class="content box style2">
 				<header>
-					<h2>이상기후 -, 스콜 등 (최윤서 강래현)</h2>
+					<h2>이상기후 -, 스콜 등 (윤서)</h2>
 				</header>
 				
-				<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+				<p>ㄱㄹㅎ 나가라. Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
 				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
 				id varius justo euismod in. Curabitur egestas consectetur magna.</p>
 			</div>
@@ -292,7 +293,7 @@
 				<header>
 					<p>해수면이 높아진다아아 비상비상!</p>
 				</header>
-				<div id="sweat_potato"></div>
+				<div id="goguma"></div>
 				<p>그래프 설명!!!!!!!!!!!!!!!!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
 			</div>
 			<!-- <a href="#general_three" class="button style2 down anchored">Next</a> -->
@@ -357,7 +358,10 @@
 		<script>
 			let lastScrollTop = 0;
 			const navbar = document.getElementById('header');
-		
+			
+			// transition을 추가하여 부드러운 이동을 설정
+			navbar.style.transition = 'top 0.3s ease-in-out';
+			
 			window.addEventListener('scroll', function() {
 				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 		
