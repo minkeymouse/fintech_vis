@@ -990,28 +990,22 @@ export function drawSeoulMaps() {
     });
 }
 // -----------------------------------------------------
-
-//침수 1: Rainfall Network Visualization (민기)
+//강수량 네트워크: Seasonal Rainfall Network Visualization (민기)
 export function startRainfallVisualization() {
-    d3.select("#rainfall_map").select("svg").remove();
-
     const width = 960, height = 600;
 
     const svg = d3.select("#rainfall_map").append("svg")
         .attr("width", width)
         .attr("height", height);
 
-    // 지도 투영 설정 (Mercator projection 사용)
     const projection = d3.geoMercator()
-        .center([128, 36])  // 대한민국 중심 좌표
-        .scale(5000)        // 확대 비율
+        .center([128, 36])  // Center coordinates of South Korea
+        .scale(5000)        // Zoom level
         .translate([width / 2, height / 2]);
 
     const path = d3.geoPath().projection(projection);
 
-    // 대한민국 GeoJSON 파일 로드
     d3.json("data/korea_geojson.json").then(geoData => {
-        // 대한민국 지도 그리기
         svg.append("g")
             .selectAll("path")
             .data(geoData.features)
@@ -1020,32 +1014,28 @@ export function startRainfallVisualization() {
             .attr("fill", "#cccccc")  // Map background color (light grey)
             .attr("stroke", "#333");
 
-        // 강수량 데이터 로드 및 처리
-        d3.json("data/rainfall_network_monthly.json").then(data => {
-            console.log("JSON data loaded:", data);
-            let monthIndex = 0;
+        d3.json("data/rainfall_network_seasonal.json").then(data => {
+            let seasonIndex = 0;
 
             function update() {
-                const currentMonthData = data[monthIndex];
-                
-                const nodes = currentMonthData.nodes;
-                const links = currentMonthData.edges;
+                const currentSeasonData = data[seasonIndex];
+
+                const nodes = currentSeasonData.nodes;
+                const links = currentSeasonData.edges;
 
                 const sizeScale = d3.scaleLinear()
                     .domain([0, d3.max(nodes, d => d.rainfall)])
-                    .range([2, 10]);  // Reduced the size range for smaller nodes
+                    .range([2, 10]);
 
                 const colorScale = d3.scaleSequential(d3.interpolateBlues)
                     .domain([0, d3.max(nodes, d => d.rainfall)]);
 
-                const edgeColor = "#007ACC";  // More visible blue color for the edges
+                const edgeColor = "#007ACC";  // Blue color for the edges
 
-                // 이전 요소 제거
                 svg.selectAll(".node").remove();
                 svg.selectAll(".link").remove();
-                svg.selectAll(".month-label").remove();  // Remove previous text labels
+                svg.selectAll(".season-label").remove();
 
-                // 연결선 그리기
                 svg.append("g")
                     .selectAll(".link")
                     .data(links)
@@ -1067,11 +1057,10 @@ export function startRainfallVisualization() {
                         const targetNode = nodes.find(node => node.id === d.target);
                         return projection([targetNode.longitude, targetNode.latitude])[1];
                     })
-                    .style("stroke-width", d => Math.sqrt(d.weight) * 0.75)  // Adjusted to make edges more visible
-                    .style("stroke", edgeColor)  // Use the more visible blue color
-                    .style("stroke-opacity", 0.9);  // Increased opacity for better visibility
+                    .style("stroke-width", d => Math.sqrt(d.weight) * 0.75)
+                    .style("stroke", edgeColor)
+                    .style("stroke-opacity", 0.9);
 
-                // 노드 그리기
                 svg.append("g")
                     .selectAll(".node")
                     .data(nodes)
@@ -1080,132 +1069,34 @@ export function startRainfallVisualization() {
                     .attr("r", d => sizeScale(d.rainfall))
                     .attr("cx", d => projection([d.longitude, d.latitude])[0])
                     .attr("cy", d => projection([d.longitude, d.latitude])[1])
-                    .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall) : "#FFD700"); // Yellow for low rainfall
+                    .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall) : "#FFD700");
 
-                // 월 표시 (이전 텍스트 제거 후 다시 추가)
                 svg.append("text")
-                    .attr("class", "month-label")
+                    .attr("class", "season-label")
                     .attr("x", width / 2)
                     .attr("y", 30)
                     .attr("text-anchor", "middle")
                     .attr("font-size", "24px")
-                    .attr("font-weight", "bold")  // Make the text bold
+                    .attr("font-weight", "bold")
                     .attr("fill", "#333")
-                    .text(`Month: ${currentMonthData.month}`);
+                    .text(`Season: ${currentSeasonData.season}`);
             }
 
             function animate() {
                 update();
-                monthIndex = (monthIndex + 1) % data.length;
-            }
-
-            let intervalSpeed = 1000;  // 기본 속도
-            function adjustSpeed() {
-                const year = parseInt(data[monthIndex].month.split('-')[0]);
-                if (year >= 2015) {
-                    intervalSpeed = 1000;  // 2019년 이후 속도 느림
-                } else {
-                    intervalSpeed = 50;  // 2010년 이전 속도 빠름
-                }
+                seasonIndex = (seasonIndex + 1) % data.length;
             }
 
             function startAnimation() {
-                adjustSpeed();
                 animate();
-                setTimeout(startAnimation, intervalSpeed);
+                setTimeout(startAnimation, 1000);
             }
 
-            startAnimation();  // 애니메이션 시작
+            startAnimation();  // Start the animation
         });
     });
 }
-// 침수 2: plot 그리기
-export function drawStaticRainfallVisualization(containerId, dataFile, season) {
-    const width = 960, height = 600;
 
-    const svg = d3.select(containerId).append("svg")
-        .attr("width", width)
-        .attr("height", height);
-
-    const projection = d3.geoMercator()
-        .center([128, 36])
-        .scale(5000)
-        .translate([width / 2, height / 2]);
-
-    const path = d3.geoPath().projection(projection);
-
-    d3.json("data/korea_geojson.json").then(geoData => {
-        svg.append("g")
-            .selectAll("path")
-            .data(geoData.features)
-            .enter().append("path")
-            .attr("d", path)
-            .attr("fill", "#cccccc")
-            .attr("stroke", "#333");
-
-        d3.json(dataFile).then(data => {
-            const seasonData = data.find(d => d.season === season);
-
-            if (!seasonData) return;
-
-            const nodes = seasonData.nodes;
-            const links = seasonData.edges;
-
-            const sizeScale = d3.scaleLinear()
-                .domain([0, d3.max(nodes, d => d.rainfall)])
-                .range([2, 10]);
-
-            const colorScale = d3.scaleSequential(d3.interpolateBlues)
-                .domain([0, d3.max(nodes, d => d.rainfall)]);
-
-            const edgeColor = "#007ACC";
-
-            svg.append("g")
-                .selectAll(".link")
-                .data(links)
-                .enter().append("line")
-                .attr("class", "link")
-                .attr("x1", d => {
-                    const sourceNode = nodes.find(node => node.id === d.source);
-                    return projection([sourceNode.longitude, sourceNode.latitude])[0];
-                })
-                .attr("y1", d => {
-                    const sourceNode = nodes.find(node => node.id === d.source);
-                    return projection([sourceNode.longitude, sourceNode.latitude])[1];
-                })
-                .attr("x2", d => {
-                    const targetNode = nodes.find(node => node.id === d.target);
-                    return projection([targetNode.longitude, targetNode.latitude])[0];
-                })
-                .attr("y2", d => {
-                    const targetNode = nodes.find(node => node.id === d.target);
-                    return projection([targetNode.longitude, targetNode.latitude])[1];
-                })
-                .style("stroke-width", d => Math.sqrt(d.weight) * 0.75)
-                .style("stroke", edgeColor)
-                .style("stroke-opacity", 0.9);
-
-            svg.append("g")
-                .selectAll(".node")
-                .data(nodes)
-                .enter().append("circle")
-                .attr("class", "node")
-                .attr("r", d => sizeScale(d.rainfall))
-                .attr("cx", d => projection([d.longitude, d.latitude])[0])
-                .attr("cy", d => projection([d.longitude, d.latitude])[1])
-                .style("fill", d => d.rainfall >= 0.1 ? colorScale(d.rainfall) : "#FFD700");
-
-            svg.append("text")
-                .attr("x", width / 2)
-                .attr("y", 30)
-                .attr("text-anchor", "middle")
-                .attr("font-size", "24px")
-                .attr("font-weight", "bold")
-                .attr("fill", "#333")
-                .text(`Season: ${season}`);
-        });
-    });
-}
 
 //침수3: 그래프 (태린)
 export function drawSeaLevelRiseChart() {
