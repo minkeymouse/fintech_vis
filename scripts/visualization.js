@@ -1257,77 +1257,97 @@ export function drawSeaLevelRiseChart() {
 }
 
 //친수4: 고구마 (태린)
+// visualization.js
 
 // visualization.js
 
-export function drawGogumaVisualization() {
-    const width = 800;
-    const height = 800;
+// 친수4: 고구마 (태린)
+// visualization.js
 
-    const svg = d3.select("#goguma").append("svg")
+export function initializeYeouidoVisualization() {
+    // 여의도 지도를 그리는 함수 호출
+    drawYeouidoMap();
+
+    // 시나리오 선택 이벤트 리스너 등록
+    document.querySelectorAll('input[name="scenario"]').forEach(function(scenario) {
+        scenario.addEventListener('change', updateYeouidoVisualization);
+    });
+
+    // 지역 선택 이벤트 리스너 등록
+    document.getElementById('region-select').addEventListener('change', updateYeouidoVisualization);
+
+    // 초기 상태 업데이트
+    updateYeouidoVisualization();
+}
+
+// 여의도 지도 그리기
+function drawYeouidoMap() {
+    const width = 500, height = 500;
+
+    // D3의 geoPath와 특정 투영법을 사용해 여의도 위치와 모양을 표시
+    const projection = d3.geoMercator()
+        .center([126.9216, 37.5251])  // 여의도의 중심 좌표 (경도, 위도)
+        .scale(20000)  // 축척을 조정하여 여의도를 적절히 표현
+        .translate([width / 2, height / 2]);
+
+    const path = d3.geoPath().projection(projection);
+
+    const svg = d3.select("#yeouido-map")
         .attr("width", width)
         .attr("height", height);
 
-    // GeoJSON 데이터 불러오기
-    d3.json("./data/emd.geojson").then(function(data) {
-        console.log("GeoJSON Data Loaded:", data); // 데이터 확인
-
-        const projection = d3.geoMercator()
-            .scale(1)
-            .translate([0, 0]);
-
-        const path = d3.geoPath().projection(projection);
-
-        const bounds = path.bounds(data),
-            scale = 0.95 / Math.max(
-                (bounds[1][0] - bounds[0][0]) / width,
-                (bounds[1][1] - bounds[0][1]) / height
-            ),
-            translate = [
-                (width - scale * (bounds[1][0] + bounds[0][0])) / 2,
-                (height - scale * (bounds[1][1] + bounds[0][1])) / 2
-            ];
-
-        projection
-            .scale(scale)
-            .translate(translate);
-
-        const yeouido = data.features.filter(d => d.properties.EMD_KOR_NM.includes('여의도'));
-
-        const group = svg.selectAll(".district")
-            .data(yeouido)
-            .enter().append("g");
-
-        group.append("path")
+    d3.json("../data/yeouido_map.geojson").then(function(geoData) {
+        console.log(geoData);  // 데이터를 확인하기 위해 콘솔에 출력
+        svg.selectAll("path")
+            .data(geoData.features)
+            .enter()
+            .append("path")
             .attr("d", path)
-            .attr("class", "district")
-            .attr("fill", "lightgray")
-            .attr("stroke", "black");
-
-        // 이미지 오버레이
-        const img = new Image();
-        img.src = "./data/gogum.png";
-
-        img.onload = function() {
-            const imagePattern = svg.append("defs")
-                .append("pattern")
-                .attr("id", "imagePattern")
-                .attr("width", 1)
-                .attr("height", 1)
-                .attr("patternContentUnits", "objectBoundingBox");
-
-            imagePattern.append("image")
-                .attr("width", 1)
-                .attr("height", 1)
-                .attr("preserveAspectRatio", "xMidYMid slice")
-                .attr("href", img.src);
-
-            group.append("rect")
-                .attr("x", d => path.centroid(d)[0] - 50)
-                .attr("y", d => path.centroid(d)[1] - 50)
-                .attr("width", 100)
-                .attr("height", 100)
-                .attr("fill", "url(#imagePattern)");
-        };
+            .attr("fill", "#cccccc")  // 여의도 모양을 회색으로 채움
+            .attr("stroke", "#000000");  // 경계를 검은색으로 설정
+    }).catch(error => {
+        console.error('Error loading or processing GeoJSON data:', error);
     });
+}
+
+
+// 여의도 시각화 업데이트
+function updateYeouidoVisualization() {
+    const width = 500, height = 500;  // height 변수를 정의하여 사용
+
+    const regionSelect = document.getElementById('region-select');
+    const scenarioSelect = document.querySelector('input[name="scenario"]:checked');
+
+    // 선택된 요소가 있는지 확인
+    if (!regionSelect || !scenarioSelect) {
+        console.error("Region or scenario selection is missing.");
+        return;
+    }
+
+    const region = regionSelect.value;
+    const scenario = scenarioSelect.value;
+    const seaLevelData = {
+        "kor": {"Rcp4.5_2050_y": 83.75, "Rcp8.5_2050_y": 88.55, "Rcp4.5_2100_y": 119.36, "Rcp8.5_2100_y": 172.94},
+        "jeon": {"Rcp4.5_2050_y": 53.55, "Rcp8.5_2050_y": 58.14, "Rcp4.5_2100_y": 81.58, "Rcp8.5_2100_y": 123.38},
+        "chung": {"Rcp4.5_2050_y": 30.75, "Rcp8.5_2050_y": 35.14, "Rcp4.5_2100_y": 51.48, "Rcp8.5_2100_y": 75.21},
+        "gyeong": {"Rcp4.5_2050_y": 44.12, "Rcp8.5_2050_y": 49.32, "Rcp4.5_2100_y": 66.48, "Rcp8.5_2100_y": 92.74},
+    };
+
+    const yeouidoMultiplier = seaLevelData[region][scenario];
+    const gogumaContainer = d3.select("#gogumas");
+
+    // 기존 고구마 이미지를 제거
+    gogumaContainer.selectAll("img").remove();
+
+    // 여의도 배수에 따라 고구마 이미지를 추가
+    for (let i = 0; i < yeouidoMultiplier; i++) {
+        gogumaContainer.append("img")
+            .attr("src", "../images/gogum.png")
+            .attr("alt", "고구마")
+            .style("position", "absolute")
+            .style("top", `${Math.random() * (height - 50)}px`)
+            .style("left", `${Math.random() * (width - 50)}px`)
+            .style("width", "50px")
+            .style("height", "auto");
+    }
 }

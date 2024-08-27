@@ -1262,7 +1262,7 @@ input, select, textarea {
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
-				color: #e5e6e7;
+				color: #000000;
 				content: '\f1ce';
 				cursor: default;
 				display: block;
@@ -1314,6 +1314,7 @@ input, select, textarea {
 			background: url("images/poptrox-nav.svg");
 			top: calc(50% - 1.5em);
 			margin: -32px 0 0 0;
+			filter: invert(100%); /* 색상을 반전시켜 흰색을 검은색으로 변경 */
 		}
 
 		.poptrox-popup:hover .nav-next,
@@ -1379,6 +1380,7 @@ input, select, textarea {
 				box-shadow: inset 0 0 0 2px #fff;
 				background: url("images/poptrox-closer.svg") center center;
 				color: #ffffff !important;
+				filter: invert(100%); /* 색상을 반전시켜 흰색을 검은색으로 변경 */
 			}
 
 		.poptrox-popup:hover .closer {

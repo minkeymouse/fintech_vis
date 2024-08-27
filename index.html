@@ -234,22 +234,16 @@
 				Gallery 
 					<div class="gallery">
 						<article class="from-left">
-							<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+							<a href="images/fulls/spring.png" class="image fit"><img src="images/thumbs/spring.png" title="The Anonymous Red" alt="" /></a>
 						</article>
 						<article class="from-right">
-							<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
+							<a href="images/fulls/summer.png" class="image fit"><img src="images/thumbs/summer.png" title="Airchitecture II" alt="" /></a>
 						</article>
 						<article class="from-left">
-							<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
+							<a href="images/fulls/autumn.png" class="image fit"><img src="images/thumbs/autumn.png" title="Air Lounge" alt="" /></a>
 						</article>
 						<article class="from-right">
-							<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
-						</article>
-						<article class="from-left">
-							<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
-						</article>
-						<article class="from-right">
-							<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
+							<a href="images/fulls/winter.png" class="image fit"><img src="images/thumbs/winter.png" title="Carry on" alt="" /></a>
 						</article>
 					</div>
 
@@ -268,15 +262,30 @@
 		</section>
 
 		<!-- 태린 그래프 2-->
-		<section id="rainfall_three" class="main style3 primary">
+		<!-- 여의도 시각화 -->
+		 
+		<section id="yeouido_visualization" class="main style3 primary">
 			<div class="content">
 				<header>
-					<p>해수면이 높아진다아아 비상비상!</p>
+					<p>여의도 침수 시각화</p>
 				</header>
-				<div id="goguma"></div>
-				<p>그래프 설명!!!!!!!!!!!!!!!!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
+				<select id="region-select">
+					<option value="kor">한국</option>
+					<option value="jeon">전라도</option>
+					<option value="chung">충청도</option>
+					<option value="gyeong">경상도</option>
+				</select>
+
+				<div id="scenario-select">
+					<label><input type="radio" name="scenario" value="Rcp4.5_2050_y"> 4.5 시나리오 2050년</label>
+					<label><input type="radio" name="scenario" value="Rcp8.5_2050_y"> 8.5 시나리오 2050년</label>
+					<label><input type="radio" name="scenario" value="Rcp4.5_2100_y"> 4.5 시나리오 2100년</label>
+					<label><input type="radio" name="scenario" value="Rcp8.5_2100_y"> 8.5 시나리오 2100년</label>
+				</div>
+
+				<svg id="yeouido-map" width="500" height="500"></svg>
+				<div id="gogumas"></div>
 			</div>
-			<!-- <a href="#general_three" class="button style2 down anchored">Next</a> -->
 		</section>
 
 		<!-- Contact -->

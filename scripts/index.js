@@ -6,8 +6,8 @@ import { startWBGTVisualization } from './visualization.js';
 import { drawSeoulMaps } from './visualization.js';
 import { drawSeaLevelRiseChart } from './visualization.js';
 import { startRainfallVisualization } from './visualization.js';
-import { drawStaticRainfallVisualization } from './visualization.js';
-import { drawGogumaVisualization } from './visualization.js';
+// import { drawStaticRainfallVisualization } from './visualization.js';
+import { initializeYeouidoVisualization } from './visualization.js';
 
 
 // general_one
@@ -83,23 +83,23 @@ const observerRainfall = new IntersectionObserver((entries, observer) => {
 observerRainfall.observe(document.querySelector('#rainfall_one'));
 
 // 침수 2: Initialize static visualizations once the corresponding section comes into view
-const observerStaticRainfall = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            drawStaticRainfallVisualization("#visualization-spring-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Spring");
-            drawStaticRainfallVisualization("#visualization-summer-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Summer");
-            drawStaticRainfallVisualization("#visualization-autumn-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Autumn");
-            drawStaticRainfallVisualization("#visualization-winter-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Winter");
+// const observerStaticRainfall = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             drawStaticRainfallVisualization("#visualization-spring-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Spring");
+//             drawStaticRainfallVisualization("#visualization-summer-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Summer");
+//             drawStaticRainfallVisualization("#visualization-autumn-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Autumn");
+//             drawStaticRainfallVisualization("#visualization-winter-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Winter");
 
-            drawStaticRainfallVisualization("#visualization-spring-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Spring");
-            drawStaticRainfallVisualization("#visualization-summer-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Summer");
-            drawStaticRainfallVisualization("#visualization-autumn-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Autumn");
-            drawStaticRainfallVisualization("#visualization-winter-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Winter");
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-observerStaticRainfall.observe(document.querySelector('#static-plots'));
+//             drawStaticRainfallVisualization("#visualization-spring-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Spring");
+//             drawStaticRainfallVisualization("#visualization-summer-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Summer");
+//             drawStaticRainfallVisualization("#visualization-autumn-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Autumn");
+//             drawStaticRainfallVisualization("#visualization-winter-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Winter");
+//             observer.unobserve(entry.target);
+//         }
+//     });
+// }, { threshold: 0.5 });
+// observerStaticRainfall.observe(document.querySelector('#static-plots'));
 
 // 침수 3: 태린 그래프
 document.addEventListener('DOMContentLoaded', function() {
@@ -116,16 +116,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // 침수 4: 태린 그래프 
+// index.js
 
-document.addEventListener('DOMContentLoaded', () => {
-    const observerRainfall = new IntersectionObserver(function(entries, observer) {
+document.addEventListener('DOMContentLoaded', function() {
+    // 여의도 시각화 섹션이 보일 때 시각화를 트리거하는 관찰자 설정
+    const observerYeouido = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                drawGogumaVisualization();  // 그래프 그리기 함수 호출
+                initializeYeouidoVisualization();  // 여의도 시각화 초기화 함수 호출
                 observer.unobserve(entry.target);  // 한 번 실행 후 관찰 중지
             }
         });
     }, { threshold: 0.8 });  // 80% 이상 보일 때 트리거
 
-    observerRainfall.observe(document.querySelector('#rainfall_three'));
+    observerYeouido.observe(document.querySelector('#yeouido_visualization'));
 });
