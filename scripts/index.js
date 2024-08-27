@@ -6,7 +6,6 @@ import { startWBGTVisualization } from './visualization.js';
 import { drawSeoulMaps } from './visualization.js';
 import { drawSeaLevelRiseChart } from './visualization.js';
 import { startRainfallVisualization } from './visualization.js';
-import { drawStaticRainfallVisualization } from './visualization.js';
 
 // general_one
 const observerOne = new IntersectionObserver((entries, observer) => {
@@ -79,25 +78,6 @@ const observerRainfall = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.5 });
 observerRainfall.observe(document.querySelector('#rainfall_one'));
-
-// Initialize static visualizations once the corresponding section comes into view
-const observerStaticRainfall = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            drawStaticRainfallVisualization("#visualization-spring-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Spring");
-            drawStaticRainfallVisualization("#visualization-summer-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Summer");
-            drawStaticRainfallVisualization("#visualization-autumn-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Autumn");
-            drawStaticRainfallVisualization("#visualization-winter-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Winter");
-
-            drawStaticRainfallVisualization("#visualization-spring-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Spring");
-            drawStaticRainfallVisualization("#visualization-summer-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Summer");
-            drawStaticRainfallVisualization("#visualization-autumn-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Autumn");
-            drawStaticRainfallVisualization("#visualization-winter-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Winter");
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-observerStaticRainfall.observe(document.querySelector('#static-plots'));
 
 // 침수 2: 태린 그래프
 document.addEventListener('DOMContentLoaded', function() {
