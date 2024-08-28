@@ -1,0 +1,6277 @@
+[
+    {
+        "period": "1973-1999",
+        "data": [
+            {
+                "temperature": 15.0,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.2,
+                "frequency": 4.645113340765515e-05,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.3,
+                "frequency": 4.645113340765515e-05,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.4,
+                "frequency": 4.645113340765515e-05,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.6,
+                "frequency": 4.645113340765515e-05,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.7,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.8,
+                "frequency": 4.645113340765515e-05,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.9,
+                "frequency": 4.645113340765515e-05,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.0,
+                "frequency": 4.645113340765515e-05,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.2,
+                "frequency": 0.0001858045336306206,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.3,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.4,
+                "frequency": 0.0001858045336306206,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.5,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.6,
+                "frequency": 0.00023225566703827572,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.7,
+                "frequency": 0.00023225566703827572,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.8,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.9,
+                "frequency": 0.0001858045336306206,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.0,
+                "frequency": 0.0002787068004459309,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.1,
+                "frequency": 0.00023225566703827572,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.2,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.3,
+                "frequency": 0.0003716090672612412,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.4,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.5,
+                "frequency": 0.00013935340022296544,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.6,
+                "frequency": 0.0005574136008918618,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.7,
+                "frequency": 0.0003716090672612412,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.8,
+                "frequency": 0.00023225566703827572,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.9,
+                "frequency": 0.0002787068004459309,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.0,
+                "frequency": 0.0003716090672612412,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.1,
+                "frequency": 0.0003716090672612412,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.2,
+                "frequency": 0.0005109624674842066,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.3,
+                "frequency": 0.0005574136008918618,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.4,
+                "frequency": 0.000325157933853586,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.5,
+                "frequency": 0.0005574136008918618,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.6,
+                "frequency": 0.0003716090672612412,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.7,
+                "frequency": 0.0009290226681531029,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.8,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.9,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.0,
+                "frequency": 0.0006967670011148272,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.1,
+                "frequency": 0.0007896692679301375,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.2,
+                "frequency": 0.0005109624674842066,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.3,
+                "frequency": 0.0007896692679301375,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.4,
+                "frequency": 0.0011148272017837235,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.5,
+                "frequency": 0.0005109624674842066,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.6,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.7,
+                "frequency": 0.0010219249349684132,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.8,
+                "frequency": 0.0010219249349684132,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.9,
+                "frequency": 0.001254180602006689,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.0,
+                "frequency": 0.0011612783351913787,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.1,
+                "frequency": 0.0007432181345224824,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.2,
+                "frequency": 0.0013470828688219993,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.3,
+                "frequency": 0.0013470828688219993,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.4,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.5,
+                "frequency": 0.0014399851356373095,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.6,
+                "frequency": 0.0015328874024526198,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.7,
+                "frequency": 0.0023690078037904125,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.8,
+                "frequency": 0.0013470828688219993,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.9,
+                "frequency": 0.0017651430694908955,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.0,
+                "frequency": 0.0013935340022296545,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.1,
+                "frequency": 0.002508361204013378,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.2,
+                "frequency": 0.0019973987365291715,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.3,
+                "frequency": 0.0020438498699368265,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.4,
+                "frequency": 0.002833519137866964,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.5,
+                "frequency": 0.002833519137866964,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.6,
+                "frequency": 0.0020903010033444815,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.7,
+                "frequency": 0.0019973987365291715,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.8,
+                "frequency": 0.002183203270159792,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.9,
+                "frequency": 0.0026477146042363435,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 22.0,
+                "frequency": 0.0027406168710516535,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.1,
+                "frequency": 0.002461910070605723,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.2,
+                "frequency": 0.0027406168710516535,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.3,
+                "frequency": 0.0032515793385358605,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.4,
+                "frequency": 0.003205128205128205,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.5,
+                "frequency": 0.003437383872166481,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.6,
+                "frequency": 0.0029728725380899295,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.7,
+                "frequency": 0.0035767372723894465,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.8,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.9,
+                "frequency": 0.004180602006688963,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.0,
+                "frequency": 0.003530286138981791,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.1,
+                "frequency": 0.004227053140096618,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.2,
+                "frequency": 0.004552211073950204,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.3,
+                "frequency": 0.00469156447417317,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.4,
+                "frequency": 0.004552211073950204,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.5,
+                "frequency": 0.00478446674098848,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.6,
+                "frequency": 0.00469156447417317,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.7,
+                "frequency": 0.00487736900780379,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.8,
+                "frequency": 0.004970271274619101,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.9,
+                "frequency": 0.005527684875510962,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.0,
+                "frequency": 0.004970271274619101,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.1,
+                "frequency": 0.005248978075065032,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.2,
+                "frequency": 0.005248978075065032,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.3,
+                "frequency": 0.004923820141211446,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.4,
+                "frequency": 0.005852842809364548,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.5,
+                "frequency": 0.005713489409141583,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.6,
+                "frequency": 0.005852842809364548,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.7,
+                "frequency": 0.0063173541434411,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.8,
+                "frequency": 0.005899293942772204,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.9,
+                "frequency": 0.005667038275733928,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.0,
+                "frequency": 0.00622445187662579,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.1,
+                "frequency": 0.006828316610925307,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.2,
+                "frequency": 0.006781865477517651,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.3,
+                "frequency": 0.006503158677071721,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.4,
+                "frequency": 0.007060572277963582,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.5,
+                "frequency": 0.006642512077294686,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.6,
+                "frequency": 0.007803790412486065,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.7,
+                "frequency": 0.006781865477517651,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.8,
+                "frequency": 0.00794314381270903,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.9,
+                "frequency": 0.008918617614269788,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.0,
+                "frequency": 0.008872166480862134,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.1,
+                "frequency": 0.009150873281308064,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.2,
+                "frequency": 0.007617985878855444,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.3,
+                "frequency": 0.008965068747677444,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.4,
+                "frequency": 0.008314752879970272,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.5,
+                "frequency": 0.00975473801560758,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.6,
+                "frequency": 0.00947603121516165,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.7,
+                "frequency": 0.009708286882199926,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.8,
+                "frequency": 0.009847640282422892,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.9,
+                "frequency": 0.010683760683760684,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.0,
+                "frequency": 0.009986993682645856,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.1,
+                "frequency": 0.010637309550353028,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.2,
+                "frequency": 0.010312151616499442,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.3,
+                "frequency": 0.00956893348197696,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.4,
+                "frequency": 0.010730211817168338,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.5,
+                "frequency": 0.009615384615384616,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.6,
+                "frequency": 0.011055369751021924,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.7,
+                "frequency": 0.009708286882199926,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.8,
+                "frequency": 0.011752136752136752,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.9,
+                "frequency": 0.012030843552582684,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.0,
+                "frequency": 0.01082311408398365,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.1,
+                "frequency": 0.009801189149015236,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.2,
+                "frequency": 0.010497956150130064,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.3,
+                "frequency": 0.012077294685990338,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.4,
+                "frequency": 0.01082311408398365,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.5,
+                "frequency": 0.011798587885544408,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.6,
+                "frequency": 0.012123745819397994,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.7,
+                "frequency": 0.011937941285767372,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.8,
+                "frequency": 0.010358602749907098,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.9,
+                "frequency": 0.012170196952805648,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.0,
+                "frequency": 0.012495354886659234,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.1,
+                "frequency": 0.009986993682645856,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.2,
+                "frequency": 0.011705685618729096,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.3,
+                "frequency": 0.009940542549238202,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.4,
+                "frequency": 0.011566332218506132,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.5,
+                "frequency": 0.01110182088442958,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.6,
+                "frequency": 0.010590858416945374,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.7,
+                "frequency": 0.0112876254180602,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.8,
+                "frequency": 0.00938312894834634,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.9,
+                "frequency": 0.010033444816053512,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.0,
+                "frequency": 0.009522482348569306,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.1,
+                "frequency": 0.011055369751021924,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.2,
+                "frequency": 0.010637309550353028,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.3,
+                "frequency": 0.009336677814938684,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.4,
+                "frequency": 0.00929022668153103,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.5,
+                "frequency": 0.009104422147900408,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.6,
+                "frequency": 0.010265700483091788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.7,
+                "frequency": 0.008454106280193236,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.8,
+                "frequency": 0.009429580081753994,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.9,
+                "frequency": 0.008825715347454478,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.0,
+                "frequency": 0.009011519881085098,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.1,
+                "frequency": 0.008547008547008548,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.2,
+                "frequency": 0.008918617614269788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.3,
+                "frequency": 0.007989594946116686,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.4,
+                "frequency": 0.007710888145670754,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.5,
+                "frequency": 0.00794314381270903,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.6,
+                "frequency": 0.007617985878855444,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.7,
+                "frequency": 0.007803790412486065,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.8,
+                "frequency": 0.007339279078409513,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.9,
+                "frequency": 0.007617985878855444,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.0,
+                "frequency": 0.007060572277963582,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.1,
+                "frequency": 0.006967670011148272,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.2,
+                "frequency": 0.006735414344109996,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.3,
+                "frequency": 0.006688963210702341,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.4,
+                "frequency": 0.006967670011148272,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.5,
+                "frequency": 0.00641025641025641,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.6,
+                "frequency": 0.006781865477517651,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.7,
+                "frequency": 0.004923820141211446,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.8,
+                "frequency": 0.005945745076179859,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.9,
+                "frequency": 0.005295429208472687,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.0,
+                "frequency": 0.0063173541434411,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.1,
+                "frequency": 0.005063173541434411,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.2,
+                "frequency": 0.005016722408026756,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.3,
+                "frequency": 0.004087699739873653,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.4,
+                "frequency": 0.004134150873281308,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.5,
+                "frequency": 0.004041248606465998,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.6,
+                "frequency": 0.004041248606465998,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.7,
+                "frequency": 0.003437383872166481,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.8,
+                "frequency": 0.0039018952062430325,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.9,
+                "frequency": 0.0029728725380899295,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 34.0,
+                "frequency": 0.002926421404682274,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.1,
+                "frequency": 0.003205128205128205,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.2,
+                "frequency": 0.0026941657376439985,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.3,
+                "frequency": 0.0029728725380899295,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.4,
+                "frequency": 0.002508361204013378,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.5,
+                "frequency": 0.002554812337421033,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.6,
+                "frequency": 0.002136752136752137,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.7,
+                "frequency": 0.0018580453363062058,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.8,
+                "frequency": 0.002136752136752137,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.9,
+                "frequency": 0.0017186919360832405,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.0,
+                "frequency": 0.0016257896692679302,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.1,
+                "frequency": 0.001579338535860275,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.2,
+                "frequency": 0.0010683760683760685,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.3,
+                "frequency": 0.0010219249349684132,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.4,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.5,
+                "frequency": 0.0007432181345224824,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.6,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.7,
+                "frequency": 0.0007896692679301375,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.8,
+                "frequency": 0.0004180602006688963,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.9,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.0,
+                "frequency": 0.000325157933853586,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.1,
+                "frequency": 0.0004180602006688963,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.2,
+                "frequency": 0.000325157933853586,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.3,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.4,
+                "frequency": 0.000325157933853586,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.5,
+                "frequency": 0.000325157933853586,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.6,
+                "frequency": 9.29022668153103e-05,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.7,
+                "frequency": 9.29022668153103e-05,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.8,
+                "frequency": 0.0001858045336306206,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.9,
+                "frequency": 0.0002787068004459309,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.0,
+                "frequency": 0.0001858045336306206,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.1,
+                "frequency": 9.29022668153103e-05,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.2,
+                "frequency": 0.00013935340022296544,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.6,
+                "frequency": 4.645113340765515e-05,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            }
+        ]
+    },
+    {
+        "period": "1999-2005",
+        "data": [
+            {
+                "temperature": 15.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.5,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.9,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.1,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.6,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.7,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.0,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.3,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.4,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.5,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.7,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.8,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.9,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.0,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.1,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.4,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.7,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.8,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.9,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.0,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.1,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.2,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.4,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.5,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.6,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.7,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.8,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.9,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.0,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.1,
+                "frequency": 0.0018115942028985507,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.2,
+                "frequency": 0.001610305958132045,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.3,
+                "frequency": 0.002012882447665056,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.4,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.5,
+                "frequency": 0.002012882447665056,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.6,
+                "frequency": 0.0024154589371980675,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.7,
+                "frequency": 0.002616747181964573,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.8,
+                "frequency": 0.001610305958132045,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.9,
+                "frequency": 0.004025764895330112,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 22.0,
+                "frequency": 0.002012882447665056,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.1,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.2,
+                "frequency": 0.004025764895330112,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.3,
+                "frequency": 0.0030193236714975845,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.4,
+                "frequency": 0.004025764895330112,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.5,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.6,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.7,
+                "frequency": 0.004227053140096618,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.8,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.9,
+                "frequency": 0.004830917874396135,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.0,
+                "frequency": 0.004227053140096618,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.1,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.2,
+                "frequency": 0.0030193236714975845,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.3,
+                "frequency": 0.004428341384863124,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.4,
+                "frequency": 0.004830917874396135,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.5,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.6,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.7,
+                "frequency": 0.005837359098228663,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.8,
+                "frequency": 0.004227053140096618,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.9,
+                "frequency": 0.004830917874396135,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.0,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.1,
+                "frequency": 0.006239935587761675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.2,
+                "frequency": 0.00644122383252818,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.3,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.4,
+                "frequency": 0.00644122383252818,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.5,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.6,
+                "frequency": 0.005837359098228663,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.7,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.8,
+                "frequency": 0.007246376811594203,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.9,
+                "frequency": 0.005636070853462158,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.0,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.1,
+                "frequency": 0.009057971014492754,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.2,
+                "frequency": 0.00644122383252818,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.3,
+                "frequency": 0.008655394524959743,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.4,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.5,
+                "frequency": 0.00785024154589372,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.6,
+                "frequency": 0.006843800322061192,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.7,
+                "frequency": 0.005837359098228663,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.8,
+                "frequency": 0.007648953301127214,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.9,
+                "frequency": 0.008454106280193236,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.0,
+                "frequency": 0.005837359098228663,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.1,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.2,
+                "frequency": 0.009057971014492754,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.3,
+                "frequency": 0.00644122383252818,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.4,
+                "frequency": 0.010265700483091788,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.5,
+                "frequency": 0.008454106280193236,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.6,
+                "frequency": 0.008252818035426731,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.7,
+                "frequency": 0.011272141706924315,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.8,
+                "frequency": 0.008051529790660225,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.9,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.0,
+                "frequency": 0.009863123993558777,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.1,
+                "frequency": 0.008655394524959743,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.2,
+                "frequency": 0.00785024154589372,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.3,
+                "frequency": 0.010265700483091788,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.4,
+                "frequency": 0.009460547504025765,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.5,
+                "frequency": 0.00966183574879227,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.6,
+                "frequency": 0.009259259259259259,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.7,
+                "frequency": 0.010265700483091788,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.8,
+                "frequency": 0.010869565217391304,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.9,
+                "frequency": 0.009259259259259259,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.0,
+                "frequency": 0.0106682769726248,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.1,
+                "frequency": 0.01288244766505636,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.2,
+                "frequency": 0.009460547504025765,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.3,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.4,
+                "frequency": 0.009863123993558777,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.5,
+                "frequency": 0.012278582930756845,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.6,
+                "frequency": 0.010869565217391304,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.7,
+                "frequency": 0.010869565217391304,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.8,
+                "frequency": 0.010466988727858293,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.9,
+                "frequency": 0.014492753623188406,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.0,
+                "frequency": 0.01107085346215781,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.1,
+                "frequency": 0.012681159420289856,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.2,
+                "frequency": 0.012077294685990338,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.3,
+                "frequency": 0.008454106280193236,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.4,
+                "frequency": 0.009863123993558777,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.5,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.6,
+                "frequency": 0.010869565217391304,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.7,
+                "frequency": 0.010064412238325281,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.8,
+                "frequency": 0.01288244766505636,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.9,
+                "frequency": 0.01288244766505636,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.0,
+                "frequency": 0.012278582930756845,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.1,
+                "frequency": 0.013888888888888888,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.2,
+                "frequency": 0.00966183574879227,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.3,
+                "frequency": 0.008856682769726247,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.4,
+                "frequency": 0.010265700483091788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.5,
+                "frequency": 0.010869565217391304,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.6,
+                "frequency": 0.01107085346215781,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.7,
+                "frequency": 0.011876006441223833,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.8,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.9,
+                "frequency": 0.010064412238325281,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.0,
+                "frequency": 0.010064412238325281,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.1,
+                "frequency": 0.008252818035426731,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.2,
+                "frequency": 0.009863123993558777,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.3,
+                "frequency": 0.012278582930756845,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.4,
+                "frequency": 0.00966183574879227,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.5,
+                "frequency": 0.008252818035426731,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.6,
+                "frequency": 0.009863123993558777,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.7,
+                "frequency": 0.006642512077294686,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.8,
+                "frequency": 0.007045088566827697,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.9,
+                "frequency": 0.007045088566827697,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.0,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.1,
+                "frequency": 0.006843800322061192,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.2,
+                "frequency": 0.009259259259259259,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.3,
+                "frequency": 0.006843800322061192,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.4,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.5,
+                "frequency": 0.006642512077294686,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.6,
+                "frequency": 0.006642512077294686,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.7,
+                "frequency": 0.006239935587761675,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.8,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.9,
+                "frequency": 0.006239935587761675,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.0,
+                "frequency": 0.007447665056360709,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.1,
+                "frequency": 0.003824476650563607,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.2,
+                "frequency": 0.004428341384863124,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.3,
+                "frequency": 0.006038647342995169,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.4,
+                "frequency": 0.007045088566827697,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.5,
+                "frequency": 0.004025764895330112,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.6,
+                "frequency": 0.004629629629629629,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.7,
+                "frequency": 0.004025764895330112,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.8,
+                "frequency": 0.004629629629629629,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.9,
+                "frequency": 0.004830917874396135,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 34.0,
+                "frequency": 0.00322061191626409,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.1,
+                "frequency": 0.00322061191626409,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.2,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.3,
+                "frequency": 0.0018115942028985507,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.4,
+                "frequency": 0.00322061191626409,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.5,
+                "frequency": 0.002012882447665056,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.6,
+                "frequency": 0.002012882447665056,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.7,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.8,
+                "frequency": 0.002012882447665056,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.9,
+                "frequency": 0.001610305958132045,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.0,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.1,
+                "frequency": 0.0012077294685990338,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.2,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.4,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.5,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.6,
+                "frequency": 0.0008051529790660225,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.8,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.9,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.1,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.7,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            }
+        ]
+    },
+    {
+        "period": "2005-2011",
+        "data": [
+            {
+                "temperature": 15.0,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.5,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.7,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.9,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.4,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.6,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.8,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.0,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.2,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.4,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.5,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.6,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.7,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.8,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.9,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.0,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.1,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.2,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.3,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.4,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.5,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.6,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.7,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.8,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.9,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.0,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.1,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.2,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.4,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.5,
+                "frequency": 0.001610305958132045,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.6,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.7,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.8,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.9,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.0,
+                "frequency": 0.0018115942028985507,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.1,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.2,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.3,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.4,
+                "frequency": 0.001610305958132045,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.5,
+                "frequency": 0.0024154589371980675,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.6,
+                "frequency": 0.0030193236714975845,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.7,
+                "frequency": 0.001610305958132045,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.8,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.9,
+                "frequency": 0.002818035426731079,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 22.0,
+                "frequency": 0.0014090177133655394,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.1,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.2,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.3,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.4,
+                "frequency": 0.002818035426731079,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.5,
+                "frequency": 0.0030193236714975845,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.6,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.7,
+                "frequency": 0.003824476650563607,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.8,
+                "frequency": 0.0030193236714975845,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.9,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.0,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.1,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.2,
+                "frequency": 0.003824476650563607,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.3,
+                "frequency": 0.002214170692431562,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.4,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.5,
+                "frequency": 0.004629629629629629,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.6,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.7,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.8,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.9,
+                "frequency": 0.005636070853462158,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.0,
+                "frequency": 0.0018115942028985507,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.1,
+                "frequency": 0.007045088566827697,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.2,
+                "frequency": 0.00644122383252818,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.3,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.4,
+                "frequency": 0.006642512077294686,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.5,
+                "frequency": 0.004830917874396135,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.6,
+                "frequency": 0.005233494363929146,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.7,
+                "frequency": 0.006843800322061192,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.8,
+                "frequency": 0.005434782608695652,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.9,
+                "frequency": 0.005032206119162641,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.0,
+                "frequency": 0.005233494363929146,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.1,
+                "frequency": 0.005837359098228663,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.2,
+                "frequency": 0.005837359098228663,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.3,
+                "frequency": 0.00785024154589372,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.4,
+                "frequency": 0.010064412238325281,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.5,
+                "frequency": 0.005233494363929146,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.6,
+                "frequency": 0.008655394524959743,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.7,
+                "frequency": 0.006843800322061192,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.8,
+                "frequency": 0.007246376811594203,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.9,
+                "frequency": 0.007648953301127214,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.0,
+                "frequency": 0.006239935587761675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.1,
+                "frequency": 0.007447665056360709,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.2,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.3,
+                "frequency": 0.009057971014492754,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.4,
+                "frequency": 0.007045088566827697,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.5,
+                "frequency": 0.00644122383252818,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.6,
+                "frequency": 0.00785024154589372,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.7,
+                "frequency": 0.011272141706924315,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.8,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.9,
+                "frequency": 0.010869565217391304,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.0,
+                "frequency": 0.008655394524959743,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.1,
+                "frequency": 0.009460547504025765,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.2,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.3,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.4,
+                "frequency": 0.008655394524959743,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.5,
+                "frequency": 0.010265700483091788,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.6,
+                "frequency": 0.008252818035426731,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.7,
+                "frequency": 0.010466988727858293,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.8,
+                "frequency": 0.013888888888888888,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.9,
+                "frequency": 0.009460547504025765,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.0,
+                "frequency": 0.01107085346215781,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.1,
+                "frequency": 0.010064412238325281,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.2,
+                "frequency": 0.009863123993558777,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.3,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.4,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.5,
+                "frequency": 0.012681159420289856,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.6,
+                "frequency": 0.012681159420289856,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.7,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.8,
+                "frequency": 0.009863123993558777,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.9,
+                "frequency": 0.010869565217391304,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.0,
+                "frequency": 0.013083735909822867,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.1,
+                "frequency": 0.011272141706924315,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.2,
+                "frequency": 0.014492753623188406,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.3,
+                "frequency": 0.012278582930756845,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.4,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.5,
+                "frequency": 0.011473429951690822,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.6,
+                "frequency": 0.011876006441223833,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.7,
+                "frequency": 0.010265700483091788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.8,
+                "frequency": 0.0106682769726248,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.9,
+                "frequency": 0.016505636070853463,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.0,
+                "frequency": 0.012278582930756845,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.1,
+                "frequency": 0.011876006441223833,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.2,
+                "frequency": 0.012681159420289856,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.3,
+                "frequency": 0.010265700483091788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.4,
+                "frequency": 0.011473429951690822,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.5,
+                "frequency": 0.0106682769726248,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.6,
+                "frequency": 0.013083735909822867,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.7,
+                "frequency": 0.007447665056360709,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.8,
+                "frequency": 0.009057971014492754,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.9,
+                "frequency": 0.00966183574879227,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.0,
+                "frequency": 0.01107085346215781,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.1,
+                "frequency": 0.010466988727858293,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.2,
+                "frequency": 0.009460547504025765,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.3,
+                "frequency": 0.006843800322061192,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.4,
+                "frequency": 0.009460547504025765,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.5,
+                "frequency": 0.009863123993558777,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.6,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.7,
+                "frequency": 0.008454106280193236,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.8,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.9,
+                "frequency": 0.009460547504025765,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.0,
+                "frequency": 0.00785024154589372,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.1,
+                "frequency": 0.010265700483091788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.2,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.3,
+                "frequency": 0.005233494363929146,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.4,
+                "frequency": 0.007447665056360709,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.5,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.6,
+                "frequency": 0.005032206119162641,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.7,
+                "frequency": 0.009259259259259259,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.8,
+                "frequency": 0.00644122383252818,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.9,
+                "frequency": 0.00644122383252818,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.0,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.1,
+                "frequency": 0.004830917874396135,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.2,
+                "frequency": 0.006038647342995169,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.3,
+                "frequency": 0.006642512077294686,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.4,
+                "frequency": 0.004629629629629629,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.5,
+                "frequency": 0.005434782608695652,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.6,
+                "frequency": 0.004025764895330112,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.7,
+                "frequency": 0.003824476650563607,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.8,
+                "frequency": 0.002818035426731079,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.9,
+                "frequency": 0.0030193236714975845,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 34.0,
+                "frequency": 0.004629629629629629,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.1,
+                "frequency": 0.0036231884057971015,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.2,
+                "frequency": 0.0024154589371980675,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.3,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.4,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.5,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.6,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.7,
+                "frequency": 0.002012882447665056,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.8,
+                "frequency": 0.001610305958132045,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.9,
+                "frequency": 0.0018115942028985507,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.0,
+                "frequency": 0.0012077294685990338,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.1,
+                "frequency": 0.0012077294685990338,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.2,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.3,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.4,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.5,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.6,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.7,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.8,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            }
+        ]
+    },
+    {
+        "period": "2011-2017",
+        "data": [
+            {
+                "temperature": 15.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.1,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.3,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.0,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.1,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.3,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.4,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.5,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.6,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.7,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.8,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.9,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.0,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.1,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.3,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.4,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.5,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.6,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.7,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.8,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.9,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.0,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.1,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.2,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.3,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.4,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.5,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.6,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.7,
+                "frequency": 0.001610305958132045,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.8,
+                "frequency": 0.0018115942028985507,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.9,
+                "frequency": 0.0018115942028985507,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 22.0,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.1,
+                "frequency": 0.0012077294685990338,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.2,
+                "frequency": 0.0012077294685990338,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.3,
+                "frequency": 0.0008051529790660225,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.4,
+                "frequency": 0.002012882447665056,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.5,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.6,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.7,
+                "frequency": 0.0008051529790660225,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.8,
+                "frequency": 0.002012882447665056,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.9,
+                "frequency": 0.004025764895330112,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.0,
+                "frequency": 0.002818035426731079,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.1,
+                "frequency": 0.002214170692431562,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.2,
+                "frequency": 0.002012882447665056,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.3,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.4,
+                "frequency": 0.002214170692431562,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.5,
+                "frequency": 0.0030193236714975845,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.6,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.7,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.8,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.9,
+                "frequency": 0.0014090177133655394,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.0,
+                "frequency": 0.005032206119162641,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.1,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.2,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.3,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.4,
+                "frequency": 0.0030193236714975845,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.5,
+                "frequency": 0.004025764895330112,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.6,
+                "frequency": 0.003824476650563607,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.7,
+                "frequency": 0.005434782608695652,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.8,
+                "frequency": 0.00644122383252818,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.9,
+                "frequency": 0.005837359098228663,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.0,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.1,
+                "frequency": 0.004629629629629629,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.2,
+                "frequency": 0.003824476650563607,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.3,
+                "frequency": 0.003824476650563607,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.4,
+                "frequency": 0.005233494363929146,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.5,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.6,
+                "frequency": 0.006239935587761675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.7,
+                "frequency": 0.006843800322061192,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.8,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.9,
+                "frequency": 0.008051529790660225,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.0,
+                "frequency": 0.006038647342995169,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.1,
+                "frequency": 0.007447665056360709,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.2,
+                "frequency": 0.008454106280193236,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.3,
+                "frequency": 0.012077294685990338,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.4,
+                "frequency": 0.007246376811594203,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.5,
+                "frequency": 0.00966183574879227,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.6,
+                "frequency": 0.009259259259259259,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.7,
+                "frequency": 0.009057971014492754,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.8,
+                "frequency": 0.005233494363929146,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.9,
+                "frequency": 0.00966183574879227,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.0,
+                "frequency": 0.010265700483091788,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.1,
+                "frequency": 0.006642512077294686,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.2,
+                "frequency": 0.007648953301127214,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.3,
+                "frequency": 0.00785024154589372,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.4,
+                "frequency": 0.011272141706924315,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.5,
+                "frequency": 0.007246376811594203,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.6,
+                "frequency": 0.009863123993558777,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.7,
+                "frequency": 0.008051529790660225,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.8,
+                "frequency": 0.012278582930756845,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.9,
+                "frequency": 0.012278582930756845,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.0,
+                "frequency": 0.01107085346215781,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.1,
+                "frequency": 0.013888888888888888,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.2,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.3,
+                "frequency": 0.011272141706924315,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.4,
+                "frequency": 0.011272141706924315,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.5,
+                "frequency": 0.011473429951690822,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.6,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.7,
+                "frequency": 0.013687600644122383,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.8,
+                "frequency": 0.013083735909822867,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.9,
+                "frequency": 0.014492753623188406,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.0,
+                "frequency": 0.011473429951690822,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.1,
+                "frequency": 0.011473429951690822,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.2,
+                "frequency": 0.012681159420289856,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.3,
+                "frequency": 0.01107085346215781,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.4,
+                "frequency": 0.013285024154589372,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.5,
+                "frequency": 0.015297906602254429,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.6,
+                "frequency": 0.011674718196457327,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.7,
+                "frequency": 0.011473429951690822,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.8,
+                "frequency": 0.013486312399355877,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.9,
+                "frequency": 0.011674718196457327,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.0,
+                "frequency": 0.014492753623188406,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.1,
+                "frequency": 0.009259259259259259,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.2,
+                "frequency": 0.009460547504025765,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.3,
+                "frequency": 0.009863123993558777,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.4,
+                "frequency": 0.008252818035426731,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.5,
+                "frequency": 0.010869565217391304,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.6,
+                "frequency": 0.008856682769726247,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.7,
+                "frequency": 0.010265700483091788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.8,
+                "frequency": 0.011674718196457327,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.9,
+                "frequency": 0.009057971014492754,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.0,
+                "frequency": 0.011674718196457327,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.1,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.2,
+                "frequency": 0.010466988727858293,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.3,
+                "frequency": 0.006843800322061192,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.4,
+                "frequency": 0.009057971014492754,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.5,
+                "frequency": 0.01107085346215781,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.6,
+                "frequency": 0.009259259259259259,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.7,
+                "frequency": 0.010869565217391304,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.8,
+                "frequency": 0.007447665056360709,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.9,
+                "frequency": 0.007045088566827697,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.0,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.1,
+                "frequency": 0.00785024154589372,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.2,
+                "frequency": 0.009259259259259259,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.3,
+                "frequency": 0.008856682769726247,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.4,
+                "frequency": 0.006642512077294686,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.5,
+                "frequency": 0.00785024154589372,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.6,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.7,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.8,
+                "frequency": 0.007648953301127214,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.9,
+                "frequency": 0.00644122383252818,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.0,
+                "frequency": 0.005032206119162641,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.1,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.2,
+                "frequency": 0.006038647342995169,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.3,
+                "frequency": 0.006843800322061192,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.4,
+                "frequency": 0.007246376811594203,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.5,
+                "frequency": 0.007447665056360709,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.6,
+                "frequency": 0.006239935587761675,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.7,
+                "frequency": 0.006038647342995169,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.8,
+                "frequency": 0.005636070853462158,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.9,
+                "frequency": 0.005837359098228663,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 34.0,
+                "frequency": 0.005233494363929146,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.1,
+                "frequency": 0.003421900161030596,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.2,
+                "frequency": 0.004025764895330112,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.3,
+                "frequency": 0.005233494363929146,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.4,
+                "frequency": 0.004428341384863124,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.5,
+                "frequency": 0.005233494363929146,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.6,
+                "frequency": 0.003421900161030596,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.7,
+                "frequency": 0.004428341384863124,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.8,
+                "frequency": 0.004025764895330112,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.9,
+                "frequency": 0.002616747181964573,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.0,
+                "frequency": 0.002012882447665056,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.1,
+                "frequency": 0.002818035426731079,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.2,
+                "frequency": 0.00322061191626409,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.3,
+                "frequency": 0.002214170692431562,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.4,
+                "frequency": 0.002214170692431562,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.5,
+                "frequency": 0.0024154589371980675,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.6,
+                "frequency": 0.002214170692431562,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.7,
+                "frequency": 0.0012077294685990338,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.8,
+                "frequency": 0.0008051529790660225,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.9,
+                "frequency": 0.002012882447665056,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.0,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.1,
+                "frequency": 0.001610305958132045,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.2,
+                "frequency": 0.0008051529790660225,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.3,
+                "frequency": 0.0008051529790660225,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.4,
+                "frequency": 0.0008051529790660225,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.5,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.6,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.7,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.8,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.9,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.1,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            }
+        ]
+    },
+    {
+        "period": "2017-2023",
+        "data": [
+            {
+                "temperature": 15.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.6,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 15.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.6,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 16.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.4,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.5,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.6,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.7,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.8,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 17.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.0,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.1,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.2,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.3,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.4,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.5,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.6,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.7,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.8,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 18.9,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.0,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.1,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.2,
+                "frequency": 0.00020128824476650564,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.3,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.4,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.5,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.6,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.7,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.8,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 19.9,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.0,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.1,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.2,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.3,
+                "frequency": 0.0006038647342995169,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.4,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.5,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.6,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.7,
+                "frequency": 0.0008051529790660225,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.8,
+                "frequency": 0.0018115942028985507,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 20.9,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.0,
+                "frequency": 0.0,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.1,
+                "frequency": 0.001610305958132045,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.2,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.3,
+                "frequency": 0.0018115942028985507,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.4,
+                "frequency": 0.00040257648953301127,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.5,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.6,
+                "frequency": 0.0012077294685990338,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.7,
+                "frequency": 0.001006441223832528,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.8,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 21.9,
+                "frequency": 0.0014090177133655394,
+                "color": "#0033cc"
+            },
+            {
+                "temperature": 22.0,
+                "frequency": 0.0018115942028985507,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.1,
+                "frequency": 0.001610305958132045,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.2,
+                "frequency": 0.0014090177133655394,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.3,
+                "frequency": 0.0018115942028985507,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.4,
+                "frequency": 0.0018115942028985507,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.5,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.6,
+                "frequency": 0.0012077294685990338,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.7,
+                "frequency": 0.002012882447665056,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.8,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 22.9,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.0,
+                "frequency": 0.0018115942028985507,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.1,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.2,
+                "frequency": 0.002818035426731079,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.3,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.4,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.5,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.6,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.7,
+                "frequency": 0.0024154589371980675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.8,
+                "frequency": 0.003824476650563607,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 23.9,
+                "frequency": 0.002616747181964573,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.0,
+                "frequency": 0.004025764895330112,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.1,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.2,
+                "frequency": 0.005032206119162641,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.3,
+                "frequency": 0.004830917874396135,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.4,
+                "frequency": 0.0036231884057971015,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.5,
+                "frequency": 0.004227053140096618,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.6,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.7,
+                "frequency": 0.005434782608695652,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.8,
+                "frequency": 0.00322061191626409,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 24.9,
+                "frequency": 0.007648953301127214,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.0,
+                "frequency": 0.004025764895330112,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.1,
+                "frequency": 0.006642512077294686,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.2,
+                "frequency": 0.003421900161030596,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.3,
+                "frequency": 0.007246376811594203,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.4,
+                "frequency": 0.005233494363929146,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.5,
+                "frequency": 0.007045088566827697,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.6,
+                "frequency": 0.006239935587761675,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.7,
+                "frequency": 0.007246376811594203,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.8,
+                "frequency": 0.005434782608695652,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 25.9,
+                "frequency": 0.007045088566827697,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.0,
+                "frequency": 0.006642512077294686,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.1,
+                "frequency": 0.008454106280193236,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.2,
+                "frequency": 0.006843800322061192,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.3,
+                "frequency": 0.008856682769726247,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.4,
+                "frequency": 0.008655394524959743,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.5,
+                "frequency": 0.008051529790660225,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.6,
+                "frequency": 0.00785024154589372,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.7,
+                "frequency": 0.008252818035426731,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.8,
+                "frequency": 0.010869565217391304,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 26.9,
+                "frequency": 0.009863123993558777,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.0,
+                "frequency": 0.008252818035426731,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.1,
+                "frequency": 0.008252818035426731,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.2,
+                "frequency": 0.010265700483091788,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.3,
+                "frequency": 0.009460547504025765,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.4,
+                "frequency": 0.01247987117552335,
+                "color": "#74BFD1"
+            },
+            {
+                "temperature": 27.5,
+                "frequency": 0.0106682769726248,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.6,
+                "frequency": 0.011272141706924315,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.7,
+                "frequency": 0.00966183574879227,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.8,
+                "frequency": 0.010064412238325281,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 27.9,
+                "frequency": 0.010265700483091788,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.0,
+                "frequency": 0.011272141706924315,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.1,
+                "frequency": 0.011876006441223833,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.2,
+                "frequency": 0.009259259259259259,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.3,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.4,
+                "frequency": 0.013888888888888888,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.5,
+                "frequency": 0.010466988727858293,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.6,
+                "frequency": 0.01288244766505636,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.7,
+                "frequency": 0.01288244766505636,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.8,
+                "frequency": 0.011674718196457327,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 28.9,
+                "frequency": 0.009460547504025765,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.0,
+                "frequency": 0.010869565217391304,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.1,
+                "frequency": 0.012077294685990338,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.2,
+                "frequency": 0.011473429951690822,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.3,
+                "frequency": 0.011876006441223833,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.4,
+                "frequency": 0.009863123993558777,
+                "color": "#d3d3d3"
+            },
+            {
+                "temperature": 29.5,
+                "frequency": 0.011674718196457327,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.6,
+                "frequency": 0.00966183574879227,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.7,
+                "frequency": 0.010869565217391304,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.8,
+                "frequency": 0.013083735909822867,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 29.9,
+                "frequency": 0.008655394524959743,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.0,
+                "frequency": 0.011674718196457327,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.1,
+                "frequency": 0.00966183574879227,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.2,
+                "frequency": 0.009460547504025765,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.3,
+                "frequency": 0.011272141706924315,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.4,
+                "frequency": 0.012077294685990338,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.5,
+                "frequency": 0.008454106280193236,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.6,
+                "frequency": 0.009863123993558777,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.7,
+                "frequency": 0.011272141706924315,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.8,
+                "frequency": 0.010466988727858293,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 30.9,
+                "frequency": 0.008454106280193236,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.0,
+                "frequency": 0.010466988727858293,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.1,
+                "frequency": 0.010869565217391304,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.2,
+                "frequency": 0.008655394524959743,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.3,
+                "frequency": 0.009259259259259259,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.4,
+                "frequency": 0.009259259259259259,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.5,
+                "frequency": 0.00966183574879227,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.6,
+                "frequency": 0.010265700483091788,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.7,
+                "frequency": 0.006843800322061192,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.8,
+                "frequency": 0.010064412238325281,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 31.9,
+                "frequency": 0.007447665056360709,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.0,
+                "frequency": 0.007648953301127214,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.1,
+                "frequency": 0.007648953301127214,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.2,
+                "frequency": 0.009057971014492754,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.3,
+                "frequency": 0.009057971014492754,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.4,
+                "frequency": 0.006642512077294686,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.5,
+                "frequency": 0.005636070853462158,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.6,
+                "frequency": 0.009460547504025765,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.7,
+                "frequency": 0.005837359098228663,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.8,
+                "frequency": 0.005837359098228663,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 32.9,
+                "frequency": 0.007447665056360709,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.0,
+                "frequency": 0.008454106280193236,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.1,
+                "frequency": 0.008051529790660225,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.2,
+                "frequency": 0.005636070853462158,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.3,
+                "frequency": 0.005636070853462158,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.4,
+                "frequency": 0.007045088566827697,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.5,
+                "frequency": 0.007648953301127214,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.6,
+                "frequency": 0.005636070853462158,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.7,
+                "frequency": 0.004428341384863124,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.8,
+                "frequency": 0.005434782608695652,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 33.9,
+                "frequency": 0.004830917874396135,
+                "color": "#F4A474"
+            },
+            {
+                "temperature": 34.0,
+                "frequency": 0.003421900161030596,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.1,
+                "frequency": 0.003824476650563607,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.2,
+                "frequency": 0.005837359098228663,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.3,
+                "frequency": 0.004428341384863124,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.4,
+                "frequency": 0.004629629629629629,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.5,
+                "frequency": 0.004025764895330112,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.6,
+                "frequency": 0.003824476650563607,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.7,
+                "frequency": 0.004830917874396135,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.8,
+                "frequency": 0.004227053140096618,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 34.9,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.0,
+                "frequency": 0.0030193236714975845,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.1,
+                "frequency": 0.002818035426731079,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.2,
+                "frequency": 0.00322061191626409,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.3,
+                "frequency": 0.0024154589371980675,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.4,
+                "frequency": 0.0014090177133655394,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.5,
+                "frequency": 0.0014090177133655394,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.6,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.7,
+                "frequency": 0.002012882447665056,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.8,
+                "frequency": 0.0018115942028985507,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 35.9,
+                "frequency": 0.0008051529790660225,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.0,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.1,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.2,
+                "frequency": 0.0012077294685990338,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.3,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.4,
+                "frequency": 0.002214170692431562,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.5,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.6,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.7,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.8,
+                "frequency": 0.001610305958132045,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 36.9,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.0,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.1,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.2,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.3,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.4,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.5,
+                "frequency": 0.0006038647342995169,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.6,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.8,
+                "frequency": 0.001006441223832528,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 37.9,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.0,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.1,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.2,
+                "frequency": 0.00040257648953301127,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.3,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 38.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.0,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.1,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.2,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.3,
+                "frequency": 0.00020128824476650564,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.4,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.5,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.6,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.7,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.8,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            },
+            {
+                "temperature": 39.9,
+                "frequency": 0.0,
+                "color": "#cc0000"
+            }
+        ]
+    }
+]

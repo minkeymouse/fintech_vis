@@ -1,172 +1,387 @@
 <!DOCTYPE HTML>
-<!--
-	Big Picture by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Big Picture by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Big Picture by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <!-- D3.js 라이브러리 추가 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+	
+</head>
+
+<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<h1>Big Picture</h1>
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#one">What I Do</a></li>
-						<li><a href="#two">Who I Am</a></li>
-						<li><a href="#work">My Work</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
-			</header>
+		<header id="header">
+			<h1>Big Picture</h1>
+			<nav>
+				<ul>
+					<li><a href="#intro">Intro</a></li>
+					<li><a href="#one">What I Do</a></li>
+					<li><a href="#two">Who I Am</a></li>
+					<li><a href="#three">My Work</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
 
-		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
-				<div class="content">
-					<header>
-						<h2> 4조!!! 기상청 시각화 </h2>
-					</header>
-					<p>Welcome to <strong>Big Picture</strong> a responsive site template designed by <a href="https://html5up.net">HTML5 UP</a><br />
-					and released for free under the <a href="https://html5up.net/license">Creative Commons Attribution license</a>.</p>
-					<footer>
-						<a href="#one" class="button style2 down">More</a>
-					</footer>
-				</div>
-			</section>
-
-		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>열사병 (이한상, 박가희)</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
-				</div>
-				<a href="#two" class="button style2 down anchored">Next</a>
-			</section>
-
-		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>이상기후 - 곤충대발생, 스콜 등 (최윤서 강래현)</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
-				</div>
-				<a href="#three" class="button style2 down anchored">Next</a>
-			</section>
+		<!-- Intro 비상 비상 메인 제목 Layout_O-->
+		<section id="intro" class="main style1 dark fullscreen">
+			<div class="content">
+				<header>
+					<h2> Global Warming </h2>
+					<h2>비상! 비상! </h2>
+				</header>
+				<p>Welcome to <strong>Big Picture</strong> a responsive site template designed by <a href="https://html5up.net">HTML5 UP</a><br />
+				and released for free under the <a href="https://html5up.net/license">Creative Commons Attribution license</a>.</p>
+				<footer>
+					<a href="#general_one" class="button style2 down">More</a>
+				</footer>
+			</div>
+		</section>
 		
-		<!-- Three -->
-			<section id="three" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>침수 (장민기, 김태린)</h2>
-					</header>
+		<!-- General #1 Layout_O-->
+		<section id="general_one" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2> 한국의 기온 상승 </h2>
+					<p class="custom-font"> 
+						최근 몇 년간 한국의 기온 상승이 가시화되고 있습니다. 이러한 변화는 단순히 더운 날씨를 의미하는 것이 아니라, 
+						우리의 생활 전반에 걸쳐 심각한 영향을 미치고 있습니다. 저희는 한국의 기온 상승 현황, 그 원인, 
+						그리고 우리 사회에 미칠 잠재적 영향에 대해 알아보고자 합니다.</p>
+				</header>
+				<header>
+					<h3> 서울, 수면온도 (1908-2023년)</h3>
+				</header>
+				<div id="visualization-one"></div> <!-- 시각화가 삽입될 곳 -->
+				<p class="custom-font"> 그래프에서 기준치는 1908년부터 1960년까지의 평균 기온이며, 
+					이 기간 동안의 기온이 평균보다 얼마나 벗어났는지를 연도별로 비교한 결과입니다. Y축은 이 기준치에서 벗어난 정도를 나타냅니다. </p>
+			</div>
+			<!-- <a href="#general_two" class="button style2 down anchored">Next</a> -->
+		</section>
+		<!-- General #2 Layout_O-->
+		<section id="general_two" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h3> 여름 일별 최고기온 변화 (1973-2023) </h3>
+				</header>
+				<div id="visualization-two"></div> <!-- 시각화가 삽입될 곳 -->
+				<p class="custom-font"> 
+					1991년부터 2001년까지의 전국의 여름(6월~8월) 최고기온을 히스토그램으로 보여줍니다. 각 데이터는 전국을 9개 지역으로 구분하여 일별 최고기온을 평균한 값을 나타냅니다. 
+					1900년대의 기온 분포와 비교할 때, 최근의 기온 분포가 오른쪽으로 이동한 것을 확인할 수 있으며, 이는 기후 변화로 인해 여름이 점점 더 더워지고 있다는 것을 시사합니다.  
+				</p>
+			</div>
+			<!-- <a href="#general_three" class="button style2 down anchored">Next</a> -->
+		</section>
+		<!-- General #3 Layout_O-->
+		<section id="general_three" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h3> 월별 평균 기온 변화 (1965-2024) </h3>
+				</header>
+				<div id="visualization-container">
+					<svg id="temp-anomaly-chart" width="1000" height="400"></svg>
+				</div>
+				<p class="custom-font"> 
+					전국 월별 평균 기온을 연도별로 비교한 것입니다. 
+					여기서 보여주는 데이터는 2024년 현재까지의 기온 추세를 시각적으로 나타내고 있으며, 
+					2023년과 2024년의 그래프가 과거 수십 년간의 기온 범위를 벗어난 것을 볼 수 있습니다.
+				</p>
+			</div>
+			<a href="#one" class="button style2 down anchored">Next</a>
+		</section>
+
+
+		<!-- One: 열사병 제목 (one) Layout_O-->
+		<section id="one" class="main style2 right dark fullscreen">
+			<div class="content box style2">
+				<header>
+					<h2> 폭염과 열사병 </h2>
+				</header>
+				<p>우리나라에서 점점 더 빈번해지고 있는 폭염과 그로 인한 기후 재해의 심각성을 시각적으로 보여줍니다. 
+					세 가지 주요 그래프를 통해 폭염 발생 빈도, 기상 재해로 인한 사망자 수, 그리고 열스트레스 지수의 추세를 분석하며, 
+					이를 통해 기후 변화가 우리 생활에 미치는 영향을 명확히 이해할 수 있습니다. </p>
+			</div>
+			<a href="#work1" class="button style2 down anchored">Next</a>
+		</section>
+
+		<section id="work1" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2>짜잔!</h2>
 					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
+					arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+				</header>
+
+				<!-- Gallery  -->
+					<div class="gallery">
+						<article class="from-left">
+							<a href="images/fulls/netflix_temp.png" class="image fit"><img src="images/thumbs/netflix_temp.png" title="바코드" alt="" /></a>
+						</article>
+						<article class="from-right">
+							<a href="images/fulls/extreme_hot.png" class="image fit"><img src="images/thumbs/extreme_hot.png" title="폭염 발생 빈도 (1973-2024년)" alt="" /></a>
+						</article>
+					</div>
+			</div>
+		</section>
+
+		<!-- 열사병 Graph -->
+			<!-- 열사병: 호우 태풍 폭염 그래프 -->
+
+		<section id="heatstroke_one" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h3>기상 재해로 인한 연간 사망자 수 (2011-2019년)</h3>
+				</header>
+				<div id="visualization-container">
+					<svg id="heatstroke_one_graph" width="1000" height="400"></svg>
 				</div>
-				<a href="#work" class="button style2 down anchored">Next</a>
-			</section>
+				<p class="custom-font">
+					마우스를 올렸을 때 나타나는 선은 폭염일 수의 추세선을 보여주며, 
+					이 추세선은 폭염으로 인한 열사병 사망자 수의 증가 추세와 일치하는 경향을 확인할 수 있습니다.
+				</p>
+			</div>
+		</section>
+			<!-- 열사병 Graph: 열스트레스 그래프 -->
+		<section id="heatstroke_two" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h3>여름 일별 열스트레스 지수 추세 (1974-2024년)</h3>
+				</header>
 
-		<!-- Work -->
-			<section id="work" class="main style3 primary">
-				<div class="content">
-					<header>
-						<h2>My Work</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
-					</header>
-
-					<!-- Gallery  -->
-						<div class="gallery">
-							<article class="from-left">
-								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
-							</article>
-						</div>
-
+				<div id="visualization-container">
+					<svg id="heatstroke_two_graph" width="1200" height="600"></svg>
 				</div>
-			</section>
+				<p>Interactive visualization of WBGT trends over years.</p>
+			</div>
+			
+			<a href="#two" class="button style2 down anchored">Next</a>
+		</section>
+
+
+		<!-- Two: 이상기후 제목 (윤서) -->
+		<section id="two" class="main style2 left dark fullscreen">
+			<div class="content box style2">
+				<header>
+					<h2>이상기후 -, 스콜 등 (윤서)</h2>
+				</header>
+				
+				<p>ㄱㄹㅎ 나가라. Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
+				id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+			</div>
+			<a href="#work2" class="button style2 down anchored">Next</a>
+		</section>
+		<!-- 이상기후 (윤서) 그래프들 -->
+		<section id="seoul_bugs" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2>Seoul District Temperature and Complaints Map</h2>
+				</header>
+				<div id="map-2022" style="display: inline-block; width: 45%;"></div>
+				<div id="map-2023" style="display: inline-block; width: 45%;"></div>
+				    <!-- 범례가 위치할 컨테이너 -->
+				<div id="legend-container"></div>
+				
+				<p>Interactive visualization of Seoul's temperature and complaints data.</p>
+			</div>
+		</section>
+
+		<section id="work2" class="main style3 primary">=
+			<div class="content">
+				<header>
+					<h2>짜잔!</h2>
+					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
+					arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+				</header>
+
+				<!-- Gallery  -->
+					<div class="gallery">
+						<article class="from-left">
+							<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+						</article>
+						<article class="from-right">
+							<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
+						</article>
+					</div>
+			</div>
+			<a href="#three" class="button style2 down anchored">Next</a>
+		</section>
+
+		<!-- Three: Rainfall Network 제목 -->
+		<section id="three" class="main style2 right dark fullscreen">
+			<div class="content box style2">
+				<header>
+					<h2>강수량 (장민기, 김태린)</h2>
+				</header>
+				<!-- Rainfall Network Visualization -->
+				<div id=""></div> <!-- This is where the D3.js visualization will be rendered -->
+
+				<!-- <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+				Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
+				id varius justo euismod in. Curabitur egestas consectetur magna.</p> -->
+			</div>
+			<a href="#work" class="button style2 down anchored">Next</a>
+		</section>
+		<!-- 민기 그래프 -->
+		<!-- Rainfall Network Animation Section -->
+		<section id="rainfall_one" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2>Seoul District Temperature and Complaints Map</h2>
+				</header>
+				<div id="rainfall_map"></div>
+				
+				<p>Interactive visualization of Seoul's temperature and complaints data.</p>
+			</div>
+		</section> 
+		
+		<section id="work" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2>My Work</h2>
+					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
+					arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+				</header>
+
+				Gallery 
+					<div class="gallery">
+						<article class="from-left">
+							<a href="images/fulls/spring.png" class="image fit"><img src="images/thumbs/spring.png" title="The Anonymous Red" alt="" /></a>
+						</article>
+						<article class="from-right">
+							<a href="images/fulls/summer.png" class="image fit"><img src="images/thumbs/summer.png" title="Airchitecture II" alt="" /></a>
+						</article>
+						<article class="from-left">
+							<a href="images/fulls/autumn.png" class="image fit"><img src="images/thumbs/autumn.png" title="Air Lounge" alt="" /></a>
+						</article>
+						<article class="from-right">
+							<a href="images/fulls/winter.png" class="image fit"><img src="images/thumbs/winter.png" title="Carry on" alt="" /></a>
+						</article>
+					</div>
+
+			</div>
+		</section>
+
+		<!-- 태린 그래프 1-->
+		<section id="rainfall_two" class="main style3 primary">
+			<div class="content">
+				<header>
+					<p>해수면이 높아진다아아 비상비상!</p>
+				</header>
+				<div id="sea_level_chart"></div>
+				<p>그래프 설명!!!!!!!!!!!!!!!!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
+			</div>
+		</section>
+
+		<!-- 태린 그래프 2-->
+		<!-- 여의도 시각화 -->
+		 
+		<section id="yeouido_visualization" class="main style3 primary">
+			<div class="content">
+				<header>
+					<p>여의도 침수 시각화</p>
+				</header>
+				<div id="region-select">
+					<label for="region">지역 선택:</label>
+					<select id="region">
+						<option value="한국">한국</option>
+						<option value="전라도">전라도</option>
+						<option value="충청도">충청도</option>
+						<option value="경상도">경상도</option>
+					</select>
+				</div>
+				<div id="scenario-select">
+					<button id="scenario-4.5-2050">4.5 시나리오</button>
+					<button id="scenario-8.5-2050">8.5 시나리오</button>
+				</div>
+				
+				<svg id="treemap" width="1000" height="600"></svg> <!-- 기본 크기 -->
+			</div>
+		</section>
 
 		<!-- Contact -->
-			<section id="contact" class="main style3 secondary">
-				<div class="content">
-					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
-					</header>
-					<div class="box">
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-							</div>
-							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</div>
+		<section id="contact" class="main style3 secondary">
+			<div class="content">
+				<header>
+					<h2>Say Hello.</h2>
+					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+				</header>
+				<div class="box">
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
+							<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
+							<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+						</div>
+						<ul class="actions special">
+							<li><input type="submit" value="Send Message" /></li>
+						</ul>
+					</form>
 				</div>
-			</section>
+			</div>
+		</section>
 
 		<!-- Footer -->
-			<footer id="footer">
+		<footer id="footer">
 
-				<!-- Icons -->
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-					</ul>
+			<!-- Icons -->
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+					<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+				</ul>
 
-				<!-- Menu -->
-					<ul class="menu">
-						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-					</ul>
+			<!-- Menu -->
+				<ul class="menu">
+					<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
 
-			</footer>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<!-- D3.js 라이브러리 추가 -->
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script type="module" src="scripts/index.js"></script>
+		
+		<!-- nav bar 숨기기 -->
+		<script>
+			let lastScrollTop = 0;
+			const navbar = document.getElementById('header');
+			
+			// transition을 추가하여 부드러운 이동을 설정
+			navbar.style.transition = 'top 0.3s ease-in-out';
+			
+			window.addEventListener('scroll', function() {
+				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		
+				if (scrollTop > lastScrollTop) {
+					// 아래로 스크롤 중
+					navbar.style.top = '-3em'; // Navbar 숨기기
+				} else {
+					// 위로 스크롤 중
+					navbar.style.top = '0'; // Navbar 보이기
+				}
+		
+				lastScrollTop = scrollTop;
+			});
+		</script>
 
-	</body>
+</body>
 </html>

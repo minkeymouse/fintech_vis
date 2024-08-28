@@ -621,7 +621,7 @@ input, select, textarea {
 /* Box */
 
 	.box {
-		background: #ffffff;
+		background: #FFFFF0;
 		color: #39454b;
 		padding: 2em;
 	}
@@ -958,15 +958,16 @@ input, select, textarea {
 		display: inline-block;
 	}
 
-		.image:before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background: url("images/overlay.png");
-		}
+	.image:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		/* background: url("images/overlay.png") no-repeat center center; */
+		background-size: cover;
+	}
 
 		.image img {
 			display: block;
@@ -1261,7 +1262,7 @@ input, select, textarea {
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
-				color: #e5e6e7;
+				color: #000000;
 				content: '\f1ce';
 				cursor: default;
 				display: block;
@@ -1313,6 +1314,7 @@ input, select, textarea {
 			background: url("images/poptrox-nav.svg");
 			top: calc(50% - 1.5em);
 			margin: -32px 0 0 0;
+			filter: invert(100%); /* 색상을 반전시켜 흰색을 검은색으로 변경 */
 		}
 
 		.poptrox-popup:hover .nav-next,
@@ -1378,6 +1380,7 @@ input, select, textarea {
 				box-shadow: inset 0 0 0 2px #fff;
 				background: url("images/poptrox-closer.svg") center center;
 				color: #ffffff !important;
+				filter: invert(100%); /* 색상을 반전시켜 흰색을 검은색으로 변경 */
 			}
 
 		.poptrox-popup:hover .closer {
@@ -1449,6 +1452,17 @@ input, select, textarea {
 			.gallery article .image {
 				margin: 0;
 				display: block;
+				width: 100%;
+				height: 300px; /* 원하는 높이로 설정 */
+				overflow: hidden;
+			}
+			.gallery article .image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover; /* 이미지를 비율에 맞게 조정하여 채우기 */
+				display: block;
+				opacity: 1; /* 이미지의 불투명도를 100%로 설정 */
+				border: 1px solid #39454b; /* 2픽셀 두께의 검은색 테두리 추가 */
 			}
 
 			.gallery article:nth-last-child(1n) {
@@ -2041,9 +2055,9 @@ input, select, textarea {
 			.main.style3 .content > header {
 				margin-bottom: 2em;
 			}
-
+			/* 백그라운드 색상 */
 			.main.style3.primary {
-				background: #ffffff;
+				background: #FFFFF0;
 			}
 
 			.main.style3.secondary {
@@ -2254,7 +2268,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("images/overlay.png"), url("../../images/rise.webp");
+		background: url("images/overlay.png"), url("../../images/hot_heat.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2263,7 +2277,7 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
+		background: url("images/overlay.png"), url("../../images/bugs.webp");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2319,3 +2333,11 @@ input, select, textarea {
 			}
 
 		}
+.custom-font {
+	width: 80%; /* 컨테이너의 너비를 화면의 50%로 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 20px;
+	font-size: 16px;
+	/* font-weight: bold;  */
+	line-height: 1.5;
+}
