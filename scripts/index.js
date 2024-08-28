@@ -6,8 +6,7 @@ import { startWBGTVisualization } from './visualization.js';
 import { drawSeoulMaps } from './visualization.js';
 import { drawSeaLevelRiseChart } from './visualization.js';
 import { startRainfallVisualization } from './visualization.js';
-// import { drawStaticRainfallVisualization } from './visualization.js';
-import { initializeYeouidoVisualization } from './visualization.js';
+import { drawScenarioComparison } from './visualization.js';
 
 
 // general_one
@@ -117,17 +116,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 침수 4: 태린 그래프 
 // index.js
-
 document.addEventListener('DOMContentLoaded', function() {
-    // 여의도 시각화 섹션이 보일 때 시각화를 트리거하는 관찰자 설정
-    const observerYeouido = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                initializeYeouidoVisualization();  // 여의도 시각화 초기화 함수 호출
-                observer.unobserve(entry.target);  // 한 번 실행 후 관찰 중지
-            }
-        });
-    }, { threshold: 0.8 });  // 80% 이상 보일 때 트리거
+    let selectedScenario = 'Rcp4.5';
+    let selectedRegion = '한국';
 
-    observerYeouido.observe(document.querySelector('#yeouido_visualization'));
+    document.getElementById('scenario-4.5-2050').addEventListener('click', () => {
+        selectedScenario = 'Rcp4.5';
+        drawScenarioComparison(selectedScenario, selectedRegion);
+    });
+
+    document.getElementById('scenario-8.5-2050').addEventListener('click', () => {
+        selectedScenario = 'Rcp8.5';
+        drawScenarioComparison(selectedScenario, selectedRegion);
+    });
+
+    document.getElementById('region').addEventListener('change', (event) => {
+        selectedRegion = event.target.value;
+        drawScenarioComparison(selectedScenario, selectedRegion);
+    });
+
+    // 초기 상태 업데이트
+    drawScenarioComparison(selectedScenario, selectedRegion);
 });

@@ -442,8 +442,7 @@ export function startTempAnomalyVisualization() {
             .attr("y", -10)
             .attr("text-anchor", "middle")
             .style("font-size", "16px")
-            .style("font-weight", "bold")
-            .text("Global temperature above preindustrial levels");
+            .style("font-weight", "bold");
     }).catch(function(error) {
         console.error('데이터 로드 실패:', error);
     });
@@ -567,25 +566,31 @@ export function startWork1Visualization() {
         });
 
     // 범례 추가 코드
+    const labels = {
+        "downpour": "폭우",
+        "typhoon": "태풍",
+        "heatwave": "폭염"
+    };
+    
     const legend = svg.selectAll(".legend")
         .data(color.domain())
         .enter().append("g")
         .attr("class", "legend")
         .attr("transform", (d, i) => `translate(0, ${i * 20})`);
-
+    
     legend.append("rect")
         .attr("x", width - 18)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", color);
-
+    
     legend.append("text")
         .attr("x", width - 24)
         .attr("y", 9)
         .attr("dy", ".35em")
-        .style("font-size", "18px")
+        .style("font-size", "14px")
         .style("text-anchor", "end")
-        .text(d => d);
+        .text(d => labels[d]);
 }
 
 // 열사병: 열스트레스 그래프
@@ -1100,15 +1105,13 @@ export function startRainfallVisualization() {
 
 //침수3: 그래프 (태린)
 export function drawSeaLevelRiseChart() {
-    // JSON 데이터 파일 경로
     const jsonFilePath = 'data/sea_level_yearly.json';
 
-    // 데이터 로드 및 시각화
     d3.json(jsonFilePath).then(data => {
-        // 차트 설정
-        const margin = { top: 20, right: 30, bottom: 30, left: 50 },
-            width = 800 - margin.left - margin.right,
-            height = 400 - margin.top - margin.bottom;
+        // 상단 마진을 더 크게 설정
+        const margin = { top: 40, right: 50, bottom: 30, left: 50 },  // 기존 20에서 40으로 증가
+            width = 1000 - margin.left - margin.right,
+            height = 600 - margin.top - margin.bottom;
 
         const svg = d3.select("#sea_level_chart")
             .append("svg")
@@ -1117,7 +1120,6 @@ export function drawSeaLevelRiseChart() {
             .append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
 
-        // 초기 X축 설정
         const x = d3.scaleLinear()
             .domain([d3.min(data, d => d.연도), d3.max(data, d => d.연도)]) 
             .range([0, width]);
@@ -1126,18 +1128,17 @@ export function drawSeaLevelRiseChart() {
             .attr("transform", `translate(0,${height})`)
             .call(d3.axisBottom(x).tickFormat(d3.format("d")));
 
-        // Y축의 최솟값을 구함
+        // Y축 최대값에 여유를 더 줌
         const minY = d3.min(data, d => d['국내 평균 해수면 높이']);
+        const maxY = d3.max(data, d => d['국내 평균 해수면 높이']) * 1.1;  // 기존 값에 10% 여유를 줌
 
-        // 초기 Y축 설정
         const y = d3.scaleLinear()
-            .domain([minY, d3.max(data, d => d['국내 평균 해수면 높이'])])
+            .domain([minY, maxY])  // Y축 도메인을 여유 있게 설정
             .range([height, 0]);
 
         const yAxis = svg.append("g")
             .call(d3.axisLeft(y));
 
-        // 그리드 추가
         const gridLines = svg.append("g")
             .attr("class", "grid")
             .call(d3.axisLeft(y)
@@ -1148,7 +1149,6 @@ export function drawSeaLevelRiseChart() {
             .style("stroke", "lightgrey")
             .style("stroke-dasharray", "3,3");
 
-        // 선 추가
         const line = d3.line()
             .x(d => x(d.연도))
             .y(d => y(d['국내 평균 해수면 높이']))
@@ -1161,25 +1161,21 @@ export function drawSeaLevelRiseChart() {
             .attr("stroke-width", 1.5)
             .attr("d", line);
 
-        // 최종적으로 색상을 채우기 위한 영역 함수
         const area = d3.area()
             .x(d => x(d.연도))
-            .y0(y(minY))  // Y축의 최솟값을 기준으로 아래쪽을 채우기
-            .y1(d => y(d['국내 평균 해수면 높이']))  // 선 아래 전체를 채우기
+            .y0(y(minY)) 
+            .y1(d => y(d['국내 평균 해수면 높이'])) 
             .curve(d3.curveMonotoneX);
 
-        // X축과 Y축을 업데이트하면서 선을 애니메이션으로 그리는 함수
         function updateChart(i) {
-            // X축과 Y축의 최대 값을 확대
             const newX = d3.scaleLinear()
                 .domain([d3.min(data, d => d.연도), d3.max(data.slice(0, i + 1), d => d.연도)])
                 .range([0, width]);
 
             const newY = d3.scaleLinear()
-                .domain([minY, d3.max(data.slice(0, i + 1), d => d['국내 평균 해수면 높이'])])
+                .domain([minY, maxY])  // Y축 도메인을 여유 있게 설정
                 .range([height, 0]);
 
-            // X축과 Y축 업데이트
             xAxis.transition()
                 .duration(500)
                 .call(d3.axisBottom(newX).tickFormat(d3.format("d")));
@@ -1188,7 +1184,6 @@ export function drawSeaLevelRiseChart() {
                 .duration(500)
                 .call(d3.axisLeft(newY));
 
-            // 그리드 업데이트
             gridLines.transition()
                 .duration(500)
                 .call(d3.axisLeft(newY)
@@ -1199,7 +1194,6 @@ export function drawSeaLevelRiseChart() {
                 .style("stroke", "lightgrey")
                 .style("stroke-dasharray", "3,3");
 
-            // 선 업데이트
             path.datum(data.slice(0, i + 1))
                 .attr("d", d3.line()
                     .x(d => newX(d.연도))
@@ -1210,21 +1204,15 @@ export function drawSeaLevelRiseChart() {
                 .duration(300)
                 .ease(d3.easeLinear);
 
-            // 모든 데이터가 다 그려졌을 때 전체 그래프를 기준으로 색상 영역 채우기
             if (i === data.length - 1) {
                 setTimeout(() => {
                     const startHeight = height;
                     const targetHeight = y(minY);
-            
-                    // 애니메이션 타이머 시작
+
                     const timer = d3.timer(function(elapsed) {
-                        // 애니메이션 진행률 (0에서 1 사이의 값)
-                        const t = Math.min(1, elapsed / 5000);  // 5초 동안 애니메이션
-            
-                        // 현재 y0 값을 계산
+                        const t = Math.min(1, elapsed / 5000); 
                         const currentHeight = startHeight - t * (startHeight - targetHeight);
-            
-                        // 경로를 다시 그리기
+
                         svg.selectAll("path.area")
                             .data([data])
                             .join("path")
@@ -1236,15 +1224,67 @@ export function drawSeaLevelRiseChart() {
                                 .y0(currentHeight)
                                 .y1(d => y(d['국내 평균 해수면 높이']))
                                 .curve(d3.curveMonotoneX));
-            
-                        // 애니메이션이 완료되면 타이머 중지
+
                         if (t === 1) timer.stop();
                     });
+
+                    const focus = svg.append("g")
+                        .attr("class", "focus")
+                        .style("display", "none");
+
+                    focus.append("circle")
+                        .attr("r", 5)
+                        .attr("fill", "steelblue");
+
+                    focus.append("rect")
+                        .attr("class", "tooltip")
+                        .attr("width", 120)
+                        .attr("height", 50)
+                        .attr("x", 10)
+                        .attr("y", -22)
+                        .attr("rx", 4)
+                        .attr("ry", 4)
+                        .style("fill", "lightsteelblue");
+
+                    focus.append("text")
+                        .attr("class", "tooltip-year")
+                        .attr("x", 18)
+                        .attr("y", -2)
+                        .style("fill", "black")
+                        .style("font-size", "16px");  
+
+                    focus.append("text")
+                        .attr("class", "tooltip-sea-level")
+                        .attr("x", 18)
+                        .attr("y", 18)
+                        .style("fill", "black")
+                        .style("font-size", "16px");  
+
+                    svg.append("rect")
+                        .attr("class", "overlay")
+                        .attr("width", width)
+                        .attr("height", height)
+                        .style("fill", "none")
+                        .style("pointer-events", "all")
+                        .on("mouseover", () => focus.style("display", null))
+                        .on("mouseout", () => focus.style("display", "none"))
+                        .on("mousemove", mousemove);
+
+                    function mousemove(event) {
+                        const bisect = d3.bisector(d => d.연도).left;
+                        const x0 = x.invert(d3.pointer(event)[0]);
+                        const i = bisect(data, x0, 1);
+                        const d0 = data[i - 1];
+                        const d1 = data[i];
+                        const d = x0 - d0.연도 > d1.연도 - x0 ? d1 : d0;
+                        focus.attr("transform", `translate(${x(d.연도)},${y(d['국내 평균 해수면 높이'])})`);
+                        focus.select(".tooltip-year").text(`${d.연도}년`);
+                        focus.select(".tooltip-sea-level").text(`해수면: ${d['국내 평균 해수면 높이']} cm`);
+                    }
                 }, 1000);
             }
         }
 
-        // 애니메이션 실행
         for (let i = 0; i < data.length; i++) {
             setTimeout(() => {
                 updateChart(i);
@@ -1257,97 +1297,109 @@ export function drawSeaLevelRiseChart() {
 }
 
 //친수4: 고구마 (태린)
-// visualization.js
+export function drawCube(svg, x, y, size, color) {
+    const group = svg.append("g")
+        .attr("transform", `translate(${x}, ${y - size * 0.5})`);  // Y 좌표를 위쪽으로 이동
 
-// visualization.js
+    // 상단면
+    group.append("polygon")
+        .attr("points", `
+            0,0
+            ${size},${-size * 0.5}
+            ${size * 2},0
+            ${size},${size * 0.5}
+        `)
+        .attr("fill", d3.color(color).brighter(1.5));
 
-// 친수4: 고구마 (태린)
-// visualization.js
+    // 좌측면
+    group.append("polygon")
+        .attr("points", `
+            0,0
+            0,${size}
+            ${size},${size * 1.5}
+            ${size},${size * 0.5}
+        `)
+        .attr("fill", d3.color(color).darker(1));
 
-export function initializeYeouidoVisualization() {
-    // 여의도 지도를 그리는 함수 호출
-    drawYeouidoMap();
-
-    // 시나리오 선택 이벤트 리스너 등록
-    document.querySelectorAll('input[name="scenario"]').forEach(function(scenario) {
-        scenario.addEventListener('change', updateYeouidoVisualization);
-    });
-
-    // 지역 선택 이벤트 리스너 등록
-    document.getElementById('region-select').addEventListener('change', updateYeouidoVisualization);
-
-    // 초기 상태 업데이트
-    updateYeouidoVisualization();
+    // 정면
+    group.append("polygon")
+        .attr("points", `
+            ${size},${size * 0.5}
+            ${size * 2},0
+            ${size * 2},${size}
+            ${size},${size * 1.5}
+        `)
+        .attr("fill", color);
 }
-
-// 여의도 지도 그리기
-function drawYeouidoMap() {
-    const width = 500, height = 500;
-
-    // D3의 geoPath와 특정 투영법을 사용해 여의도 위치와 모양을 표시
-    const projection = d3.geoMercator()
-        .center([126.9216, 37.5251])  // 여의도의 중심 좌표 (경도, 위도)
-        .scale(20000)  // 축척을 조정하여 여의도를 적절히 표현
-        .translate([width / 2, height / 2]);
-
-    const path = d3.geoPath().projection(projection);
-
-    const svg = d3.select("#yeouido-map")
-        .attr("width", width)
-        .attr("height", height);
-
-    d3.json("../data/yeouido_map.geojson").then(function(geoData) {
-        console.log(geoData);  // 데이터를 확인하기 위해 콘솔에 출력
-        svg.selectAll("path")
-            .data(geoData.features)
-            .enter()
-            .append("path")
-            .attr("d", path)
-            .attr("fill", "#cccccc")  // 여의도 모양을 회색으로 채움
-            .attr("stroke", "#000000");  // 경계를 검은색으로 설정
-    }).catch(error => {
-        console.error('Error loading or processing GeoJSON data:', error);
-    });
-}
-
-
-// 여의도 시각화 업데이트
-function updateYeouidoVisualization() {
-    const width = 500, height = 500;  // height 변수를 정의하여 사용
-
-    const regionSelect = document.getElementById('region-select');
-    const scenarioSelect = document.querySelector('input[name="scenario"]:checked');
-
-    // 선택된 요소가 있는지 확인
-    if (!regionSelect || !scenarioSelect) {
-        console.error("Region or scenario selection is missing.");
-        return;
-    }
-
-    const region = regionSelect.value;
-    const scenario = scenarioSelect.value;
-    const seaLevelData = {
-        "kor": {"Rcp4.5_2050_y": 83.75, "Rcp8.5_2050_y": 88.55, "Rcp4.5_2100_y": 119.36, "Rcp8.5_2100_y": 172.94},
-        "jeon": {"Rcp4.5_2050_y": 53.55, "Rcp8.5_2050_y": 58.14, "Rcp4.5_2100_y": 81.58, "Rcp8.5_2100_y": 123.38},
-        "chung": {"Rcp4.5_2050_y": 30.75, "Rcp8.5_2050_y": 35.14, "Rcp4.5_2100_y": 51.48, "Rcp8.5_2100_y": 75.21},
-        "gyeong": {"Rcp4.5_2050_y": 44.12, "Rcp8.5_2050_y": 49.32, "Rcp4.5_2100_y": 66.48, "Rcp8.5_2100_y": 92.74},
+export function drawScenarioComparison(scenario, selectedRegion) {
+    const data = {
+        "Rcp4.5": {
+            "여의도": 1,
+            "2050년": {
+                "한국": 83.75,
+                "전라도": 53.55,
+                "충청도": 30.75,
+                "경상도": 44.12
+            },
+            "2100년": {
+                "한국": 119.36,
+                "전라도": 81.58,
+                "충청도": 51.48,
+                "경상도": 66.48
+            }
+        },
+        "Rcp8.5": {
+            "여의도": 1,
+            "2050년": {
+                "한국": 88.55,
+                "전라도": 58.14,
+                "충청도": 35.14,
+                "경상도": 49.32
+            },
+            "2100년": {
+                "한국": 172.94,
+                "전라도": 123.38,
+                "충청도": 75.21,
+                "경상도": 92.74
+            }
+        }
     };
 
-    const yeouidoMultiplier = seaLevelData[region][scenario];
-    const gogumaContainer = d3.select("#gogumas");
+    const svg = d3.select("#treemap");
+    svg.selectAll("*").remove();  // 기존 시각화 제거
 
-    // 기존 고구마 이미지를 제거
-    gogumaContainer.selectAll("img").remove();
+    const svgWidth = parseInt(svg.attr("width"));
+    const svgHeight = parseInt(svg.attr("height"));
+    const cubeSize = Math.min(svgWidth, svgHeight) / 32;  // 여의도 크기 조절 (SVG 크기에 비례)
 
-    // 여의도 배수에 따라 고구마 이미지를 추가
-    for (let i = 0; i < yeouidoMultiplier; i++) {
-        gogumaContainer.append("img")
-            .attr("src", "../images/gogum.png")
-            .attr("alt", "고구마")
-            .style("position", "absolute")
-            .style("top", `${Math.random() * (height - 50)}px`)
-            .style("left", `${Math.random() * (width - 50)}px`)
-            .style("width", "50px")
-            .style("height", "auto");
-    }
+    const yeouidoSize = cubeSize * Math.sqrt(data[scenario]["여의도"]);
+    const size2050 = cubeSize * Math.sqrt(data[scenario]["2050년"][selectedRegion]);
+    const size2100 = cubeSize * Math.sqrt(data[scenario]["2100년"][selectedRegion]);
+
+    // 2100년 큐브를 먼저 그리기
+    drawCube(svg, svgWidth * 0.45, svgHeight * 0.45, size2100, "#0b3467");
+    svg.append("text")
+        .attr("x", svgWidth * 0.45 + size2100)
+        .attr("y", svgHeight * 0.45 + size2100 + 20)
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .text("2100년: " + data[scenario]["2100년"][selectedRegion]);
+
+    // 2050년 큐브 그리기
+    drawCube(svg, svgWidth * 0.25, svgHeight * 0.6, size2050, "#69b3a2");
+    svg.append("text")
+        .attr("x", svgWidth * 0.25 + size2050)
+        .attr("y", svgHeight * 0.6 + size2050 + 20)
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .text("2050년: " + data[scenario]["2050년"][selectedRegion]);
+
+    // 여의도 큐브 그리기
+    drawCube(svg, svgWidth * 0.22, svgHeight * 0.75, yeouidoSize, "#ffcc00");
+    svg.append("text")
+        .attr("x", svgWidth * 0.22 + yeouidoSize)
+        .attr("y", svgHeight * 0.75 + yeouidoSize + 20)
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .text("여의도: " + data[scenario]["여의도"]);
 }
