@@ -13,11 +13,12 @@ import { drawScenarioComparison } from './visualization.js';
 const observerOne = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            startVisualization();  // 첫 번째 시각화 호출
-            observer.unobserve(entry.target);
+            setTimeout(() => {startVisualization();  // 첫 번째 시각화 호출
+            observer.unobserve(entry.target)
+            }, 1000);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.8 });
 observerOne.observe(document.querySelector('#general_one'));
 
 // general_two
@@ -29,7 +30,7 @@ const observerTwo = new IntersectionObserver((entries, observer) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 1.0 });
 observerTwo.observe(document.querySelector('#general_two'));
 
 // general_three
@@ -47,7 +48,7 @@ const observerWork1 = new IntersectionObserver((entries, observer) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 1.0 });
 observerWork1.observe(document.querySelector('#heatstroke_one'));
 
 // 열사병 2: 열스트레스 그래프
@@ -58,7 +59,7 @@ const observer = new IntersectionObserver((entries, observer) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.5});
 observer.observe(document.querySelector('#heatstroke_two'));
 
 // -----------------------------------------------------
@@ -78,38 +79,22 @@ const observerRainfall = new IntersectionObserver((entries, observer) => {
             observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 1.0 });
 observerRainfall.observe(document.querySelector('#rainfall_one'));
 
-// 침수 2: Initialize static visualizations once the corresponding section comes into view
-// const observerStaticRainfall = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             drawStaticRainfallVisualization("#visualization-spring-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Spring");
-//             drawStaticRainfallVisualization("#visualization-summer-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Summer");
-//             drawStaticRainfallVisualization("#visualization-autumn-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Autumn");
-//             drawStaticRainfallVisualization("#visualization-winter-1997-2007", "data/rainfall_network_seasonal_1997-2007.json", "Winter");
-
-//             drawStaticRainfallVisualization("#visualization-spring-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Spring");
-//             drawStaticRainfallVisualization("#visualization-summer-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Summer");
-//             drawStaticRainfallVisualization("#visualization-autumn-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Autumn");
-//             drawStaticRainfallVisualization("#visualization-winter-2018-2023", "data/rainfall_network_seasonal_2018-2023.json", "Winter");
-//             observer.unobserve(entry.target);
-//         }
-//     });
-// }, { threshold: 0.5 });
-// observerStaticRainfall.observe(document.querySelector('#static-plots'));
 
 // 침수 3: 태린 그래프
 document.addEventListener('DOMContentLoaded', function() {
     const observerRainfall = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                drawSeaLevelRiseChart();  // 그래프 그리기 함수 호출
-                observer.unobserve(entry.target);  // 한 번 실행 후 관찰 중지
+                setTimeout(() => {
+                    drawSeaLevelRiseChart();  // 그래프 그리기 함수 호출
+                    observer.unobserve(entry.target);  // 한 번 실행 후 관찰 중지
+                }, 1500);  // 2초(2000ms) 지연 후 실행
             }
         });
-    }, { threshold: 0.8 });  // 80% 이상 보일 때 트리거
+    }, { threshold: 0.9 });  // 80% 이상 보일 때 트리거
 
     observerRainfall.observe(document.querySelector('#rainfall_two'));
 });

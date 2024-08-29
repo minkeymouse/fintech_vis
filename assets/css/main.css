@@ -858,9 +858,10 @@ input, select, textarea {
 		-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		margin: auto;
 		color: #39454b;
 		display: block;
-		width: 100%;
+		width: 50%;
 		padding: 0.65em 0.75em;
 		background: none;
 		border: solid 2px #e5e6e7;
@@ -1194,6 +1195,7 @@ input, select, textarea {
 	footer {
 		margin-top: 2em;
 	}
+
 
 /* Table */
 
@@ -2061,7 +2063,7 @@ input, select, textarea {
 			}
 
 			.main.style3.secondary {
-				background: #f5f6f7;
+				background: #39454b;
 			}
 
 		.main.dark {
@@ -2341,3 +2343,111 @@ input, select, textarea {
 	/* font-weight: bold;  */
 	line-height: 1.5;
 }
+.custom-wbgt {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.risk-level-box {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    flex-shrink: 0; /* 색상 박스가 크기를 유지하도록 설정 */
+}
+
+/* 기본 스타일 설정 */
+#region-select {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* 필요에 따라 너비를 조절 */
+}
+
+#region {
+    width: 100%;
+    padding: 10px;
+    appearance: none; /* 기본 드롭다운 화살표 제거 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 드롭다운 화살표 추가 */
+#region-select::after {
+    content: '▼'; /* 세모 모양 화살표 */
+    font-size: 14px;
+    color: #333;
+    position: absolute;
+    top: 80%;
+    right: 15px; /* 오른쪽 끝에서 화살표 위치 조정 */
+    transform: translateY(-50%);
+    pointer-events: none; /* 화살표 위에 커서가 있어도 드롭다운 작동 */
+	
+}
+
+
+#reference {
+    color: #fffff0; /* 원하는 텍스트 색상으로 변경 */
+}
+
+#reference h2 {
+    color: #fffff0; /* 헤더의 색상만 따로 지정 */
+	text-align: left;
+	font-size: 28px;
+	width: 80%;
+	margin: auto;
+	margin-bottom: -20px;
+	opacity: 0.5;
+}
+
+#reference h3 {
+    color: #fffff0; /* 헤더의 색상만 따로 지정 */
+	text-align: left;
+	font-size: 20px;
+	width: 80%;
+	margin: auto;
+	opacity: 0.5;
+}
+
+#reference p {
+    color: #fffff0; /* 섹션 내 모든 <p> 요소의 색상을 변경 */
+	font-size: 16px;
+	text-align: left;
+	width: 80%;
+	margin: auto;
+}
+
+#reference strong {
+    color: #fffff0; /* 섹션 내 <strong> 요소의 색상을 변경 */
+}
+
+#reference ol {
+    color: #fffff0; /* 섹션 내 <strong> 요소의 색상을 변경 */
+	font-size: 16px;
+	text-align: left;
+	width: 80%;
+	margin: auto;
+	list-style-type: disc; /* 목록의 항목 앞에 작은 점을 표시 */
+    padding-left: 20px; /* 왼쪽에 여백을 추가하여 점이 더 잘 보이도록 조정 */
+}
+/* 다른 텍스트 관련 요소들에 대해서도 필요에 따라 추가 */

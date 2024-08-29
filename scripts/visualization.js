@@ -900,7 +900,8 @@ export function drawSeoulMaps() {
                 .attr("y", 20)
                 .attr("text-anchor", "middle")
                 .style("font-size", "18px")
-                .text(`${year} Seoul District Temperature and Complaints Map`);
+                .style("font-weight", "bold")
+                .text(`${year}년`);
         }
 
         // 패턴 정의 (빗금)
@@ -1078,10 +1079,10 @@ export function startRainfallVisualization() {
 
                 svg.append("text")
                     .attr("class", "season-label")
-                    .attr("x", width / 2)
-                    .attr("y", 30)
+                    .attr("x", 600)
+                    .attr("y", 500)
                     .attr("text-anchor", "middle")
-                    .attr("font-size", "24px")
+                    .attr("font-size", "18px")
                     .attr("font-weight", "bold")
                     .attr("fill", "#333")
                     .text(`Season: ${currentSeasonData.season}`);
@@ -1270,17 +1271,38 @@ export function drawSeaLevelRiseChart() {
                         .on("mouseout", () => focus.style("display", "none"))
                         .on("mousemove", mousemove);
 
-                    function mousemove(event) {
-                        const bisect = d3.bisector(d => d.연도).left;
-                        const x0 = x.invert(d3.pointer(event)[0]);
-                        const i = bisect(data, x0, 1);
-                        const d0 = data[i - 1];
-                        const d1 = data[i];
-                        const d = x0 - d0.연도 > d1.연도 - x0 ? d1 : d0;
-                        focus.attr("transform", `translate(${x(d.연도)},${y(d['국내 평균 해수면 높이'])})`);
-                        focus.select(".tooltip-year").text(`${d.연도}년`);
-                        focus.select(".tooltip-sea-level").text(`해수면: ${d['국내 평균 해수면 높이']} cm`);
-                    }
+                        function mousemove(event) {
+                            const bisect = d3.bisector(d => d.연도).left;
+                            const x0 = x.invert(d3.pointer(event)[0]);
+                            const i = bisect(data, x0, 1);
+                            const d0 = data[i - 1];
+                            const d1 = data[i];
+                            const d = x0 - d0.연도 > d1.연도 - x0 ? d1 : d0;
+                        
+                            // 툴팁 위치를 조정하여 화면 밖으로 나가지 않도록 함
+                            const tooltipX = x(d.연도);
+                            const tooltipY = y(d['국내 평균 해수면 높이']);
+                            const tooltipWidth = 120;
+                            const tooltipHeight = 50;
+                        
+                            const offsetX = (tooltipX + tooltipWidth > width) ? -tooltipWidth - 20 : 10;
+                            const offsetY = (tooltipY - tooltipHeight < 0) ? tooltipHeight + 10 : -22;
+                        
+                            focus.attr("transform", `translate(${tooltipX},${tooltipY})`);
+                            focus.select(".tooltip")
+                                .attr("x", offsetX)
+                                .attr("y", offsetY);
+                        
+                            focus.select(".tooltip-year")
+                                .attr("x", offsetX + 8)
+                                .attr("y", offsetY + 20)
+                                .text(`${d.연도}년`);
+                        
+                            focus.select(".tooltip-sea-level")
+                                .attr("x", offsetX + 8)
+                                .attr("y", offsetY + 40)
+                                .text(`해수면: ${d['국내 평균 해수면 높이']} cm`);
+                        }
                 }, 1000);
             }
         }
@@ -1383,7 +1405,7 @@ export function drawScenarioComparison(scenario, selectedRegion) {
         .attr("y", svgHeight * 0.45 + size2100 + 20)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("2100년: " + data[scenario]["2100년"][selectedRegion]);
+        .text("2100년: 여의도의 " + Math.round(data[scenario]["2100년"][selectedRegion]) + "배");
 
     // 2050년 큐브 그리기
     drawCube(svg, svgWidth * 0.25, svgHeight * 0.6, size2050, "#69b3a2");
@@ -1392,7 +1414,7 @@ export function drawScenarioComparison(scenario, selectedRegion) {
         .attr("y", svgHeight * 0.6 + size2050 + 20)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("2050년: " + data[scenario]["2050년"][selectedRegion]);
+        .text("2050년: 여의도의 " + Math.round(data[scenario]["2050년"][selectedRegion]) + "배");
 
     // 여의도 큐브 그리기
     drawCube(svg, svgWidth * 0.22, svgHeight * 0.75, yeouidoSize, "#ffcc00");
@@ -1401,5 +1423,5 @@ export function drawScenarioComparison(scenario, selectedRegion) {
         .attr("y", svgHeight * 0.75 + yeouidoSize + 20)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("여의도: " + data[scenario]["여의도"]);
+        .text("여의도" );
 }
