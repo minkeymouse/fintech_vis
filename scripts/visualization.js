@@ -1271,17 +1271,38 @@ export function drawSeaLevelRiseChart() {
                         .on("mouseout", () => focus.style("display", "none"))
                         .on("mousemove", mousemove);
 
-                    function mousemove(event) {
-                        const bisect = d3.bisector(d => d.연도).left;
-                        const x0 = x.invert(d3.pointer(event)[0]);
-                        const i = bisect(data, x0, 1);
-                        const d0 = data[i - 1];
-                        const d1 = data[i];
-                        const d = x0 - d0.연도 > d1.연도 - x0 ? d1 : d0;
-                        focus.attr("transform", `translate(${x(d.연도)},${y(d['국내 평균 해수면 높이'])})`);
-                        focus.select(".tooltip-year").text(`${d.연도}년`);
-                        focus.select(".tooltip-sea-level").text(`해수면: ${d['국내 평균 해수면 높이']} cm`);
-                    }
+                        function mousemove(event) {
+                            const bisect = d3.bisector(d => d.연도).left;
+                            const x0 = x.invert(d3.pointer(event)[0]);
+                            const i = bisect(data, x0, 1);
+                            const d0 = data[i - 1];
+                            const d1 = data[i];
+                            const d = x0 - d0.연도 > d1.연도 - x0 ? d1 : d0;
+                        
+                            // 툴팁 위치를 조정하여 화면 밖으로 나가지 않도록 함
+                            const tooltipX = x(d.연도);
+                            const tooltipY = y(d['국내 평균 해수면 높이']);
+                            const tooltipWidth = 120;
+                            const tooltipHeight = 50;
+                        
+                            const offsetX = (tooltipX + tooltipWidth > width) ? -tooltipWidth - 20 : 10;
+                            const offsetY = (tooltipY - tooltipHeight < 0) ? tooltipHeight + 10 : -22;
+                        
+                            focus.attr("transform", `translate(${tooltipX},${tooltipY})`);
+                            focus.select(".tooltip")
+                                .attr("x", offsetX)
+                                .attr("y", offsetY);
+                        
+                            focus.select(".tooltip-year")
+                                .attr("x", offsetX + 8)
+                                .attr("y", offsetY + 20)
+                                .text(`${d.연도}년`);
+                        
+                            focus.select(".tooltip-sea-level")
+                                .attr("x", offsetX + 8)
+                                .attr("y", offsetY + 40)
+                                .text(`해수면: ${d['국내 평균 해수면 높이']} cm`);
+                        }
                 }, 1000);
             }
         }
