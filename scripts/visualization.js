@@ -900,7 +900,8 @@ export function drawSeoulMaps() {
                 .attr("y", 20)
                 .attr("text-anchor", "middle")
                 .style("font-size", "18px")
-                .text(`${year} Seoul District Temperature and Complaints Map`);
+                .style("font-weight", "bold")
+                .text(`${year}년`);
         }
 
         // 패턴 정의 (빗금)
@@ -1078,10 +1079,10 @@ export function startRainfallVisualization() {
 
                 svg.append("text")
                     .attr("class", "season-label")
-                    .attr("x", width / 2)
-                    .attr("y", 30)
+                    .attr("x", 600)
+                    .attr("y", 500)
                     .attr("text-anchor", "middle")
-                    .attr("font-size", "24px")
+                    .attr("font-size", "18px")
                     .attr("font-weight", "bold")
                     .attr("fill", "#333")
                     .text(`Season: ${currentSeasonData.season}`);
@@ -1383,7 +1384,7 @@ export function drawScenarioComparison(scenario, selectedRegion) {
         .attr("y", svgHeight * 0.45 + size2100 + 20)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("2100년: " + data[scenario]["2100년"][selectedRegion]);
+        .text("2100년: 여의도의 " + Math.round(data[scenario]["2100년"][selectedRegion]) + "배");
 
     // 2050년 큐브 그리기
     drawCube(svg, svgWidth * 0.25, svgHeight * 0.6, size2050, "#69b3a2");
@@ -1392,7 +1393,7 @@ export function drawScenarioComparison(scenario, selectedRegion) {
         .attr("y", svgHeight * 0.6 + size2050 + 20)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("2050년: " + data[scenario]["2050년"][selectedRegion]);
+        .text("2050년: 여의도의 " + Math.round(data[scenario]["2050년"][selectedRegion]) + "배");
 
     // 여의도 큐브 그리기
     drawCube(svg, svgWidth * 0.22, svgHeight * 0.75, yeouidoSize, "#ffcc00");
@@ -1401,5 +1402,5 @@ export function drawScenarioComparison(scenario, selectedRegion) {
         .attr("y", svgHeight * 0.75 + yeouidoSize + 20)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("여의도: " + data[scenario]["여의도"]);
+        .text("여의도" );
 }
